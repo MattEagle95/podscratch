@@ -1,0 +1,198 @@
+[2021-05-11 01:28:34] info undefined [undefined]: binance {}
+[2021-05-11 01:29:41] info undefined [undefined]: binance, 'market price', 0.000020000000000006124 {}
+[2021-05-11 01:29:56] info undefined [undefined]: binance, 'market price', 0.070519, 0.07052, 0.000001000000000001 {}
+[2021-05-11 16:35:41] info: binance, 'market price', 0.071107, 0.07112, 0.000012999999999999123 {}
+[2021-05-11 16:36:04] info: binance, 'market price', 0.071121, 0.071122, 0.000001000000000001
+[2021-05-11 16:36:26] info: binance, 'market price', 0.071113, 0.071121, 0.000008000000000008 
+[2021-05-11 16:36:42] info: binance, 'market price', 0.071139, 0.07114, 0.000001000000000001
+[2021-05-11 17:12:02] info: started
+[2021-05-11 17:12:15] info: started
+[2021-05-11 17:16:40] info: started
+[2021-05-11 17:16:42] info: [object Object]
+[2021-05-11 17:16:42] info: [object Object]
+[2021-05-11 17:17:10] info: started
+[2021-05-11 17:17:12] info: {"symbol":"BTC/USD","timestamp":1620746231,"datetime":"1970-01-19T18:12:26.231Z","bid":55608.16,"ask":56166.4,"last":55880.95,"close":55880.95,"info":{"buy":{"data":{"base":"BTC","currency":"USD","amount":"56166.40"}},"sell":{"data":{"base":"BTC","currency":"USD","amount":"55608.16"}},"spot":{"data":{"base":"BTC","currency":"USD","amount":"55880.95"}}}}
+[2021-05-11 17:17:12] info: {"limits":{"amount":{},"price":{},"cost":{"min":0.01}},"precision":{},"id":"BTC-USD","symbol":"BTC/USD","base":"BTC","quote":"USD","baseId":"BTC","quoteId":"USD","info":{"id":"USD","name":"US Dollar","min_size":"0.01000000"}}
+[2021-05-11 17:21:03] info: started
+[2021-05-11 17:21:52] info: started
+[2021-05-11 17:25:27] info: started
+[2021-05-11 17:26:34] info: started
+[2021-05-11 17:26:35] error: api offline
+[2021-05-11 17:27:00] info: started
+[2021-05-11 17:27:00] info: api online
+[2021-05-11 17:33:39] info: started
+[2021-05-11 17:33:49] info: update started
+[2021-05-11 17:33:50] info: api online
+[2021-05-11 17:33:50] info: loading markets
+[2021-05-11 17:33:50] info: markets loaded
+[2021-05-11 17:33:51] info: update finished
+undefined
+[2021-05-11 17:37:40] info: started
+[2021-05-11 17:39:20] info: started
+[2021-05-11 17:39:30] info: update started
+[2021-05-11 17:39:31] info: api online
+[2021-05-11 17:39:31] info: loading markets
+[2021-05-11 17:39:31] info: markets loaded
+[2021-05-11 17:39:32] info: update finished
+{
+  message: 'started',
+  level: 'info',
+  timestamp: '2021-05-11 17:40:15',
+  metadata: {}
+}
+{
+  message: 'update started',
+  level: 'info',
+  timestamp: '2021-05-11 17:40:25',
+  metadata: {}
+}
+{
+  message: 'api online',
+  level: 'info',
+  timestamp: '2021-05-11 17:40:25',
+  metadata: {}
+}
+{
+  message: 'loading markets',
+  level: 'info',
+  timestamp: '2021-05-11 17:40:25',
+  metadata: {}
+}
+{
+  message: 'markets loaded',
+  level: 'info',
+  timestamp: '2021-05-11 17:40:25',
+  metadata: { durationMs: 398 }
+}
+[2021-05-11 17:41:21] info: started
+[2021-05-11 17:41:44] info: started
+[2021-05-11 17:43:32] [32minfo[39m: started
+[2021-05-11 17:43:48] [32minfo[39m: started
+[2021-05-11 17:43:58] [32minfo[39m: update started
+[2021-05-11 17:43:58] [32minfo[39m: api online
+[2021-05-11 17:43:58] [32minfo[39m: loading markets
+[2021-05-11 17:43:58] [32minfo[39m: markets loaded
+[2021-05-11 17:43:59] [32minfo[39m: update finished
+[2021-05-11 17:44:49] [32minfo[39m: started
+[2021-05-11 17:45:13] [32minfo[39m: started
+[2021-05-11 17:45:23] [32minfo[39m: update started
+[2021-05-11 17:45:24] [32minfo[39m: api online
+[2021-05-11 17:45:24] [32minfo[39m: loading markets
+[2021-05-11 17:45:24] [32minfo[39m: markets loaded
+[2021-05-11 17:45:25] [32minfo[39m: update finished
+[2021-05-11 17:45:33] [32minfo[39m: update started
+[2021-05-11 17:45:34] [32minfo[39m: api online
+[2021-05-11 17:45:34] [32minfo[39m: loading markets
+[2021-05-11 17:45:34] [32minfo[39m: markets loaded
+[2021-05-11 17:45:35] [32minfo[39m: update finished
+[2021-05-11 17:45:53] [32minfo[39m: started
+[2021-05-11 17:46:03] [32minfo[39m: update started
+[2021-05-11 17:46:03] [32minfo[39m: api online
+[2021-05-11 17:46:03] [32minfo[39m: loading markets
+[2021-05-11 17:46:04] [32minfo[39m: markets loaded
+[2021-05-11 17:46:05] [32minfo[39m: update finished
+[2021-05-11 17:52:31] [32minfo[39m: started
+[2021-05-11 17:52:41] [32minfo[39m: update started
+[2021-05-11 17:52:41] [32minfo[39m: api online
+[2021-05-11 17:52:41] [32minfo[39m: loading markets
+[2021-05-11 17:52:42] [32minfo[39m: markets loaded
+[2021-05-11 17:52:43] [32minfo[39m: update finished
+[2021-05-11 17:53:07] [32minfo[39m: started
+[2021-05-11 17:53:17] [32minfo[39m: update started
+[2021-05-11 17:53:17] [32minfo[39m: api online
+[2021-05-11 17:53:17] [32minfo[39m: loading markets
+[2021-05-11 17:53:17] [32minfo[39m: markets loaded
+[2021-05-11 17:53:19] [32minfo[39m: update finished
+[2021-05-11 17:55:45] [32minfo[39m: started
+[2021-05-11 17:55:55] [32minfo[39m: update started
+[2021-05-11 17:55:55] [32minfo[39m: api online
+[2021-05-11 17:55:55] [32minfo[39m: loading markets
+[2021-05-11 17:55:55] [32minfo[39m: markets loaded duration: 334ms
+[2021-05-11 17:55:56] [32minfo[39m: update finished duration: 1705ms
+[2021-05-11 18:03:53] [32minfo[39m: started
+[2021-05-11 18:03:53] [32minfo[39m: api online
+[2021-05-11 18:04:02] [32minfo[39m: started
+[2021-05-11 18:04:03] [32minfo[39m: api online
+[2021-05-11 18:08:16] [32minfo[39m: started
+[2021-05-11 18:10:54] [32minfo[39m: started
+[2021-05-11 18:10:54] [32minfo[39m: 20
+[2021-05-11 18:11:01] [32minfo[39m: started
+[2021-05-11 18:11:01] [32minfo[39m: 16
+[2021-05-11 18:15:44] [32minfo[39m: started
+[2021-05-11 18:15:44] [32minfo[39m: 20
+[2021-05-11 18:15:44] [32minfo[39m: moneyByPercentage 16% is lower than minMoneyAmount, using minMoneyAmount: ' + 20 €
+[2021-05-11 18:15:44] [32minfo[39m: 20
+[2021-05-11 18:15:44] [32minfo[39m: moneyByPercentage 12% is lower than minMoneyAmount, using minMoneyAmount: ' + 20 €
+[2021-05-11 18:15:44] [32minfo[39m: 20
+[2021-05-11 18:15:44] [32minfo[39m: moneyByPercentage 8% is lower than minMoneyAmount, using minMoneyAmount: ' + 20 €
+[2021-05-11 18:15:44] [32minfo[39m: 20
+[2021-05-11 18:15:44] [32minfo[39m: moneyByPercentage 4% is lower than minMoneyAmount, using minMoneyAmount: ' + 20 €
+[2021-05-11 18:15:44] [32minfo[39m: 20
+[2021-05-11 18:15:44] [32minfo[39m: moneyByPercentage 2% is lower than minMoneyAmount, using minMoneyAmount: ' + 20 €
+[2021-05-11 18:15:44] [32minfo[39m: 20
+[2021-05-11 18:16:20] [32minfo[39m: started
+[2021-05-11 18:16:20] [32minfo[39m: 20
+[2021-05-11 18:16:20] [32minfo[39m: moneyByPercentage 16% is lower than minMoneyAmount, using minMoneyAmount: 20 €
+[2021-05-11 18:16:20] [32minfo[39m: 20
+[2021-05-11 18:16:20] [32minfo[39m: moneyByPercentage 12% is lower than minMoneyAmount, using minMoneyAmount: 20 €
+[2021-05-11 18:16:20] [32minfo[39m: 20
+[2021-05-11 18:16:20] [32minfo[39m: moneyByPercentage 8% is lower than minMoneyAmount, using minMoneyAmount: 20 €
+[2021-05-11 18:16:20] [32minfo[39m: 20
+[2021-05-11 18:16:20] [32minfo[39m: moneyByPercentage 4% is lower than minMoneyAmount, using minMoneyAmount: 20 €
+[2021-05-11 18:16:20] [32minfo[39m: 20
+[2021-05-11 18:16:20] [32minfo[39m: moneyByPercentage 2% is lower than minMoneyAmount, using minMoneyAmount: 20 €
+[2021-05-11 18:16:20] [32minfo[39m: 20
+[2021-05-11 18:16:37] [32minfo[39m: started
+[2021-05-11 18:16:37] [32minfo[39m: 20
+[2021-05-11 18:16:37] [32minfo[39m: moneyByPercentage 16 % is lower than minMoneyAmount, using minMoneyAmount: 20€
+[2021-05-11 18:16:37] [32minfo[39m: 20
+[2021-05-11 18:16:37] [32minfo[39m: moneyByPercentage 12 % is lower than minMoneyAmount, using minMoneyAmount: 20€
+[2021-05-11 18:16:37] [32minfo[39m: 20
+[2021-05-11 18:16:37] [32minfo[39m: moneyByPercentage 8 % is lower than minMoneyAmount, using minMoneyAmount: 20€
+[2021-05-11 18:16:37] [32minfo[39m: 20
+[2021-05-11 18:16:37] [32minfo[39m: moneyByPercentage 4 % is lower than minMoneyAmount, using minMoneyAmount: 20€
+[2021-05-11 18:16:37] [32minfo[39m: 20
+[2021-05-11 18:16:37] [32minfo[39m: moneyByPercentage 2 % is lower than minMoneyAmount, using minMoneyAmount: 20€
+[2021-05-11 18:16:37] [32minfo[39m: 20
+[2021-05-11 18:18:31] [32minfo[39m: started
+[2021-05-11 18:27:22] [32minfo[39m: started
+[2021-05-11 18:27:33] [32minfo[39m: started
+[2021-05-11 18:27:33] [32minfo[39m: undefined
+[2021-05-11 18:27:42] [32minfo[39m: started
+[2021-05-11 18:27:42] [32minfo[39m: false
+[2021-05-11 18:27:58] [32minfo[39m: started
+[2021-05-11 18:27:58] [32minfo[39m: true
+[2021-05-11 18:28:59] [32minfo[39m: started
+[2021-05-11 18:29:00] [32minfo[39m: [object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object],[object Object]
+[2021-05-11 18:29:08] [32minfo[39m: started
+[2021-05-11 18:52:00] [32minfo[39m: started
+[2021-05-11 18:52:06] [32minfo[39m: started
+[2021-05-11 18:52:06] [32minfo[39m: api online
+[2021-05-11 18:52:13] [32minfo[39m: started
+[2021-05-11 18:52:14] [32minfo[39m: api online
+[2021-05-11 18:52:26] [32minfo[39m: started
+[2021-05-11 18:52:27] [32minfo[39m: api online
+[2021-05-11 18:54:17] [32minfo[39m: started
+[2021-05-11 18:54:17] [32minfo[39m: api online
+[2021-05-11 18:55:59] [32minfo[39m: started
+[2021-05-11 18:55:59] [32minfo[39m: api online
+[2021-05-11 18:56:15] [32minfo[39m: started
+[2021-05-11 18:56:16] [32minfo[39m: api online
+[2021-05-11 18:57:24] [32minfo[39m: started
+[2021-05-11 18:57:24] [32minfo[39m: api online
+[2021-05-11 20:19:07] [32minfo[39m: started
+[2021-05-11 20:19:07] [32minfo[39m: api online
+[2021-05-11 20:19:17] [32minfo[39m: update started
+[2021-05-11 20:19:18] [32minfo[39m: markets loaded duration: 1097ms
+[2021-05-11 20:19:19] [32minfo[39m: fetched ticker BTC/USD, bid: 56512.18
+[2021-05-11 20:19:19] [32minfo[39m: starting money-printing-signalizer
+[2021-05-11 20:19:19] [32minfo[39m: money-printing-signalizer has not enough data. length: 1, needed: 60
+[2021-05-11 20:19:19] [32minfo[39m: fetch finished duration: 967ms
+[2021-05-11 20:19:19] [32minfo[39m: update finished duration: 2068ms
+[2021-05-11 20:19:27] [32minfo[39m: update started
+[2021-05-11 20:19:27] [32minfo[39m: markets loaded duration: 1ms
+[2021-05-11 20:19:27] [32minfo[39m: fetched ticker BTC/USD, bid: 56473.88
+[2021-05-11 20:19:27] [32minfo[39m: starting money-printing-signalizer
+[2021-05-11 20:19:27] [32minfo[39m: money-printing-signalizer has not enough data. length: 2, needed: 60
+[2021-05-11 20:19:27] [32minfo[39m: fetch finished duration: 45ms
+[2021-05-11 20:19:27] [32minfo[39m: update finished duration: 47ms

@@ -1,0 +1,14 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 30
+    },
+    "auditLog": "storage\\combined\\.33ec1cbe1dbc8ef75d7d6a1c79e0761dc0c872c9-audit.json",
+    "files": [
+        {
+            "date": 1620689313980,
+            "name": "storage\\combined\\combined-2021-05-11.log",
+            "hash": "161f1d99ec494033bb73a70b72112033"
+        }
+    ]
+}

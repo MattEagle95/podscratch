@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css">
+
+    <style>
+        html,
+        body {
+            height: 100%;
+        }
+
+        .game-wrapper {
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            width: 800px;
+        }
+
+        .box {
+            background: red;
+            width: 50px;
+            height: 50px;
+        }
+
+        .playingCard {
+            position: relative;
+            margin-left: -50px;
+            height: 140px;
+            width: 90px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 5px;
+        }
+
+        .playingCard:hover {
+            position: relative;
+            bottom: 25px;
+        }
+
+        .rotate {
+            transform: rotate(-180deg);
+        }
+    </style>
+
+    <title>Hello, world!</title>
+</head>
+
+<body class="bg-dark text-white">
+    <div class="d-flex flex-column justify-content-between align-items-center" style="height: 100%;">
+        <div>
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <div class="container">
+                    <a class="navbar-brand" href="#">Cards</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <button class="btn btn-outline-danger">Leave</button>
+                </div>
+            </nav>
+            <div class="container">
+                <div class="card-group">
+                    <div class="card bg-dark mx-2">
+                        <div class="card-body">
+                            <h5 class="card-title"><i class="bi-person-circle"></i> Skrambl</h5>
+                        </div>
+                        <div class="card-footer d-flex align-items-center">
+                            <div
+                                style="width: 12px; height: 16px; border: 1px solid #ccc; border-radius: 5px; margin-right: 5px;">
+                            </div>
+                            x 2
+                        </div>
+                    </div>
+                    <div class="card bg-dark mx-2">
+                        <div class="card-body">
+                            <h5 class="card-title"><i class="bi-person-circle"></i> Skrambl</h5>
+                        </div>
+                        <div class="card-footer d-flex align-items-center">
+                            <div
+                                style="width: 12px; height: 16px; border: 1px solid #ccc; border-radius: 5px; margin-right: 5px;">
+                            </div>
+                            x 5
+                        </div>
+                    </div>
+                    <div class="card bg-dark mx-2">
+                        <div class="card-body">
+                            <h5 class="card-title"><i class="bi-person-circle"></i> Skrambl</h5>
+                        </div>
+                        <div class="card-footer d-flex align-items-center">
+                            <div
+                                style="width: 12px; height: 16px; border: 1px solid #ccc; border-radius: 5px; margin-right: 5px;">
+                            </div>
+                            x 8
+                        </div>
+                    </div>
+                    <div class="card bg-dark mx-2">
+                        <div class="card-body">
+                            <h5 class="card-title"><i class="bi-person-circle"></i> Skrambl</h5>
+                        </div>
+                        <div class="card-footer d-flex align-items-center">
+                            <div
+                                style="width: 12px; height: 16px; border: 1px solid #ccc; border-radius: 5px; margin-right: 5px;">
+                            </div>
+                            x 10
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container d-flex justify-content-center">
+            <div class="playingCard bg-dark d-flex flex-column justify-content-between" style="margin-left: 0px;">
+                <h5 style=" margin: 0px;">9</h5>
+                <div style="text-align: center;">
+                    <i class="bi-suit-club-fill"></i>
+                </div>
+                <h5 class="rotate" style="margin: 0px;">9</h5>
+            </div>
+        </div>
+        <nav class="navbar navbar-dark bg-dark" style="
+        padding-left: 250px;
+        border: 1px dashed #ccc;
+        padding-right: 200px;
+        border-radius: 10px;
+        ">
+            <div class="container">
+                <div class="playingCard bg-dark d-flex flex-column justify-content-between"">
+                    <h5 style=" margin: 0px;">9</h5>
+                    <div style="text-align: center;">
+                        <i class="bi-suit-club-fill"></i>
+                    </div>
+                    <h5 class="rotate" style="margin: 0px;">9</h5>
+                </div>
+                <div class="playingCard bg-dark d-flex flex-column justify-content-between"">
+                    <h5 style=" margin: 0px;">9</h5>
+                    <div style="text-align: center;">
+                        <i class="bi-suit-club-fill"></i>
+                    </div>
+                    <h5 class="rotate" style="margin: 0px;">9</h5>
+                </div>
+                <div class="playingCard bg-dark d-flex flex-column justify-content-between"">
+                    <h5 style=" margin: 0px;">9</h5>
+                    <div style="text-align: center;">
+                        <i class="bi-suit-club-fill"></i>
+                    </div>
+                    <h5 class="rotate" style="margin: 0px;">9</h5>
+                </div>
+            </div>
+        </nav>
+    </div>
+</body>
+
+</html>

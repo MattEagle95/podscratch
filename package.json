@@ -1,0 +1,31 @@
+{
+  "name": "podscratch",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "env-cmd node index",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MattEagle95/podscratch.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MattEagle95/podscratch/issues"
+  },
+  "homepage": "https://github.com/MattEagle95/podscratch#readme",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "ccxt": "^1.49.74",
+    "env-cmd": "^10.1.0",
+    "winston": "^3.3.3",
+    "winston-daily-rotate-file": "^4.5.5"
+  },
+  "devDependencies": {
+    "jest": "^26.6.3",
+    "prettier": "2.3.0"
+  }
+}
