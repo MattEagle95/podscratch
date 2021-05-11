@@ -196,3 +196,92 @@ undefined
 [2021-05-11 20:19:27] [32minfo[39m: money-printing-signalizer has not enough data. length: 2, needed: 60
 [2021-05-11 20:19:27] [32minfo[39m: fetch finished duration: 45ms
 [2021-05-11 20:19:27] [32minfo[39m: update finished duration: 47ms
+[2021-05-11 20:50:57] [32minfo[39m: started
+[2021-05-11 20:50:57] [32minfo[39m: api online
+[2021-05-11 20:51:27] [32minfo[39m: update started
+[2021-05-11 20:51:28] [32minfo[39m: markets loaded duration: 1074ms
+[2021-05-11 20:51:29] [32minfo[39m: fetched ticker BTC/USD, bid: 56345
+[2021-05-11 20:51:29] [32minfo[39m: starting money-printing-signalizer
+[2021-05-11 20:51:29] [32minfo[39m: money-printing-signalizer has not enough data. length: 1, needed: 30
+[2021-05-11 20:51:29] [32minfo[39m: update finished duration: 2057ms
+[2021-05-11 20:59:11] [32minfo[39m: started
+[2021-05-11 21:02:35] [32minfo[39m: started
+[2021-05-11 21:02:36] [32minfo[39m: api online
+[2021-05-11 21:02:58] [32minfo[39m: money-printing-signalizer has not enough data. length: 1, needed: 30
+[2021-05-11 21:02:58] [32minfo[39m: update - ${COIN_CURRENCY} ${tickerData.bid} duration: 2062ms
+[2021-05-11 21:03:16] [32minfo[39m: money-printing-signalizer has not enough data. length: 2, needed: 30
+[2021-05-11 21:03:16] [32minfo[39m: update - ${COIN_CURRENCY} ${tickerData.bid} duration: 69ms
+[2021-05-11 21:03:36] [32minfo[39m: money-printing-signalizer has not enough data. length: 3, needed: 30
+[2021-05-11 21:03:36] [32minfo[39m: update - ${COIN_CURRENCY} ${tickerData.bid} duration: 69ms
+[2021-05-11 21:04:37] [32minfo[39m: started (UPDATE: 20000ms)
+[2021-05-11 21:04:37] [32minfo[39m: api online
+[2021-05-11 21:04:59] [32minfo[39m: money-printing-signalizer has not enough data. length: 1, needed: 30
+[2021-05-11 21:08:22] [32minfo[39m: started (UPDATE: 20000ms)
+[2021-05-11 21:08:22] [32minfo[39m: api online
+[2021-05-11 21:08:44] [32minfo[39m: money-printing-signalizer: has not enough data. length: 1, needed: 30
+[2021-05-11 21:08:44] [32minfo[39m: update - BTC/USD 56678.07 duration: 2047ms
+[2021-05-11 21:09:02] [32minfo[39m: money-printing-signalizer: has not enough data. length: 2, needed: 30
+[2021-05-11 21:09:02] [32minfo[39m: update - BTC/USD 56686.77 duration: 46ms
+[2021-05-11 21:09:22] [32minfo[39m: money-printing-signalizer: has not enough data. length: 3, needed: 30
+[2021-05-11 21:09:22] [32minfo[39m: update - BTC/USD 56651.19 duration: 55ms
+[2021-05-11 21:09:42] [32minfo[39m: money-printing-signalizer: has not enough data. length: 4, needed: 30
+[2021-05-11 21:09:42] [32minfo[39m: update - BTC/USD 56569.85 duration: 57ms
+[2021-05-11 21:10:02] [32minfo[39m: money-printing-signalizer: has not enough data. length: 5, needed: 30
+[2021-05-11 21:10:02] [32minfo[39m: update - BTC/USD 56602.46 duration: 39ms
+[2021-05-11 21:10:22] [32minfo[39m: money-printing-signalizer: has not enough data. length: 6, needed: 30
+[2021-05-11 21:10:22] [32minfo[39m: update - BTC/USD 56560.67 duration: 49ms
+[2021-05-11 21:10:42] [32minfo[39m: money-printing-signalizer: has not enough data. length: 7, needed: 30
+[2021-05-11 21:10:42] [32minfo[39m: update - BTC/USD 56546.76 duration: 46ms
+[2021-05-11 21:11:02] [32minfo[39m: money-printing-signalizer: has not enough data. length: 8, needed: 30
+[2021-05-11 21:11:02] [32minfo[39m: update - BTC/USD 56576.46 duration: 43ms
+[2021-05-11 21:11:22] [32minfo[39m: money-printing-signalizer: has not enough data. length: 9, needed: 30
+[2021-05-11 21:11:22] [32minfo[39m: update - BTC/USD 56581.02 duration: 51ms
+[2021-05-11 21:11:42] [32minfo[39m: money-printing-signalizer: has not enough data. length: 10, needed: 30
+[2021-05-11 21:11:42] [32minfo[39m: money-printing-signalizer: ready
+[2021-05-11 21:11:42] [32minfo[39m: update - BTC/USD 56543.34 duration: 53ms
+[2021-05-11 21:12:02] [32minfo[39m: money-printing-signalizer: has not enough data. length: 11, needed: 30
+[2021-05-11 21:12:02] [32minfo[39m: update - BTC/USD 56504.49 duration: 42ms
+[2021-05-11 21:14:05] [32minfo[39m: started (UPDATE: 20000ms)
+[2021-05-11 21:14:05] [32minfo[39m: api online
+[2021-05-11 21:20:09] [32minfo[39m: started (UPDATE: 20000ms)
+[2021-05-11 21:20:09] [32minfo[39m: api online
+[2021-05-11 21:20:12] [32minfo[39m: fetched price data (300 elements)
+[2021-05-11 21:20:32] [32minfo[39m: money-printing-signalizer: has not enough data. length: 1, needed: 30
+[2021-05-11 21:20:32] [32minfo[39m: update - BTC/USD 56650.38 duration: 45ms
+[2021-05-11 21:20:52] [32minfo[39m: money-printing-signalizer: has not enough data. length: 2, needed: 30
+[2021-05-11 21:20:52] [32minfo[39m: update - BTC/USD 56630 duration: 92ms
+[2021-05-11 21:22:45] [32minfo[39m: started (UPDATE: 20000ms)
+[2021-05-11 21:22:45] [32minfo[39m: api online
+[2021-05-11 21:22:48] [32minfo[39m: fetched price data (300 elements)
+[2021-05-11 21:23:20] [32minfo[39m: started (UPDATE: 20000ms)
+[2021-05-11 21:23:21] [32minfo[39m: api online
+[2021-05-11 21:23:24] [32minfo[39m: fetched price data (300 elements)
+[2021-05-11 21:23:44] [32minfo[39m: money-printing-signalizer: has not enough data. length: 2, needed: 30
+[2021-05-11 21:23:44] [32minfo[39m: update - BTC/USD 56727.84 duration: 48ms
+[2021-05-11 21:24:04] [32minfo[39m: money-printing-signalizer: has not enough data. length: 3, needed: 30
+[2021-05-11 21:24:04] [32minfo[39m: update - BTC/USD 56725.35 duration: 57ms
+[2021-05-11 21:24:24] [32minfo[39m: money-printing-signalizer: has not enough data. length: 4, needed: 30
+[2021-05-11 21:24:24] [32minfo[39m: update - BTC/USD 56741.89 duration: 47ms
+[2021-05-11 21:24:31] [32minfo[39m: started (UPDATE: 20000ms)
+[2021-05-11 21:24:31] [32minfo[39m: api online
+[2021-05-11 21:24:34] [32minfo[39m: fetched price data (300 elements)
+[2021-05-11 21:24:54] [32minfo[39m: money-printing-signalizer: last buy too recent
+[2021-05-11 21:24:54] [32minfo[39m: update - BTC/USD 56742.65 duration: 55ms
+[2021-05-11 21:25:14] [32minfo[39m: money-printing-signalizer: last buy too recent
+[2021-05-11 21:25:14] [32minfo[39m: update - BTC/USD 56756.06 duration: 47ms
+[2021-05-11 21:25:34] [32minfo[39m: money-printing-signalizer: last buy too recent
+[2021-05-11 21:25:34] [32minfo[39m: update - BTC/USD 56792.58 duration: 50ms
+[2021-05-11 21:25:54] [32minfo[39m: money-printing-signalizer: last buy too recent
+[2021-05-11 21:25:54] [32minfo[39m: update - BTC/USD 56833.38 duration: 62ms
+[2021-05-11 21:27:37] [32minfo[39m: started (UPDATE: 20000ms)
+[2021-05-11 21:27:37] [32minfo[39m: api online
+[2021-05-11 21:27:40] [32minfo[39m: fetched price data (300 elements)
+[2021-05-11 21:28:00] [32minfo[39m: update - BTC/USD 56855.48 duration: 56ms
+[2021-05-11 21:28:20] [32minfo[39m: update - BTC/USD 56824.34 duration: 63ms
+[2021-05-11 21:28:40] [32minfo[39m: update - BTC/USD 56829.53 duration: 50ms
+[2021-05-11 21:29:00] [32minfo[39m: update - BTC/USD 56830.69 duration: 59ms
+[2021-05-11 21:29:20] [32minfo[39m: update - BTC/USD 56801.76 duration: 55ms
+[2021-05-11 21:29:40] [32minfo[39m: update - BTC/USD 56810.26 duration: 43ms
+[2021-05-11 21:30:00] [32minfo[39m: update - BTC/USD 56823.29 duration: 70ms
+[2021-05-11 21:30:08] [32minfo[39m: started (UPDATE: 20000ms)
+[2021-05-11 21:30:08] [32minfo[39m: api online

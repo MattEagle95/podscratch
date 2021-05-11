@@ -3,8 +3,7 @@
   const logger = require('./logger');
   const { moneyPrinterBuySignal } = require('./moneyPrinterSignal');
 
-  const UPDATE_INTERVAL_MS = 10000;
-  const MIN_PRICE_DATA = 60;
+  const UPDATE_INTERVAL_MS = 20000;
   const COIN = 'BTC';
   const CURRENCY = 'USD';
   const COIN_CURRENCY = `${COIN}/${CURRENCY}`;
@@ -18,9 +17,12 @@
   const NEEDS_PERCENTAGE = 0.1;
   const NEEDS_MAX_PERCENTAGE = 0.2;
 
+  const MIN_PRICE_DATA = NEEDS_TICKS_LOW + NEEDS_TICKS_HIGH;
+
   // money in the bank
   let BANK = 100;
-  let LAST_BOUGHT = 0;
+  const NEEDS_MIN_TICKS_FOR_NEXT_BUY = 10;
+  let LAST_BOUGHT_TICKS = NEEDS_MIN_TICKS_FOR_NEXT_BUY;
 
   const PRICE_DATA = [];
 
@@ -35,9 +37,11 @@
     return moneyByPercentage;
   }
 
-  logger.info(`started`)
+  logger.info(`started (UPDATE: ${UPDATE_INTERVAL_MS}ms)`)
 
-  const exchange = new ccxt.coinbasepro()
+  const exchange = new ccxt.coinbasepro({
+    'enableRateLimit': true,
+  })
 
   try {
     const status = await exchange.fetchStatus(params = {})
@@ -46,56 +50,61 @@
     }
 
     logger.info(`api online`)
+
+    // if (exchange.has.fetchOHLCV) {
+    //   let fetchedPriceData = await exchange.fetchOHLCV(COIN_CURRENCY, '1m');
+    //   logger.info(`fetched price data (${fetchedPriceData.length} elements)`)
+    //   fetchedPriceData = fetchedPriceData.slice(fetchedPriceData.length - MIN_PRICE_DATA, fetchedPriceData.length)
+    //   logger.info(`last price data - ${COIN_CURRENCY} ${fetchedPriceData[fetchedPriceData.length - 1][4]}`)
+    //   fetchedPriceData.forEach(priceData => {
+    //     PRICE_DATA.push(priceData[4])
+    //   });
+    // }
   } catch (error) {
     logger.error(error);
   }
 
   setInterval(async () => {
     const updateProfiler = logger.startTimer();
-    logger.info(`update started`)
+    let tickerData = null;
 
     try {
-      const marketUpdateProfiler = logger.startTimer();
       await exchange.loadMarkets()
-      marketUpdateProfiler.done({ message: 'markets loaded' })
 
-
-
-
-      const signalProfiler = logger.startTimer();
-
-      const tickerData = await exchange.fetchTicker(COIN_CURRENCY)
-      logger.info(`fetched ticker ${COIN_CURRENCY}, bid: ${tickerData.bid}`)
+      tickerData = await exchange.fetchTicker(COIN_CURRENCY)
+      console.log(tickerData);
       PRICE_DATA.push(tickerData.bid);
 
       // MONEY-PRINTING-SIGNALIZER
-      logger.info(`starting money-printing-signalizer`)
       if (BANK < ORDER_MIN_MONEY_AMOUNT) {
-        logger.info(`not checking buy signals, not enough money to buy`)
+        logger.info(`money-printing-signalizer: not enough money to buy`)
+        LAST_BOUGHT_TICKS++;
       } else {
         if (PRICE_DATA.length >= MIN_PRICE_DATA) {
-          if (moneyPrinterBuySignal(NEEDS_TICKS_LOW, NEEDS_TICKS_HIGH, NEEDS_PERCENTAGE, NEEDS_MAX_PERCENTAGE, PRICE_DATA)) {
-            logger.info(`BOOOOOOM! BUY SIGNAL!`)
-            buy();
+          if (LAST_BOUGHT_TICKS >= NEEDS_MIN_TICKS_FOR_NEXT_BUY) {
+            if (moneyPrinterBuySignal(NEEDS_TICKS_LOW, NEEDS_TICKS_HIGH, NEEDS_PERCENTAGE, NEEDS_MAX_PERCENTAGE, PRICE_DATA)) {
+              logger.info(`money-printing-signalizer: BOOOOOOM! BUY SIGNAL!`)
+              buy();
+              LAST_BOUGHT_TICKS = 0;
+            }
+          } else {
+            logger.info(`money-printing-signalizer: last buy too recent`)
+            LAST_BOUGHT_TICKS++;
           }
         } else {
-          logger.info(`money-printing-signalizer has not enough data. length: ${PRICE_DATA.length}, needed: ${MIN_PRICE_DATA}`)
+          logger.info(`money-printing-signalizer: has not enough data. length: ${PRICE_DATA.length}, needed: ${MIN_PRICE_DATA}`)
+          LAST_BOUGHT_TICKS++;
+
+          if (PRICE_DATA.length === MIN_PRICE_DATA) {
+            logger.info(`money-printing-signalizer: ready`)
+          }
         }
       }
-
-
-
-
-
-
-
-
-      signalProfiler.done({ message: 'fetch finished' })
     } catch (error) {
       logger.error(error);
     }
 
-    updateProfiler.done({ message: 'update finished' });
+    updateProfiler.done({ message: `update - ${COIN_CURRENCY} ${tickerData ? tickerData.bid : 'undefined'}` });
   }, UPDATE_INTERVAL_MS);
 
   // exchange.apiKey = process.env.COINBASE_API_KEY
