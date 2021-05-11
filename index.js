@@ -72,7 +72,6 @@
       await exchange.loadMarkets()
 
       tickerData = await exchange.fetchTicker(COIN_CURRENCY)
-      console.log(tickerData);
       PRICE_DATA.push(tickerData.bid);
 
       // MONEY-PRINTING-SIGNALIZER
@@ -81,21 +80,21 @@
         LAST_BOUGHT_TICKS++;
       } else {
         if (PRICE_DATA.length >= MIN_PRICE_DATA) {
-          if (LAST_BOUGHT_TICKS >= NEEDS_MIN_TICKS_FOR_NEXT_BUY) {
-            if (moneyPrinterBuySignal(NEEDS_TICKS_LOW, NEEDS_TICKS_HIGH, NEEDS_PERCENTAGE, NEEDS_MAX_PERCENTAGE, PRICE_DATA)) {
+          if (moneyPrinterBuySignal(NEEDS_TICKS_LOW, NEEDS_TICKS_HIGH, NEEDS_PERCENTAGE, NEEDS_MAX_PERCENTAGE, PRICE_DATA)) {
+            if (LAST_BOUGHT_TICKS >= NEEDS_MIN_TICKS_FOR_NEXT_BUY) {
               logger.info(`money-printing-signalizer: BOOOOOOM! BUY SIGNAL!`)
               buy();
               LAST_BOUGHT_TICKS = 0;
+            } else {
+              logger.info(`money-printing-signalizer: last buy too recent`)
+              LAST_BOUGHT_TICKS++;
             }
-          } else {
-            logger.info(`money-printing-signalizer: last buy too recent`)
-            LAST_BOUGHT_TICKS++;
           }
         } else {
           logger.info(`money-printing-signalizer: has not enough data. length: ${PRICE_DATA.length}, needed: ${MIN_PRICE_DATA}`)
           LAST_BOUGHT_TICKS++;
 
-          if (PRICE_DATA.length === MIN_PRICE_DATA) {
+          if (PRICE_DATA.length + 1 === MIN_PRICE_DATA) {
             logger.info(`money-printing-signalizer: ready`)
           }
         }
