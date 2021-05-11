@@ -1,7 +1,7 @@
 (async function main() {
   const ccxt = require('ccxt')
   const logger = require('./logger');
-  const moneyPrinterSignal = require('./moneyPrinterSignal');
+  const { moneyPrinterBuySignal } = require('./moneyPrinterSignal');
 
   const UPDATE_INTERVAL_MS = 10000;
   const MIN_PRICE_DATA = 60;
@@ -70,13 +70,17 @@
 
       // MONEY-PRINTING-SIGNALIZER
       logger.info(`starting money-printing-signalizer`)
-      if (PRICE_DATA.length >= MIN_PRICE_DATA) {
-        if (moneyPrinterSignal(NEEDS_TICKS_LOW, NEEDS_TICKS_HIGH, NEEDS_PERCENTAGE, NEEDS_MAX_PERCENTAGE, PRICE_DATA)) {
-          logger.info(`BOOOOOOM! BUY SIGNAL!`)
-          buy();
-        }
+      if (BANK < ORDER_MIN_MONEY_AMOUNT) {
+        logger.info(`not checking buy signals, not enough money to buy`)
       } else {
-        logger.info(`money-printing-signalizer has not enough data. length: ${PRICE_DATA.length}, needed: ${MIN_PRICE_DATA}`)
+        if (PRICE_DATA.length >= MIN_PRICE_DATA) {
+          if (moneyPrinterBuySignal(NEEDS_TICKS_LOW, NEEDS_TICKS_HIGH, NEEDS_PERCENTAGE, NEEDS_MAX_PERCENTAGE, PRICE_DATA)) {
+            logger.info(`BOOOOOOM! BUY SIGNAL!`)
+            buy();
+          }
+        } else {
+          logger.info(`money-printing-signalizer has not enough data. length: ${PRICE_DATA.length}, needed: ${MIN_PRICE_DATA}`)
+        }
       }
 
 
