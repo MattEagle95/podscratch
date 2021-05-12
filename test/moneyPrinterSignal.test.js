@@ -1,4 +1,4 @@
-const signal = require('./moneyPrinterSignal');
+const signal = require('../moneyPrinterSignal');
 
 describe('kurs mindestens 5x gefallen, danach 2x um mindestens 1% gestiegen', () => {
     const needsTicksLow = 5;

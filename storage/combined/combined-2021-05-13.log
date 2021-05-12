@@ -1,0 +1,29 @@
+[2021-05-13 00:14:40] [32minfo[39m: moneyprinter started
+[2021-05-13 00:14:41] [32minfo[39m: api online
+[2021-05-13 00:14:41] [32minfo[39m: update interval: 20000
+[2021-05-13 00:15:03] [32minfo[39m: not enough money to buy - skipping signalizer buysignal
+[2021-05-13 00:15:03] [32minfo[39m: update - BTC/USD 52631.44 duration: 2065ms
+[2021-05-13 00:15:21] [32minfo[39m: not enough money to buy - skipping signalizer buysignal
+[2021-05-13 00:15:21] [32minfo[39m: update - BTC/USD 52713.91 duration: 52ms
+[2021-05-13 00:15:41] [32minfo[39m: not enough money to buy - skipping signalizer buysignal
+[2021-05-13 00:15:41] [32minfo[39m: update - BTC/USD 52850.03 duration: 56ms
+[2021-05-13 00:16:01] [32minfo[39m: not enough money to buy - skipping signalizer buysignal
+[2021-05-13 00:16:01] [32minfo[39m: update - BTC/USD 52802.12 duration: 52ms
+[2021-05-13 00:16:21] [32minfo[39m: not enough money to buy - skipping signalizer buysignal
+[2021-05-13 00:16:21] [32minfo[39m: update - BTC/USD 53055.21 duration: 57ms
+[2021-05-13 00:16:41] [32minfo[39m: not enough money to buy - skipping signalizer buysignal
+[2021-05-13 00:16:41] [32minfo[39m: update - BTC/USD 53046.07 duration: 65ms
+[2021-05-13 00:17:01] [32minfo[39m: not enough money to buy - skipping signalizer buysignal
+[2021-05-13 00:17:01] [32minfo[39m: update - BTC/USD 53133.44 duration: 51ms
+[2021-05-13 00:17:21] [32minfo[39m: not enough money to buy - skipping signalizer buysignal
+[2021-05-13 00:17:21] [32minfo[39m: update - BTC/USD 53206.12 duration: 43ms
+[2021-05-13 00:17:41] [32minfo[39m: not enough money to buy - skipping signalizer buysignal
+[2021-05-13 00:17:41] [32minfo[39m: update - BTC/USD 53155.96 duration: 43ms
+[2021-05-13 00:18:01] [32minfo[39m: not enough money to buy - skipping signalizer buysignal
+[2021-05-13 00:18:01] [32minfo[39m: update - BTC/USD 53191.73 duration: 42ms
+[2021-05-13 00:25:01] [32minfo[39m: moneyprinter started
+[2021-05-13 00:25:02] [32minfo[39m: api online
+[2021-05-13 00:25:02] [32minfo[39m: update interval: 20000ms
+[2021-05-13 00:25:24] [32minfo[39m: update - BTC/USD 53124.31 -  duration: 2049ms
+[2021-05-13 00:25:42] [32minfo[39m: update - BTC/USD 53100.59 -  duration: 36ms
+[2021-05-13 00:26:02] [32minfo[39m: update - BTC/USD 53049.19 -  duration: 38ms

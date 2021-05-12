@@ -1,0 +1,25 @@
+{
+    "COIN": "BTC",
+    "CURRENCY": "USD",
+    "COIN_CURRENCY": "BTC/USD",
+    "CURRENCY_SYMBOL": "€",
+    "UPDATE": {
+        "INTERVAL_MS": 20000
+    },
+    "BANKER": {
+        "BUY": {
+            "BUY_MIN_MONEY_AMOUNT": 20,
+            "BUY_MAX_MONEY_PERCENTAGE": 0.20
+        }
+    },
+    "SIGNALIZER": {
+        "MIN_PRICE_DATA": 10,
+        "BUY": {
+            "NEEDS_TICKS_LOW": 5,
+            "NEEDS_TICKS_HIGH": 2,
+            "NEEDS_PERCENTAGE": 0.02,
+            "NEEDS_MAX_PERCENTAGE": 0.002,
+            "NEEDS_MIN_TICKS_FOR_NEXT_BUY": 10
+        }
+    }
+}

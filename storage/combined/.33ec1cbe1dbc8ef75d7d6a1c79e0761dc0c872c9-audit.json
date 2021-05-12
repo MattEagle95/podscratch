@@ -9,6 +9,16 @@
             "date": 1620689313980,
             "name": "storage\\combined\\combined-2021-05-11.log",
             "hash": "161f1d99ec494033bb73a70b72112033"
+        },
+        {
+            "date": 1620808568863,
+            "name": "storage\\combined\\combined-2021-05-12.log",
+            "hash": "0083ba3e2ed14390f97f0c92e960fcf7"
+        },
+        {
+            "date": 1620857664762,
+            "name": "storage\\combined\\combined-2021-05-13.log",
+            "hash": "6aa9d39ee23124fb72d1a7402c435c1f"
         }
     ]
 }
