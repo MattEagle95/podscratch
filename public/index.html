@@ -216,8 +216,8 @@
             rightPriceScale: {
                 visible: true,
                 scaleMargins: {
-                    top: 0.1,
-                    bottom: 0.1,
+                    top: 0.2,
+                    bottom: 0.2,
                 },
                 mode: LightweightCharts.PriceScaleMode.Percentage,
                 borderColor: 'rgba(197, 203, 206, 0.4)',
@@ -230,9 +230,12 @@
         })
         var chartData = []
         let markers = []
+        let priceLines = []
 
         var lineSeries = chart.addLineSeries()
         lineSeries.setData(chartData)
+
+        chart.timeScale().fitContent();
 
         const socket = io()
 
@@ -254,6 +257,10 @@
 
             chartData = newChartData
             lineSeries.setData(newChartData)
+
+            priceLines.forEach(priceLine => {
+                lineSeries.removePriceLine(priceLine);
+            })
 
             // SELL DATA
             var tbodyRefSellDataTable = document
@@ -293,12 +300,13 @@
                 newCell5.setAttribute('class', 'text-right')
                 newCell5.appendChild(newText5)
 
+                const neededChartPrice = (order.chartPrice + ((order.chartPrice * order.lowLimit) - order.chartPrice)).toFixed(2)
                 var newCell6 = newRow.insertCell()
-                var newText6 = document.createTextNode(`${(order.chartPrice + ((order.chartPrice * order.lowLimit) - order.chartPrice)).toFixed(2)} €`)
+                var newText6 = document.createTextNode(`${neededChartPrice} €`)
                 newCell6.setAttribute('class', 'text-right')
                 newCell6.appendChild(newText6)
 
-                const priceDifference = (parseFloat(data.priceData[data.priceData.length - 1].ask) / parseFloat((order.chartPrice + ((order.chartPrice * order.lowLimit) - order.chartPrice)))) - parseFloat(1)
+                const priceDifference = (parseFloat(data.priceData[data.priceData.length - 1].ask) / neededChartPrice) - parseFloat(1)
                 var newCellDifference = newRow.insertCell()
                 var buySpan = document.createElement('span')
                 if (priceDifference >= 1) {
@@ -310,14 +318,23 @@
 
                 newCellDifference.setAttribute('class', 'text-right')
                 newCellDifference.appendChild(buySpan)
+
+                priceLines.push(lineSeries.createPriceLine({
+                    price: neededChartPrice,
+                    color: 'orange',
+                    lineWidth: 2,
+                    lineStyle: LightweightCharts.LineStyle.Dotted,
+                    axisLabelVisible: true,
+                    title: 'NEED',
+                }))
             })
 
             // LAST EVENTS
+            let newMarkers = []
             var tbodyRefLastEventsTable = document
                 .getElementById('lastEventsTable')
                 .getElementsByTagName('tbody')[0]
             tbodyRefLastEventsTable.innerHTML = ""
-            let newMarkers = []
 
             data.orders.forEach(order => {
                 let newDate = new Date(order.timestamp)
@@ -370,11 +387,11 @@
             if (data.priceData.length > 0) {
                 document.getElementById(
                     'currentState_bid'
-                ).innerText = `${data.priceData[data.priceData.length - 1].bid}`
+                ).innerText = `${parseFloat(data.priceData[data.priceData.length - 1].bid).toFixed(2)}`
 
                 document.getElementById(
                     'currentState_ask'
-                ).innerText = `${data.priceData[data.priceData.length - 1].ask}`
+                ).innerText = `${parseFloat(data.priceData[data.priceData.length - 1].ask).toFixed(2)}`
             }
 
             let lastUpdateDate = new Date()
@@ -385,12 +402,14 @@
             if (data.balance.totalMoney) {
                 document.getElementById(
                     'currentBalance'
-                ).innerText = `${data.balance.totalMoney}`
+                ).innerText = `${parseFloat(data.balance.totalMoney).toFixed(2)}`
 
                 document.getElementById(
                     'currentCoins'
                 ).innerText = `${data.balance.totalCoins}`
             }
+
+            chart.timeScale().fitContent();
         }
 
         socket.on('bugSignalUpdate', function (data) {
