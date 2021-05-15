@@ -155,11 +155,7 @@ httpServer.listen(3000)
                             totalCoins: BALANCE_DATA.total[config.COIN],
                             freeCoins: BALANCE_DATA.free[config.COIN],
                         },
-                        priceData: {
-                            timestamp: tickerData.timestamp,
-                            bid: tickerData.bid,
-                            ask: tickerData.ask
-                        },
+                        priceData: PRICE_DATA_HISTORY,
                         orders: db.get('orders')
                     })
                 })

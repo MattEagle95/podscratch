@@ -217,20 +217,25 @@
         })
         var chartData = []
         let markers = []
+
         var lineSeries = chart.addLineSeries()
         lineSeries.setData(chartData)
 
         const socket = io()
 
-        socket.on('setup', function (value) {
+        socket.on('setup', function (data) { update(data) })
+
+        socket.on('update', function (data) { update(data) })
+
+        const update = (data) => {
             let newChartData = []
-            value.priceData.forEach((element) => {
-                let d = new Date(element.timestamp)
-                d.setHours(d.getHours() + 2)
+            data.priceData.forEach((priceData) => {
+                let time = new Date(priceData.timestamp)
+                time.setHours(time.getHours() + 2)
 
                 newChartData.push({
-                    time: d.getTime() / 1000,
-                    value: element.price,
+                    time: time.getTime() / 1000,
+                    value: priceData.bid,
                 })
             })
 
@@ -243,13 +248,13 @@
 
             let newMarkers = []
             for (
-                let index = value.orders.length - 1;
+                let index = data.orders.length - 1;
                 index >= 0;
                 index--
             ) {
-                const element = value.buyEvents[index]
+                const element = data.orders[index]
 
-                let newDate = new Date(element.timestamp)
+                let newDate = new Date(data.timestamp)
                 newDate.setHours(newDate.getHours() + 2)
 
                 newMarkers.push({
@@ -257,7 +262,7 @@
                     position: 'belowBar',
                     color: '#2196F3',
                     shape: 'arrowUp',
-                    text: 'Buy @ ' + Math.floor(element.coin_price - 2),
+                    text: 'Buy @ ' + Math.floor(element.price - 2),
                 })
 
                 var newRow = tbodyRef.insertRow()
@@ -269,12 +274,12 @@
 
                 var newCell2 = newRow.insertCell()
                 var newText2 = document.createTextNode(
-                    `${newDate.getHours()}:${newDate.getMinutes()}:${newDate.getUTCSeconds()}`
+                    `${newDate.getHours()}:${newDate.getMinutes()}:${newDate.getUTCSeconds().toFixed(2)}`
                 )
                 newCell2.appendChild(newText2)
 
                 var newCell3 = newRow.insertCell()
-                var newText3 = document.createTextNode(`${element.coin_price} €`)
+                var newText3 = document.createTextNode(`${element.price} €`)
                 newCell3.appendChild(newText3)
             }
 
@@ -283,7 +288,7 @@
             let lastUpdateDate = new Date()
             document.getElementById(
                 'lastUpdate'
-            ).innerText = `${lastUpdateDate.getHours()}:${lastUpdateDate.getMinutes()}:${lastUpdateDate.getUTCSeconds()}`
+            ).innerText = `${lastUpdateDate.getHours()}:${lastUpdateDate.getMinutes()}:${lastUpdateDate.getUTCSeconds().toFixed(2)}`
 
             if (value.balance.totalMoney) {
                 document.getElementById(
@@ -294,84 +299,7 @@
                     'currentCoins'
                 ).innerText = `${value.balance.totalCoins}`
             }
-        })
-
-        socket.on('update', function (value) {
-            let d = new Date(value.coinbase.timestamp)
-            d.setHours(d.getHours() + 2)
-
-            chartData.push({
-                time: d.getTime() / 1000,
-                value: value.coinbase.price,
-            })
-
-            console.log('timestamp')
-            console.log(value.coinbase.timestamp)
-            console.log(d.getTime() / 1000)
-
-            lineSeries.setData(chartData)
-
-            var tbodyRef = document
-                .getElementById('lastEventsTable')
-                .getElementsByTagName('tbody')[0]
-
-            tbodyRef.innerText = ''
-
-            let newMarkers = []
-
-            for (
-                let index = value.buyEvents.length - 1;
-                index >= 0;
-                index--
-            ) {
-                const element = value.buyEvents[index]
-
-                let newDate = new Date(element.timestamp)
-                newDate.setHours(newDate.getHours() + 2)
-
-                newMarkers.push({
-                    time: newDate.getTime() / 1000,
-                    position: 'belowBar',
-                    color: '#2196F3',
-                    shape: 'arrowUp',
-                    text: 'Buy @ ' + Math.floor(element.coin_price - 2),
-                })
-
-                var newRow = tbodyRef.insertRow()
-                var newCell = newRow.insertCell()
-                var buySpan = document.createElement('span')
-                buySpan.setAttribute('class', 'text-success')
-                buySpan.textContent = 'BUY'
-                newCell.appendChild(buySpan)
-
-                var newCell2 = newRow.insertCell()
-                var newText2 = document.createTextNode(
-                    `${newDate.getHours()}:${newDate.getMinutes()}:${newDate.getUTCSeconds()}`
-                )
-                newCell2.appendChild(newText2)
-
-                var newCell3 = newRow.insertCell()
-                var newText3 = document.createTextNode(`${element.coin_price} €`)
-                newCell3.appendChild(newText3)
-            }
-
-            lineSeries.setMarkers(newMarkers)
-
-            let lastUpdateDate = new Date()
-            document.getElementById(
-                'lastUpdate'
-            ).innerText = `${lastUpdateDate.getHours()}:${lastUpdateDate.getMinutes()}:${lastUpdateDate.getUTCSeconds()}`
-
-            if (value.balance.totalMoney) {
-                document.getElementById(
-                    'currentBalance'
-                ).innerText = `${value.balance.totalMoney}`
-
-                document.getElementById(
-                    'currentCoins'
-                ).innerText = `${value.balance.totalCoins}`
-            }
-        })
+        }
 
         socket.on('bugSignalUpdate', function (value) {
             document.getElementById(
