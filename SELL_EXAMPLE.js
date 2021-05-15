@@ -29,13 +29,13 @@ const { checkSellSignal } = require('./src/signalizer/sellSignal')
         console.log('NO SELL SIGNAL')
     }
 
-    // try {
-    //     console.log(
-    //         await exchange.createMarketSellOrder('BTC/EUR', coinsToSell)
-    //     )
+    try {
+        console.log(
+            await exchange.createMarketSellOrder('BTC/EUR', coinsToSell)
+        )
 
-    //     console.log(await exchange.fetchMyTrades('BTC/EUR'))
-    // } catch (err) {
-    //     console.error(err)
-    // }
+        console.log(await exchange.fetchMyTrades('BTC/EUR'))
+    } catch (err) {
+        console.error(err)
+    }
 })()

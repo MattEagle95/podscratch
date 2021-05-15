@@ -10,6 +10,7 @@ const config = require('../../config.json')
 const checkSellSignal = (priceToBeat, currentPrice) => {
     const prozentUnterschied =
         parseFloat(currentPrice) / parseFloat(priceToBeat)
+        console.log(`${prozentUnterschied - 1} % / ${config.SIGNALIZER.SELL.NEEDS_PERCENTAGE} %`)
 
     return prozentUnterschied > config.SIGNALIZER.SELL.NEEDS_PERCENTAGE
 }

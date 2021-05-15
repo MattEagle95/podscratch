@@ -6,6 +6,15 @@ const { checkSellSignalMulti } = require('../signalizer/sellSignal_Multi')
 const adapter = new FileSync('./storage/db/db.json')
 const db = low(adapter)
 
+/*
+{
+    id,
+    timestamp,
+    amount,
+    lowLimit,
+    nextLimit
+}
+*/
 db.defaults({ orders: [] }).write()
 
 const run = (currentPrice) => {
@@ -16,18 +25,24 @@ const run = (currentPrice) => {
     logger.debug(`found ${orders.length} orders`)
 
     orders.forEach((order) => {
-        /*
-        {
-            id,
-            timestamp,
-            amount,
+        const {
+            status,
             lowLimit,
+            lowLimitHit,
             nextLimit
-        }
-        */
-        if (checkSellSignalMulti(order.amount, currentPrice, order.lowLimit, order.nextLimit)) {
+        } = checkSellSignalMulti(order.amount, currentPrice, order.lowLimit, order.lowLimitHit, order.nextLimit)
+        if (status === true) {
             logger.info(`${order.id} SELL-SIGNAL)`)
-            sellOrder(order)
+            // sellOrder(order)
+        } else {
+            db.get('orders')
+                .find({ id: order.id })
+                .assign({
+                    lowLimit: lowLimit,
+                    lowLimitHit: lowLimitHit,
+                    nextLimit: nextLimit
+                })
+                .write()
         }
     })
 
