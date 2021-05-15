@@ -104,7 +104,7 @@
                             <tr>
                                 <td>currentChangePercentage</td>
                                 <td class="text-right d-flex justify-content-end">
-                                    <div id="currentState_currentChangePercentage"></div> %
+                                    <div id="currentState_currentChangePercentage"></div>
                                 </td>
                             </tr>
                         </tbody>
@@ -476,9 +476,21 @@
             document.getElementById(
                 'currentState_ticks'
             ).innerText = `${data.stateTicks}`
+
+            if (data.currentChangePercentage >= 1) {
+                document.getElementById(
+                    'currentState_currentChangePercentage'
+                ).className = 'text-success'
+            } else {
+                document.getElementById(
+                    'currentState_currentChangePercentage'
+                ).className = 'text-danger'
+            }
+
             document.getElementById(
                 'currentState_currentChangePercentage'
-            ).innerText = `${data.currentChangePercentage}`
+            ).innerText = ``
+            typewriter(`${data.currentChangePercentage} %`, 'currentState_currentChangePercentage')
         })
     </script>
 </body>
