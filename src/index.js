@@ -5,27 +5,20 @@ const httpServer = require('http').createServer(app)
 const config = require('../config')
 const buyBanker = require('./banker/buyBanker')
 const sellBanker = require('./banker/sellBanker')
-
+const ccxt = require('ccxt')
+const logger = require('./logger')
+const table = require('text-table')
+const packageJson = require('../package.json')
 const low = require('lowdb')
 const FileSync = require('lowdb/adapters/FileSync')
-
-const adapter = new FileSync('./storage/db/db.json')
-const db = low(adapter)
+const figlet = require('figlet')
 
 app.use(express.static('public'))
-
-const options = {
-    /* ... */
-}
-const io = require('socket.io')(httpServer, options)
+const io = require('socket.io')(httpServer)
 
 let SOCKETS = []
 let PRICE_DATA = []
 let PRICE_DATA_HISTORY = []
-let KRAKEN_PRICE_DATA_WITH_TIMESTAMPS = []
-let BUY_SIGNAL_DATA = []
-let SELL_SIGNAL_DATA = []
-let BUY_EVENTS = []
 let BALANCE_DATA = []
 
 io.on('connection', (socket) => {
@@ -42,26 +35,14 @@ io.on('connection', (socket) => {
     }
     socket.emit('setup', {
         balance: balanceData,
-        coinbase: PRICE_DATA_HISTORY,
-        kraken: KRAKEN_PRICE_DATA_WITH_TIMESTAMPS,
-        buySignal: BUY_SIGNAL_DATA,
-        sellSignal: SELL_SIGNAL_DATA,
-        buyEvents: BUY_EVENTS,
+        priceData: PRICE_DATA_HISTORY,
     })
 })
 
 httpServer.listen(3000)
+
     ; (async function main() {
-        const ccxt = require('ccxt')
-        const logger = require('./logger')
-        const table = require('text-table')
-        const { checkEnoughMoney } = require('./banker/banker')
-        const { checkBuySignal } = require('./signalizer/buySignal')
-        const packageJson = require('../package.json')
-
         let LAST_BOUGHT_TICKS = config.SIGNALIZER.BUY.NEEDS_MIN_TICKS_FOR_NEXT_BUY
-
-        var figlet = require('figlet')
 
         logger.info(`\n${figlet.textSync('Money Printer')}`)
         logger.info(`version ${packageJson.version}`)
@@ -73,39 +54,37 @@ httpServer.listen(3000)
             password: process.env.COINBASE_API_PASSPHRASE,
         })
 
-        const krakenExchange = new ccxt.kraken({
-            enableRateLimit: true,
-        })
-
         try {
             exchange.checkRequiredCredentials()
             const status = await exchange.fetchStatus((params = {}))
             if (status.status !== 'ok') {
-                throw new Error('api offline')
+                throw new Error('❌ api offline')
             }
 
             await exchange.loadMarkets()
-            await krakenExchange.loadMarkets()
 
-            logger.info('api online')
+            logger.info('✅ api online')
 
-            const balance2 = await exchange.fetchBalance((params = {}))
-            const availableMoney2 = balance2.free[config.CURRENCY]
-            const totalMoney2 = balance2.total[config.CURRENCY]
-            const availableCoin2 = balance2.free[config.COIN]
-            const totalCoin2 = balance2.total[config.COIN]
-            BALANCE_DATA = balance2
+            const balance = await exchange.fetchBalance((params = {}))
+            BALANCE_DATA = balance
+
+            if (BALANCE_DATA.free[config.CURRENCY] > 0) {
+                logger.info(`✅ money for trading available (${BALANCE_DATA.free[config.CURRENCY]} ${config.CURRENCY_SYMBOL})`)
+            } else {
+                logger.warn(`ℹ no money available for trading`)
+            }
 
             const orders = await exchange.fetchMyTrades(config.COIN_CURRENCY)
 
+            logger.info(`----- exchange data -----`)
             let t = table([
-                ['> money in da bank', `${totalMoney2} ${config.CURRENCY_SYMBOL}`],
+                ['> money total', `${BALANCE_DATA.total[config.CURRENCY].toFixed(2)} ${config.CURRENCY_SYMBOL}`],
                 [
                     '> money available',
-                    `${availableMoney2} ${config.CURRENCY_SYMBOL}`,
+                    `${BALANCE_DATA.free[config.CURRENCY].toFixed(2)} ${config.CURRENCY_SYMBOL}`,
                 ],
-                ['> coins in da bank', `${totalCoin2} ${config.COIN}`],
-                ['> coins available', `${availableCoin2} ${config.COIN}`],
+                ['> coins total', `${BALANCE_DATA.total[config.COIN]} ${config.COIN}`],
+                ['> coins available', `${BALANCE_DATA.free[config.COIN]} ${config.COIN}`],
                 ['----------', ``],
                 ['> orders', `${orders.length}`],
                 [
@@ -123,12 +102,12 @@ httpServer.listen(3000)
             ])
 
             logger.info(`\n${t}`)
+
+            logger.info(`update interval: ${config.UPDATE.INTERVAL_MS}ms`)
         } catch (error) {
             logger.error(error)
             process.exit(1)
         }
-
-        logger.info(`update interval: ${config.UPDATE.INTERVAL_MS}ms`)
 
         setInterval(async () => {
             const updateProfiler = logger.startTimer()
@@ -174,13 +153,10 @@ httpServer.listen(3000)
                             totalCoins: BALANCE_DATA.total[config.COIN],
                             freeCoins: BALANCE_DATA.free[config.COIN],
                         },
-                        coinbase: {
+                        priceData: {
                             timestamp: tickerData.timestamp,
                             price: tickerData.bid,
-                        },
-                        buySignal: null,
-                        sellSignal: null,
-                        buyEvents: BUY_EVENTS,
+                        }
                     })
                 })
             } catch (error) {
@@ -188,9 +164,9 @@ httpServer.listen(3000)
             }
 
             updateProfiler.done({
-                message: `update - freeMoney: ${availableMoney} ${config.CURRENCY_SYMBOL
-                    } totalMoney: ${totalMoney} ${config.CURRENCY_SYMBOL
-                    } - freeCoin: ${availableCoin} ${config.COIN} totalCoin: ${totalCoin} ${config.COIN
+                message: `update - freeMoney: ${BALANCE_DATA.free[config.CURRENCY].toFixed(2)} ${config.CURRENCY_SYMBOL
+                    } totalMoney: ${BALANCE_DATA.total[config.CURRENCY].toFixed(2)} ${config.CURRENCY_SYMBOL
+                    } - freeCoin: ${BALANCE_DATA.free[config.COIN]} ${config.COIN} totalCoin: ${BALANCE_DATA.total[config.COIN]} ${config.COIN
                     } - ${config.COIN_CURRENCY} ${tickerData
                         ? `${tickerData.bid} ${config.CURRENCY_SYMBOL}`
                         : 'undefined'
