@@ -3,6 +3,7 @@ const low = require('lowdb')
 const FileSync = require('lowdb/adapters/FileSync')
 const { checkSellSignalMulti } = require('../signalizer/sellSignal_Multi')
 const { checkBuySignal } = require('../signalizer/buySignal')
+const config = require('../../config.json')
 
 const adapter = new FileSync('./storage/db/db.json')
 const db = low(adapter)
@@ -18,7 +19,7 @@ const db = low(adapter)
 */
 db.defaults({ orders: [] }).write()
 
-const run = (availableMoney, priceData, lastBoughtTicks, sockets, buyEvents) => {
+const run = (availableMoney, priceData, lastBoughtTicks, sockets) => {
     const profiler = logger.startTimer()
     logger.debug('running buy banker')
 
@@ -27,11 +28,19 @@ const run = (availableMoney, priceData, lastBoughtTicks, sockets, buyEvents) => 
         lastBoughtTicks++
     } else {
         if (checkBuySignal(priceData, lastBoughtTicks, sockets)) {
-            // WIRKLICES BUY
-            buyEvents.push({
-                timestamp: Date.now(),
-                coin_price: priceData[priceData.length - 1],
-            })
+            const moneyToUse = calculateMoneyToUse(availableMoney)
+            // const buyTrade = await buyOrder(moneyToUse)
+            // db.get('orders')
+            //     .push({
+            //         id: buyTrade.order,
+            //         timestamp: Date.now(),
+            //         amount: buyTrade.amount,
+            //         price: priceData[priceData.length - 1],
+            //         lowLimit: config.SIGNALIZER.SELL.LOW_LIMIT,
+            //         lowLimitHit: false,
+            //         nextLimit: parseFloat(config.SIGNALIZER.SELL.LOW_LIMIT) + parseFloat(config.SIGNALIZER.SELL.NEXT_LIMIT)
+            //     })
+            //     .write()
             lastBoughtTicks = 0
             logger.info('buy-signal: I WOULD HAVE BOUGHT THAT!')
         } else {
@@ -42,12 +51,11 @@ const run = (availableMoney, priceData, lastBoughtTicks, sockets, buyEvents) => 
     profiler.done({ message: 'buy banker done' })
 
     return {
-        lastBoughtTicks,
-        buyEvents
+        lastBoughtTicks
     }
 }
 
-const buyOrder = (amount) => {
+const buyOrder = async (amount) => {
     try {
         const buyOrderData = await exchange.createMarketBuyOrder(config.COIN_CURRENCY, amount)
 
@@ -55,11 +63,15 @@ const buyOrder = (amount) => {
         const buyTrade = trades.find((trade) => trade.order === buyOrderData.id)
 
         logger.info(
-            `${buyTrade.order} - ${buyTrade.cost} ${buyTrade.COIN} BOUGHT FOR ${buyTrade.amount} ${config.CURRENCY} AT PRICE ${buyTrade.price} ${config.CURRENCY}`
+            `${buyTrade.order} - ${buyTrade.amount} ${buyTrade.COIN} BOUGHT FOR ${buyTrade.cost} ${config.CURRENCY} AT PRICE ${buyTrade.price} ${config.CURRENCY}`
         )
+
+        return buyTrade
     } catch (err) {
         console.error(err)
     }
+
+    return null
 }
 
 const calculateMoneyToUse = (moneyAvailable) => {

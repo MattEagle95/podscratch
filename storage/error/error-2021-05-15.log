@@ -1,0 +1,60 @@
+[2021-05-15 20:36:57] [31merror[39m: uncaughtException: await is only valid in async function
+C:\Users\colin\Documents\GitHub\podscratch\src\banker\buyBanker.js:60
+        const buyOrderData = await exchange.createMarketBuyOrder(config.COIN_CURRENCY, amount)
+                             ^^^^^
+
+SyntaxError: await is only valid in async function
+    at wrapSafe (internal/modules/cjs/loader.js:979:16)
+    at Module._compile (internal/modules/cjs/loader.js:1027:27)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+    at Module.load (internal/modules/cjs/loader.js:928:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:769:14)
+    at Module.require (internal/modules/cjs/loader.js:952:19)
+    at require (internal/modules/cjs/helpers.js:88:18)
+    at Object.<anonymous> (C:\Users\colin\Documents\GitHub\podscratch\src\index.js:6:19)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+[2021-05-15 20:38:21] [31merror[39m: uncaughtException: ENOENT: no such file or directory, open './storage/db/db.json'
+Error: ENOENT: no such file or directory, open './storage/db/db.json'
+    at Object.openSync (fs.js:476:3)
+    at writeFileSync (fs.js:1467:35)
+    at FileSync.read (C:\Users\colin\Documents\GitHub\podscratch\node_modules\lowdb\adapters\FileSync.js:46:9)
+    at LodashWrapper.db.read (C:\Users\colin\Documents\GitHub\podscratch\node_modules\lowdb\lib\main.js:32:21)
+    at module.exports (C:\Users\colin\Documents\GitHub\podscratch\node_modules\lowdb\lib\main.js:51:13)
+    at Object.<anonymous> (C:\Users\colin\Documents\GitHub\podscratch\src\banker\buyBanker.js:9:12)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+    at Module.load (internal/modules/cjs/loader.js:928:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:769:14)
+[2021-05-15 20:38:42] [31merror[39m: uncaughtException: await is only valid in async function
+C:\Users\colin\Documents\GitHub\podscratch\src\banker\sellBanker.js:56
+        const sellOrderData = await exchange.createMarketSellOrder(config.COIN_CURRENCY, order.amount)
+                              ^^^^^
+
+SyntaxError: await is only valid in async function
+    at wrapSafe (internal/modules/cjs/loader.js:979:16)
+    at Module._compile (internal/modules/cjs/loader.js:1027:27)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+    at Module.load (internal/modules/cjs/loader.js:928:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:769:14)
+    at Module.require (internal/modules/cjs/loader.js:952:19)
+    at require (internal/modules/cjs/helpers.js:88:18)
+    at Object.<anonymous> (C:\Users\colin\Documents\GitHub\podscratch\src\index.js:7:20)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+[2021-05-15 20:38:50] [31merror[39m: uncaughtException: ENOENT: no such file or directory, open '../storage/db/db.json'
+Error: ENOENT: no such file or directory, open '../storage/db/db.json'
+    at Object.openSync (fs.js:476:3)
+    at writeFileSync (fs.js:1467:35)
+    at FileSync.read (C:\Users\colin\Documents\GitHub\podscratch\node_modules\lowdb\adapters\FileSync.js:46:9)
+    at LodashWrapper.db.read (C:\Users\colin\Documents\GitHub\podscratch\node_modules\lowdb\lib\main.js:32:21)
+    at module.exports (C:\Users\colin\Documents\GitHub\podscratch\node_modules\lowdb\lib\main.js:51:13)
+    at Object.<anonymous> (C:\Users\colin\Documents\GitHub\podscratch\src\index.js:13:12)
+    at Module._compile (internal/modules/cjs/loader.js:1063:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1092:10)
+    at Module.load (internal/modules/cjs/loader.js:928:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:769:14)
+[2021-05-15 20:39:19] [31merror[39m: Cannot read property 'BUY' of undefined
+[2021-05-15 20:41:40] [31merror[39m: Cannot read property 'BANKER' of undefined
+[2021-05-15 20:43:46] [31merror[39m: buySignal is not defined
+[2021-05-15 20:43:56] [31merror[39m: buySignal is not defined

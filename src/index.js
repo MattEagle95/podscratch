@@ -3,11 +3,13 @@ const logger = require('./logger')
 const app = express()
 const httpServer = require('http').createServer(app)
 const config = require('../config')
+const buyBanker = require('./banker/buyBanker')
+const sellBanker = require('./banker/sellBanker')
 
 const low = require('lowdb')
 const FileSync = require('lowdb/adapters/FileSync')
 
-const adapter = new FileSync('../storage/db/db.json')
+const adapter = new FileSync('./storage/db/db.json')
 const db = low(adapter)
 
 app.use(express.static('public'))
@@ -19,7 +21,7 @@ const io = require('socket.io')(httpServer, options)
 
 let SOCKETS = []
 let PRICE_DATA = []
-let PRICE_DATA_WITH_TIMESTAMPS = []
+let PRICE_DATA_HISTORY = []
 let KRAKEN_PRICE_DATA_WITH_TIMESTAMPS = []
 let BUY_SIGNAL_DATA = []
 let SELL_SIGNAL_DATA = []
@@ -40,7 +42,7 @@ io.on('connection', (socket) => {
     }
     socket.emit('setup', {
         balance: balanceData,
-        coinbase: PRICE_DATA_WITH_TIMESTAMPS,
+        coinbase: PRICE_DATA_HISTORY,
         kraken: KRAKEN_PRICE_DATA_WITH_TIMESTAMPS,
         buySignal: BUY_SIGNAL_DATA,
         sellSignal: SELL_SIGNAL_DATA,
@@ -53,7 +55,7 @@ httpServer.listen(3000)
         const ccxt = require('ccxt')
         const logger = require('./logger')
         const table = require('text-table')
-        const { checkEnoughMoney } = require('./banker')
+        const { checkEnoughMoney } = require('./banker/banker')
         const { checkBuySignal } = require('./signalizer/buySignal')
         const packageJson = require('../package.json')
 
@@ -130,66 +132,38 @@ httpServer.listen(3000)
 
         setInterval(async () => {
             const updateProfiler = logger.startTimer()
-            let tickerData = null
-            let addToMsg = ''
-            let availableMoney = 0
-            let totalMoney = 0
-            let availableCoin = 0
-            let totalCoin = 0
 
             try {
-                tickerData = await exchange.fetchTicker(config.COIN_CURRENCY)
-                let krakenTickerData = await exchange.fetchTicker(
-                    config.COIN_CURRENCY
-                )
-
+                // UPDATE PREIS
+                const tickerData = await exchange.fetchTicker(config.COIN_CURRENCY)
                 PRICE_DATA.push(tickerData.bid)
-                PRICE_DATA_WITH_TIMESTAMPS.push({
+                PRICE_DATA_HISTORY.push({
                     timestamp: tickerData.timestamp,
                     price: tickerData.bid,
-                })
-
-                KRAKEN_PRICE_DATA_WITH_TIMESTAMPS.push({
-                    timestamp: krakenTickerData.timestamp,
-                    price: krakenTickerData.bid,
                 })
 
                 if (PRICE_DATA.length > config.SIGNALIZER.MIN_PRICE_DATA) {
                     PRICE_DATA = PRICE_DATA.slice(1, PRICE_DATA.length)
                 }
 
-                let balance = await exchange.fetchBalance((params = {}))
-                availableMoney = balance.free[config.CURRENCY].toFixed(2)
-                totalMoney = balance.total[config.CURRENCY].toFixed(2)
-                availableCoin = balance.free[config.COIN]
-                totalCoin = balance.total[config.COIN]
-
+                // UPDATE BALANCE
+                const balance = await exchange.fetchBalance((params = {}))
                 BALANCE_DATA = balance
 
-                let buySignal = null
+                // SELLING
+                await sellBanker.run(PRICE_DATA[PRICE_DATA.length - 1])
 
-                if (!checkEnoughMoney(availableMoney)) {
-                    addToMsg += `skipping buy-signalizer (not enough money)`
-                    LAST_BOUGHT_TICKS++
-                } else {
-                    if (checkBuySignal(PRICE_DATA, LAST_BOUGHT_TICKS, SOCKETS)) {
-                        // WIRKLICES BUY
-                        buySignal = PRICE_DATA[PRICE_DATA.length - 1]
-                        BUY_EVENTS.push({
-                            timestamp: Date.now(),
-                            coin_price: PRICE_DATA[PRICE_DATA.length - 1],
-                        })
-                        LAST_BOUGHT_TICKS = 0
-                        logger.info('I WOULD HAVE BOUGHT THAT!')
-                    } else {
-                        LAST_BOUGHT_TICKS++
-                    }
-                }
+                // TODO: RELOAD VON BALANCE
 
-                BUY_SIGNAL_DATA.push(buySignal)
+                // BUYING
+                const { lastBoughtTicks } = await buyBanker.run(BALANCE_DATA.free[config.CURRENCY].toFixed(2), PRICE_DATA, LAST_BOUGHT_TICKS, SOCKETS)
+                LAST_BOUGHT_TICKS = lastBoughtTicks
 
+                // LADE ORDERS NEU
+                BUY_SIGNAL_DATA.push(null)
                 SELL_SIGNAL_DATA.push(null)
 
+                // SEND UPDATE
                 SOCKETS.forEach((socket) => {
                     socket.emit('update', {
                         balance: {
@@ -204,11 +178,7 @@ httpServer.listen(3000)
                             timestamp: tickerData.timestamp,
                             price: tickerData.bid,
                         },
-                        kraken: {
-                            timestamp: krakenTickerData.timestamp,
-                            price: krakenTickerData.bid,
-                        },
-                        buySignal: buySignal,
+                        buySignal: null,
                         sellSignal: null,
                         buyEvents: BUY_EVENTS,
                     })
@@ -218,9 +188,9 @@ httpServer.listen(3000)
             }
 
             updateProfiler.done({
-                message: `update - av: ${availableMoney} ${config.CURRENCY_SYMBOL
-                    } t: ${totalMoney} ${config.CURRENCY_SYMBOL
-                    } - av_coin: ${availableCoin} ${config.COIN} t_coin: ${totalCoin} ${config.COIN
+                message: `update - freeMoney: ${availableMoney} ${config.CURRENCY_SYMBOL
+                    } totalMoney: ${totalMoney} ${config.CURRENCY_SYMBOL
+                    } - freeCoin: ${availableCoin} ${config.COIN} totalCoin: ${totalCoin} ${config.COIN
                     } - ${config.COIN_CURRENCY} ${tickerData
                         ? `${tickerData.bid} ${config.CURRENCY_SYMBOL}`
                         : 'undefined'

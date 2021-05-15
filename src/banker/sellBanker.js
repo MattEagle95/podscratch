@@ -2,6 +2,7 @@ const logger = require('../logger')
 const low = require('lowdb')
 const FileSync = require('lowdb/adapters/FileSync')
 const { checkSellSignalMulti } = require('../signalizer/sellSignal_Multi')
+const config = require('../../config.json')
 
 const adapter = new FileSync('./storage/db/db.json')
 const db = low(adapter)
@@ -17,7 +18,7 @@ const db = low(adapter)
 */
 db.defaults({ orders: [] }).write()
 
-const run = (currentPrice) => {
+const run = async (currentPrice) => {
     const profiler = logger.startTimer()
     logger.debug('running sell banker')
 
@@ -47,9 +48,11 @@ const run = (currentPrice) => {
     })
 
     profiler.done({ message: 'sell banker done' })
+
+    return
 }
 
-const sellOrder = (order) => {
+const sellOrder = async (order) => {
     try {
         const sellOrderData = await exchange.createMarketSellOrder(config.COIN_CURRENCY, order.amount)
 

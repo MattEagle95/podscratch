@@ -47,7 +47,7 @@ const checkSellSignalMulti = (priceToBeat, currentPrice, lowLimit, lowLimitHit, 
     if (lowLimitHit) {
         if (prozentUnterschied > nextLimit) {
             lowLimitHit = nextLimit
-            nexLimit = nextLimit + nextLimit
+            nexLimit = parseFloat(nextLimit) + parseFloat(config.SIGNALIZER.SELL.NEXT_LIMIT)
             return {
                 status: false,
                 lowLimit: lowLimit,
