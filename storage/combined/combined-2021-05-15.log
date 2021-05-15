@@ -496,3 +496,995 @@ Error: ENOENT: no such file or directory, open '../storage/db/db.json'
 > closed orders    0
 > canceled orders  0
 [2021-05-15 21:50:23] [32minfo[39m: update interval: 10000ms
+[2021-05-15 21:50:29] [32minfo[39m: socket for visualization connected
+[2021-05-15 21:50:35] [32minfo[39m: sell banker done duration: 1ms
+[2021-05-15 21:50:35] [32minfo[39m: buy signal: not enough data
+[2021-05-15 21:50:35] [32minfo[39m: buy banker done duration: 2ms
+[2021-05-15 21:50:35] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39318.62 € duration: 1186ms
+[2021-05-15 21:50:45] [32minfo[39m: sell banker done duration: 2ms
+[2021-05-15 21:50:45] [32minfo[39m: buy signal: not enough data
+[2021-05-15 21:50:45] [32minfo[39m: buy banker done duration: 2ms
+[2021-05-15 21:50:45] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39301.91 € duration: 1213ms
+[2021-05-15 21:50:53] [32minfo[39m: socket for visualization connected
+[2021-05-15 21:50:55] [32minfo[39m: sell banker done duration: 2ms
+[2021-05-15 21:50:55] [32minfo[39m: buy signal: not enough data
+[2021-05-15 21:50:55] [32minfo[39m: buy banker done duration: 2ms
+[2021-05-15 21:50:55] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39293.03 € duration: 1186ms
+[2021-05-15 21:51:05] [32minfo[39m: sell banker done duration: 1ms
+[2021-05-15 21:51:05] [32minfo[39m: buy signal: not enough data
+[2021-05-15 21:51:05] [32minfo[39m: buy banker done duration: 1ms
+[2021-05-15 21:51:05] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39302.9 € duration: 1190ms
+[2021-05-15 21:51:11] [32minfo[39m: socket for visualization connected
+[2021-05-15 21:51:15] [32minfo[39m: sell banker done duration: 1ms
+[2021-05-15 21:51:15] [32minfo[39m: buy signal: not enough data
+[2021-05-15 21:51:15] [32minfo[39m: buy banker done duration: 1ms
+[2021-05-15 21:51:15] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39337.92 € duration: 1180ms
+[2021-05-15 21:51:25] [32minfo[39m: sell banker done duration: 1ms
+[2021-05-15 21:51:25] [32minfo[39m: buy signal: state low triggered
+[2021-05-15 21:51:25] [32minfo[39m: steigend seit 5 ticks, change: 0.0016%
+[2021-05-15 21:51:25] [32minfo[39m: buy signal: BOOOOOOM! BUY SIGNAL!
+[2021-05-15 21:51:25] [32minfo[39m: buy-signal: I WOULD HAVE BOUGHT THAT!
+[2021-05-15 21:51:25] [32minfo[39m: buy banker done duration: 4ms
+[2021-05-15 21:51:25] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39356.74 € duration: 1182ms
+[2021-05-15 21:51:35] [32minfo[39m: sell banker done duration: 1ms
+[2021-05-15 21:51:35] [32minfo[39m: steigend seit 5 ticks, change: 0.0020%
+[2021-05-15 21:51:35] [32minfo[39m: buy banker done duration: 1ms
+[2021-05-15 21:51:35] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39372.5 € duration: 1283ms
+[2021-05-15 21:51:45] [32minfo[39m: sell banker done duration: 1ms
+[2021-05-15 21:51:45] [32minfo[39m: fallend seit 1 ticks, change: -0.0011%
+[2021-05-15 21:51:45] [32minfo[39m: buy banker done duration: 1ms
+[2021-05-15 21:51:45] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39327.44 € duration: 1187ms
+[2021-05-15 21:51:55] [32minfo[39m: sell banker done duration: 1ms
+[2021-05-15 21:51:55] [32minfo[39m: buy signal: state low triggered
+[2021-05-15 21:51:55] [32minfo[39m: fallend seit 2 ticks, change: -0.0012%
+[2021-05-15 21:51:55] [32minfo[39m: buy banker done duration: 1ms
+[2021-05-15 21:51:55] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39325.46 € duration: 1170ms
+[2021-05-15 21:52:05] [32minfo[39m: sell banker done duration: 2ms
+[2021-05-15 21:52:05] [32minfo[39m: buy signal: state low triggered
+[2021-05-15 21:52:05] [32minfo[39m: steigend seit 3 ticks, change: 0.0001%
+[2021-05-15 21:52:05] [32minfo[39m: buy banker done duration: 3ms
+[2021-05-15 21:52:05] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39329.96 € duration: 1197ms
+[2021-05-15 21:52:15] [32minfo[39m: sell banker done duration: 2ms
+[2021-05-15 21:52:15] [32minfo[39m: buy signal: state low triggered
+[2021-05-15 21:52:15] [32minfo[39m: steigend seit 4 ticks, change: 0.0004%
+[2021-05-15 21:52:15] [32minfo[39m: buy banker done duration: 3ms
+[2021-05-15 21:52:15] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39339.9 € duration: 1206ms
+[2021-05-15 21:52:25] [32minfo[39m: sell banker done duration: 2ms
+[2021-05-15 21:52:25] [32minfo[39m: buy signal: state low triggered
+[2021-05-15 21:52:25] [32minfo[39m: fallend seit 1 ticks, change: -0.0001%
+[2021-05-15 21:52:25] [32minfo[39m: buy banker done duration: 1ms
+[2021-05-15 21:52:25] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39334.23 € duration: 1169ms
+[2021-05-15 21:52:35] [32minfo[39m: sell banker done duration: 1ms
+[2021-05-15 21:52:35] [32minfo[39m: steigend seit 2 ticks, change: 0.0004%
+[2021-05-15 21:52:35] [32minfo[39m: buy banker done duration: 2ms
+[2021-05-15 21:52:35] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39350.97 € duration: 1204ms
+[2021-05-15 21:52:45] [32minfo[39m: sell banker done duration: 1ms
+[2021-05-15 21:52:45] [32minfo[39m: fallend seit 1 ticks, change: -0.0005%
+[2021-05-15 21:52:45] [32minfo[39m: buy banker done duration: 1ms
+[2021-05-15 21:52:45] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39330.92 € duration: 1245ms
+[2021-05-15 21:52:55] [32minfo[39m: sell banker done duration: 1ms
+[2021-05-15 21:52:55] [32minfo[39m: buy signal: state low triggered
+[2021-05-15 21:52:55] [32minfo[39m: fallend seit 2 ticks, change: -0.0009%
+[2021-05-15 21:52:55] [32minfo[39m: buy banker done duration: 1ms
+[2021-05-15 21:52:55] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39317.3 € duration: 1203ms
+[2021-05-15 21:53:05] [32minfo[39m: sell banker done duration: 2ms
+[2021-05-15 21:53:05] [32minfo[39m: buy signal: state low triggered
+[2021-05-15 21:53:05] [32minfo[39m: steigend seit 3 ticks, change: 0.0000%
+[2021-05-15 21:53:05] [32minfo[39m: buy banker done duration: 3ms
+[2021-05-15 21:53:05] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39317.47 € duration: 1265ms
+[2021-05-15 21:53:15] [32minfo[39m: sell banker done duration: 1ms
+[2021-05-15 21:53:15] [32minfo[39m: buy signal: state low triggered
+[2021-05-15 21:53:15] [32minfo[39m: fallend seit 1 ticks, change: -0.0009%
+[2021-05-15 21:53:15] [32minfo[39m: buy banker done duration: 2ms
+[2021-05-15 21:53:15] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39283.51 € duration: 1185ms
+[2021-05-15 21:53:25] [32minfo[39m: sell banker done duration: 2ms
+[2021-05-15 21:53:25] [32minfo[39m: buy signal: state low triggered
+[2021-05-15 21:53:25] [32minfo[39m: steigend seit 2 ticks, change: 0.0004%
+[2021-05-15 21:53:25] [32minfo[39m: buy banker done duration: 2ms
+[2021-05-15 21:53:25] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39300 € duration: 1194ms
+[2021-05-15 21:53:35] [32minfo[39m: sell banker done duration: 3ms
+[2021-05-15 21:53:35] [32minfo[39m: steigend seit 3 ticks, change: 0.0008%
+[2021-05-15 21:53:35] [32minfo[39m: buy banker done duration: 1ms
+[2021-05-15 21:53:35] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39313.17 € duration: 1187ms
+[2021-05-15 21:53:45] [32minfo[39m: sell banker done duration: 1ms
+[2021-05-15 21:53:45] [32minfo[39m: steigend seit 4 ticks, change: 0.0014%
+[2021-05-15 21:53:45] [32minfo[39m: buy banker done duration: 2ms
+[2021-05-15 21:53:45] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39340.08 € duration: 1185ms
+[2021-05-15 21:53:55] [32minfo[39m: sell banker done duration: 1ms
+[2021-05-15 21:53:55] [32minfo[39m: fallend seit 1 ticks, change: -0.0007%
+[2021-05-15 21:53:55] [32minfo[39m: buy banker done duration: 2ms
+[2021-05-15 21:53:55] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39312.38 € duration: 1186ms
+[2021-05-15 21:54:05] [32minfo[39m: sell banker done duration: 1ms
+[2021-05-15 21:54:05] [32minfo[39m: steigend seit 2 ticks, change: 0.0004%
+[2021-05-15 21:54:05] [32minfo[39m: buy banker done duration: 1ms
+[2021-05-15 21:54:05] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39326.83 € duration: 1180ms
+[2021-05-15 21:54:15] [32minfo[39m: sell banker done duration: 1ms
+[2021-05-15 21:54:15] [32minfo[39m: fallend seit 1 ticks, change: -0.0006%
+[2021-05-15 21:54:15] [32minfo[39m: buy banker done duration: 1ms
+[2021-05-15 21:54:15] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39304.51 € duration: 1173ms
+[2021-05-15 21:54:25] [32minfo[39m: sell banker done duration: 1ms
+[2021-05-15 21:54:25] [32minfo[39m: buy signal: state low triggered
+[2021-05-15 21:54:25] [32minfo[39m: fallend seit 2 ticks, change: -0.0011%
+[2021-05-15 21:54:25] [32minfo[39m: buy banker done duration: 1ms
+[2021-05-15 21:54:25] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39283.36 € duration: 1182ms
+[2021-05-15 21:54:35] [32minfo[39m: sell banker done duration: 1ms
+[2021-05-15 21:54:35] [32minfo[39m: buy signal: state low triggered
+[2021-05-15 21:54:35] [32minfo[39m: steigend seit 3 ticks, change: 0.0004%
+[2021-05-15 21:54:35] [32minfo[39m: buy banker done duration: 2ms
+[2021-05-15 21:54:35] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39300.94 € duration: 1195ms
+[2021-05-15 21:54:45] [32minfo[39m: sell banker done duration: 1ms
+[2021-05-15 21:54:45] [32minfo[39m: buy signal: state low triggered
+[2021-05-15 21:54:45] [32minfo[39m: steigend seit 4 ticks, change: 0.0005%
+[2021-05-15 21:54:45] [32minfo[39m: buy banker done duration: 2ms
+[2021-05-15 21:54:45] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39304.55 € duration: 1172ms
+[2021-05-15 21:54:55] [32minfo[39m: sell banker done duration: 1ms
+[2021-05-15 21:54:55] [32minfo[39m: buy signal: state low triggered
+[2021-05-15 21:54:55] [32minfo[39m: fallend seit 1 ticks, change: -0.0003%
+[2021-05-15 21:54:55] [32minfo[39m: buy banker done duration: 3ms
+[2021-05-15 21:54:55] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39291.59 € duration: 1178ms
+[2021-05-15 21:55:05] [32minfo[39m: sell banker done duration: 1ms
+[2021-05-15 21:55:05] [32minfo[39m: buy signal: state low triggered
+[2021-05-15 21:55:05] [32minfo[39m: fallend seit 2 ticks, change: -0.0007%
+[2021-05-15 21:55:05] [32minfo[39m: buy banker done duration: 2ms
+[2021-05-15 21:55:05] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39278.65 € duration: 1183ms
+[2021-05-15 21:55:15] [32minfo[39m: sell banker done duration: 1ms
+[2021-05-15 21:55:15] [32minfo[39m: buy signal: state low triggered
+[2021-05-15 21:55:15] [32minfo[39m: fallend seit 3 ticks, change: -0.0010%
+[2021-05-15 21:55:15] [32minfo[39m: buy banker done duration: 1ms
+[2021-05-15 21:55:15] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39266.68 € duration: 1189ms
+[2021-05-15 21:58:19] [32minfo[39m: 
+  __  __                          ____       _       _            
+ |  \/  | ___  _ __   ___ _   _  |  _ \ _ __(_)_ __ | |_ ___ _ __ 
+ | |\/| |/ _ \| '_ \ / _ \ | | | | |_) | '__| | '_ \| __/ _ \ '__|
+ | |  | | (_) | | | |  __/ |_| | |  __/| |  | | | | | ||  __/ |   
+ |_|  |_|\___/|_| |_|\___|\__, | |_|   |_|  |_|_| |_|\__\___|_|   
+                          |___/                                   
+[2021-05-15 21:58:19] [32minfo[39m: version 1.0.0
+[2021-05-15 21:58:21] [32minfo[39m: socket for visualization connected
+[2021-05-15 21:58:22] [32minfo[39m: ✅ api online
+[2021-05-15 21:58:23] [32minfo[39m: ✅ money for trading available (100.128395096041 €)
+[2021-05-15 21:58:24] [32minfo[39m: ----- exchange data -----
+[2021-05-15 21:58:24] [32minfo[39m: 
+> money total      100.13 €
+> money available  100.13 €
+> coins total      0 BTC
+> coins available  0 BTC
+----------
+> orders           2
+> open orders      0
+> closed orders    0
+> canceled orders  0
+[2021-05-15 21:58:24] [32minfo[39m: update interval: 10000ms
+[2021-05-15 21:58:34] [32minfo[39m: socket for visualization connected
+[2021-05-15 21:58:35] [32minfo[39m: sell banker done duration: 1ms
+[2021-05-15 21:58:35] [32minfo[39m: buy signal: not enough data
+[2021-05-15 21:58:35] [32minfo[39m: buy banker done duration: 1ms
+[2021-05-15 21:58:35] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39337.65 € duration: 1204ms
+[2021-05-15 21:58:45] [32minfo[39m: sell banker done duration: 1ms
+[2021-05-15 21:58:45] [32minfo[39m: buy signal: not enough data
+[2021-05-15 21:58:45] [32minfo[39m: buy banker done duration: 1ms
+[2021-05-15 21:58:45] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39334.46 € duration: 1195ms
+[2021-05-15 21:58:55] [32minfo[39m: sell banker done duration: 1ms
+[2021-05-15 21:58:55] [32minfo[39m: buy signal: not enough data
+[2021-05-15 21:58:55] [32minfo[39m: buy banker done duration: 1ms
+[2021-05-15 21:58:55] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39336.83 € duration: 1194ms
+[2021-05-15 21:59:05] [32minfo[39m: sell banker done duration: 2ms
+[2021-05-15 21:59:05] [32minfo[39m: buy signal: not enough data
+[2021-05-15 21:59:05] [32minfo[39m: buy banker done duration: 1ms
+[2021-05-15 21:59:05] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39335.54 € duration: 1199ms
+[2021-05-15 21:59:15] [32minfo[39m: sell banker done duration: 1ms
+[2021-05-15 21:59:15] [32minfo[39m: buy signal: not enough data
+[2021-05-15 21:59:15] [32minfo[39m: buy banker done duration: 1ms
+[2021-05-15 21:59:15] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39351.64 € duration: 1209ms
+[2021-05-15 21:59:25] [32minfo[39m: sell banker done duration: 1ms
+[2021-05-15 21:59:25] [32minfo[39m: steigend seit 3 ticks, change: 0.0007%
+[2021-05-15 21:59:25] [32minfo[39m: buy banker done duration: 2ms
+[2021-05-15 21:59:25] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39361.34 € duration: 1178ms
+[2021-05-15 21:59:35] [32minfo[39m: sell banker done duration: 1ms
+[2021-05-15 21:59:35] [32minfo[39m: steigend seit 4 ticks, change: 0.0011%
+[2021-05-15 21:59:35] [32minfo[39m: buy banker done duration: 2ms
+[2021-05-15 21:59:35] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39376.87 € duration: 1209ms
+[2021-05-15 21:59:45] [32minfo[39m: sell banker done duration: 1ms
+[2021-05-15 21:59:45] [32minfo[39m: steigend seit 5 ticks, change: 0.0045%
+[2021-05-15 21:59:45] [32minfo[39m: buy banker done duration: 2ms
+[2021-05-15 21:59:45] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39513.46 € duration: 1372ms
+[2021-05-15 21:59:55] [32minfo[39m: sell banker done duration: 0ms
+[2021-05-15 21:59:55] [32minfo[39m: fallend seit 1 ticks, change: -0.0003%
+[2021-05-15 21:59:55] [32minfo[39m: buy banker done duration: 1ms
+[2021-05-15 21:59:55] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39500.29 € duration: 1197ms
+[2021-05-15 22:00:05] [32minfo[39m: sell banker done duration: 1ms
+[2021-05-15 22:00:05] [32minfo[39m: steigend seit 2 ticks, change: 0.0018%
+[2021-05-15 22:00:05] [32minfo[39m: buy banker done duration: 1ms
+[2021-05-15 22:00:05] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39573.02 € duration: 1202ms
+[2021-05-15 22:00:15] [32minfo[39m: sell banker done duration: 1ms
+[2021-05-15 22:00:15] [32minfo[39m: steigend seit 3 ticks, change: 0.0026%
+[2021-05-15 22:00:15] [32minfo[39m: buy banker done duration: 2ms
+[2021-05-15 22:00:15] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39603.14 € duration: 1210ms
+[2021-05-15 22:00:25] [32minfo[39m: sell banker done duration: 1ms
+[2021-05-15 22:00:25] [32minfo[39m: steigend seit 4 ticks, change: 0.0031%
+[2021-05-15 22:00:25] [32minfo[39m: buy banker done duration: 2ms
+[2021-05-15 22:00:25] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39621.89 € duration: 1234ms
+[2021-05-15 22:00:35] [32minfo[39m: sell banker done duration: 3ms
+[2021-05-15 22:00:35] [32minfo[39m: steigend seit 5 ticks, change: 0.0033%
+[2021-05-15 22:00:35] [32minfo[39m: buy banker done duration: 2ms
+[2021-05-15 22:00:35] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39632.48 € duration: 1222ms
+[2021-05-15 22:00:45] [32minfo[39m: sell banker done duration: 1ms
+[2021-05-15 22:00:45] [32minfo[39m: fallend seit 1 ticks, change: -0.0004%
+[2021-05-15 22:00:45] [32minfo[39m: buy banker done duration: 2ms
+[2021-05-15 22:00:45] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39617.52 € duration: 1185ms
+[2021-05-15 22:00:55] [32minfo[39m: sell banker done duration: 0ms
+[2021-05-15 22:00:55] [32minfo[39m: buy signal: state low triggered
+[2021-05-15 22:00:55] [32minfo[39m: fallend seit 2 ticks, change: -0.0014%
+[2021-05-15 22:00:55] [32minfo[39m: buy banker done duration: 1ms
+[2021-05-15 22:00:55] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39576.81 € duration: 1205ms
+[2021-05-15 22:01:05] [32minfo[39m: sell banker done duration: 1ms
+[2021-05-15 22:01:05] [32minfo[39m: buy signal: state low triggered
+[2021-05-15 22:01:05] [32minfo[39m: steigend seit 3 ticks, change: 0.0009%
+[2021-05-15 22:01:05] [32minfo[39m: buy signal: BOOOOOOM! BUY SIGNAL!
+[2021-05-15 22:01:05] [32minfo[39m: buy-signal: I WOULD HAVE BOUGHT THAT!
+[2021-05-15 22:01:05] [32minfo[39m: buy banker done duration: 3ms
+[2021-05-15 22:01:05] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39611.2 € duration: 1187ms
+[2021-05-15 22:01:15] [32minfo[39m: sell banker done duration: 1ms
+[2021-05-15 22:01:15] [32minfo[39m: buy signal: state low triggered
+[2021-05-15 22:01:15] [32minfo[39m: steigend seit 4 ticks, change: 0.0016%
+[2021-05-15 22:01:15] [32minfo[39m: buy signal: signal, but last buy too recent
+[2021-05-15 22:01:15] [32minfo[39m: buy banker done duration: 2ms
+[2021-05-15 22:01:15] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39641.87 € duration: 1189ms
+[2021-05-15 22:01:25] [32minfo[39m: sell banker done duration: 1ms
+[2021-05-15 22:01:25] [32minfo[39m: buy signal: state low triggered
+[2021-05-15 22:01:25] [32minfo[39m: steigend seit 5 ticks, change: 0.0020%
+[2021-05-15 22:01:25] [32minfo[39m: buy signal: signal, but last buy too recent
+[2021-05-15 22:01:25] [32minfo[39m: buy banker done duration: 2ms
+[2021-05-15 22:01:25] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39654.85 € duration: 1187ms
+[2021-05-15 22:01:35] [32minfo[39m: sell banker done duration: 1ms
+[2021-05-15 22:01:35] [32minfo[39m: steigend seit 5 ticks, change: 0.0027%
+[2021-05-15 22:01:35] [32minfo[39m: buy banker done duration: 1ms
+[2021-05-15 22:01:35] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39683.22 € duration: 1213ms
+[2021-05-15 22:01:39] [32minfo[39m: socket for visualization connected
+[2021-05-15 22:01:45] [32minfo[39m: sell banker done duration: 1ms
+[2021-05-15 22:01:45] [32minfo[39m: fallend seit 1 ticks, change: -0.0006%
+[2021-05-15 22:01:45] [32minfo[39m: buy banker done duration: 1ms
+[2021-05-15 22:01:45] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39658.41 € duration: 1190ms
+[2021-05-15 22:01:50] [32minfo[39m: socket for visualization connected
+[2021-05-15 22:01:55] [32minfo[39m: sell banker done duration: 1ms
+[2021-05-15 22:01:55] [32minfo[39m: steigend seit 2 ticks, change: 0.0013%
+[2021-05-15 22:01:55] [32minfo[39m: buy banker done duration: 1ms
+[2021-05-15 22:01:55] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39710.76 € duration: 1188ms
+[2021-05-15 22:02:05] [32minfo[39m: sell banker done duration: 1ms
+[2021-05-15 22:02:05] [32minfo[39m: fallend seit 1 ticks, change: -0.0001%
+[2021-05-15 22:02:05] [32minfo[39m: buy banker done duration: 1ms
+[2021-05-15 22:02:05] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39706.07 € duration: 1179ms
+[2021-05-15 22:02:15] [32minfo[39m: sell banker done duration: 1ms
+[2021-05-15 22:02:15] [32minfo[39m: steigend seit 2 ticks, change: 0.0008%
+[2021-05-15 22:02:15] [32minfo[39m: buy banker done duration: 1ms
+[2021-05-15 22:02:15] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39738.45 € duration: 1187ms
+[2021-05-15 22:02:25] [32minfo[39m: sell banker done duration: 1ms
+[2021-05-15 22:02:25] [32minfo[39m: steigend seit 3 ticks, change: 0.0023%
+[2021-05-15 22:02:25] [32minfo[39m: buy banker done duration: 2ms
+[2021-05-15 22:02:25] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39795.9 € duration: 1209ms
+[2021-05-15 22:02:35] [32minfo[39m: sell banker done duration: 1ms
+[2021-05-15 22:02:35] [32minfo[39m: fallend seit 1 ticks, change: -0.0017%
+[2021-05-15 22:02:35] [32minfo[39m: buy banker done duration: 1ms
+[2021-05-15 22:02:35] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39728.3 € duration: 1197ms
+[2021-05-15 22:02:45] [32minfo[39m: sell banker done duration: 1ms
+[2021-05-15 22:02:45] [32minfo[39m: steigend seit 2 ticks, change: 0.0004%
+[2021-05-15 22:02:45] [32minfo[39m: buy banker done duration: 1ms
+[2021-05-15 22:02:45] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39744.6 € duration: 1235ms
+[2021-05-15 22:02:55] [32minfo[39m: sell banker done duration: 1ms
+[2021-05-15 22:02:55] [32minfo[39m: steigend seit 3 ticks, change: 0.0012%
+[2021-05-15 22:02:55] [32minfo[39m: buy banker done duration: 1ms
+[2021-05-15 22:02:55] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39776.6 € duration: 1183ms
+[2021-05-15 22:02:58] [32minfo[39m: socket for visualization connected
+[2021-05-15 22:03:05] [32minfo[39m: sell banker done duration: 0ms
+[2021-05-15 22:03:05] [32minfo[39m: steigend seit 4 ticks, change: 0.0016%
+[2021-05-15 22:03:05] [32minfo[39m: buy banker done duration: 0ms
+[2021-05-15 22:03:05] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39790.14 € duration: 1184ms
+[2021-05-15 22:03:15] [32minfo[39m: sell banker done duration: 1ms
+[2021-05-15 22:03:15] [32minfo[39m: fallend seit 1 ticks, change: -0.0016%
+[2021-05-15 22:03:15] [32minfo[39m: buy banker done duration: 1ms
+[2021-05-15 22:03:15] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39725.11 € duration: 1200ms
+[2021-05-15 22:03:25] [32minfo[39m: sell banker done duration: 1ms
+[2021-05-15 22:03:25] [32minfo[39m: fallend seit 1 ticks, change: -0.0016%
+[2021-05-15 22:03:25] [32minfo[39m: buy banker done duration: 1ms
+[2021-05-15 22:03:25] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39725.11 € duration: 1213ms
+[2021-05-15 22:03:35] [32minfo[39m: sell banker done duration: 1ms
+[2021-05-15 22:03:35] [32minfo[39m: buy signal: state low triggered
+[2021-05-15 22:03:35] [32minfo[39m: fallend seit 2 ticks, change: -0.0019%
+[2021-05-15 22:03:35] [32minfo[39m: buy banker done duration: 2ms
+[2021-05-15 22:03:35] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39713.8 € duration: 1201ms
+[2021-05-15 22:03:45] [32minfo[39m: sell banker done duration: 1ms
+[2021-05-15 22:03:45] [32minfo[39m: buy signal: state low triggered
+[2021-05-15 22:03:45] [32minfo[39m: steigend seit 3 ticks, change: 0.0002%
+[2021-05-15 22:03:45] [32minfo[39m: buy banker done duration: 1ms
+[2021-05-15 22:03:45] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39720.23 € duration: 1220ms
+[2021-05-15 22:03:55] [32minfo[39m: sell banker done duration: 1ms
+[2021-05-15 22:03:55] [32minfo[39m: buy signal: state low triggered
+[2021-05-15 22:03:55] [32minfo[39m: steigend seit 4 ticks, change: 0.0006%
+[2021-05-15 22:03:55] [32minfo[39m: buy banker done duration: 2ms
+[2021-05-15 22:03:55] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39739.6 € duration: 1191ms
+[2021-05-15 22:04:01] [32minfo[39m: socket for visualization connected
+[2021-05-15 22:04:05] [32minfo[39m: sell banker done duration: 1ms
+[2021-05-15 22:04:05] [32minfo[39m: steigend seit 4 ticks, change: 0.0014%
+[2021-05-15 22:04:05] [32minfo[39m: buy banker done duration: 1ms
+[2021-05-15 22:04:05] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39768.64 € duration: 1220ms
+[2021-05-15 22:04:15] [32minfo[39m: sell banker done duration: 1ms
+[2021-05-15 22:04:15] [32minfo[39m: fallend seit 1 ticks, change: -0.0002%
+[2021-05-15 22:04:15] [32minfo[39m: buy banker done duration: 1ms
+[2021-05-15 22:04:15] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39759.66 € duration: 1175ms
+[2021-05-15 22:04:23] [32minfo[39m: socket for visualization connected
+[2021-05-15 22:04:25] [32minfo[39m: sell banker done duration: 1ms
+[2021-05-15 22:04:25] [32minfo[39m: buy signal: state low triggered
+[2021-05-15 22:04:25] [32minfo[39m: fallend seit 2 ticks, change: -0.0003%
+[2021-05-15 22:04:25] [32minfo[39m: buy banker done duration: 1ms
+[2021-05-15 22:04:25] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39755.29 € duration: 1187ms
+[2021-05-15 22:04:35] [32minfo[39m: sell banker done duration: 1ms
+[2021-05-15 22:04:35] [32minfo[39m: buy signal: state low triggered
+[2021-05-15 22:04:35] [32minfo[39m: fallend seit 3 ticks, change: -0.0008%
+[2021-05-15 22:04:35] [32minfo[39m: buy banker done duration: 2ms
+[2021-05-15 22:04:35] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39734.95 € duration: 1200ms
+[2021-05-15 22:04:45] [32minfo[39m: sell banker done duration: 1ms
+[2021-05-15 22:04:45] [32minfo[39m: buy signal: state low triggered
+[2021-05-15 22:04:45] [32minfo[39m: steigend seit 4 ticks, change: 0.0004%
+[2021-05-15 22:04:45] [32minfo[39m: buy banker done duration: 2ms
+[2021-05-15 22:04:45] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39752.03 € duration: 1196ms
+[2021-05-15 22:04:55] [32minfo[39m: sell banker done duration: 0ms
+[2021-05-15 22:04:55] [32minfo[39m: buy signal: state low triggered
+[2021-05-15 22:04:55] [32minfo[39m: steigend seit 5 ticks, change: 0.0011%
+[2021-05-15 22:04:55] [32minfo[39m: buy signal: signal, but last buy too recent
+[2021-05-15 22:04:55] [32minfo[39m: buy banker done duration: 1ms
+[2021-05-15 22:04:55] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39779.76 € duration: 1184ms
+[2021-05-15 22:05:05] [32minfo[39m: sell banker done duration: 1ms
+[2021-05-15 22:05:05] [32minfo[39m: buy signal: state low triggered
+[2021-05-15 22:05:05] [32minfo[39m: fallend seit 1 ticks, change: -0.0009%
+[2021-05-15 22:05:05] [32minfo[39m: buy banker done duration: 2ms
+[2021-05-15 22:05:05] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39742.51 € duration: 1197ms
+[2021-05-15 22:05:15] [32minfo[39m: socket for visualization connected
+[2021-05-15 22:05:15] [32minfo[39m: sell banker done duration: 1ms
+[2021-05-15 22:05:15] [32minfo[39m: buy signal: state low triggered
+[2021-05-15 22:05:15] [32minfo[39m: fallend seit 2 ticks, change: -0.0018%
+[2021-05-15 22:05:15] [32minfo[39m: buy banker done duration: 1ms
+[2021-05-15 22:05:15] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39706.45 € duration: 1182ms
+[2021-05-15 22:05:25] [32minfo[39m: sell banker done duration: 1ms
+[2021-05-15 22:05:25] [32minfo[39m: buy signal: state low triggered
+[2021-05-15 22:05:25] [32minfo[39m: steigend seit 3 ticks, change: 0.0009%
+[2021-05-15 22:05:25] [32minfo[39m: buy signal: signal, but last buy too recent
+[2021-05-15 22:05:25] [32minfo[39m: buy banker done duration: 3ms
+[2021-05-15 22:05:25] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39741.27 € duration: 1187ms
+[2021-05-15 22:05:35] [32minfo[39m: sell banker done duration: 1ms
+[2021-05-15 22:05:35] [32minfo[39m: buy signal: state low triggered
+[2021-05-15 22:05:35] [32minfo[39m: steigend seit 4 ticks, change: 0.0011%
+[2021-05-15 22:05:35] [32minfo[39m: buy signal: signal, but last buy too recent
+[2021-05-15 22:05:35] [32minfo[39m: buy banker done duration: 3ms
+[2021-05-15 22:05:35] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39748.28 € duration: 1200ms
+[2021-05-15 22:05:45] [32minfo[39m: sell banker done duration: 1ms
+[2021-05-15 22:05:45] [32minfo[39m: buy signal: state low triggered
+[2021-05-15 22:05:45] [32minfo[39m: steigend seit 5 ticks, change: 0.0013%
+[2021-05-15 22:05:45] [32minfo[39m: buy signal: signal, but last buy too recent
+[2021-05-15 22:05:45] [32minfo[39m: buy banker done duration: 2ms
+[2021-05-15 22:05:45] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39757.03 € duration: 1188ms
+[2021-05-15 22:05:55] [32minfo[39m: sell banker done duration: 1ms
+[2021-05-15 22:05:55] [32minfo[39m: steigend seit 5 ticks, change: 0.0027%
+[2021-05-15 22:05:55] [32minfo[39m: buy banker done duration: 1ms
+[2021-05-15 22:05:55] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39815.4 € duration: 1235ms
+[2021-05-15 22:06:05] [32minfo[39m: sell banker done duration: 1ms
+[2021-05-15 22:06:05] [32minfo[39m: steigend seit 5 ticks, change: 0.0030%
+[2021-05-15 22:06:05] [32minfo[39m: buy banker done duration: 2ms
+[2021-05-15 22:06:05] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39824.92 € duration: 1169ms
+[2021-05-15 22:06:15] [32minfo[39m: sell banker done duration: 1ms
+[2021-05-15 22:06:15] [32minfo[39m: steigend seit 5 ticks, change: 0.0029%
+[2021-05-15 22:06:15] [32minfo[39m: buy banker done duration: 1ms
+[2021-05-15 22:06:15] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39858.48 € duration: 1211ms
+[2021-05-15 22:06:25] [32minfo[39m: sell banker done duration: 2ms
+[2021-05-15 22:06:25] [32minfo[39m: steigend seit 5 ticks, change: 0.0029%
+[2021-05-15 22:06:25] [32minfo[39m: buy banker done duration: 2ms
+[2021-05-15 22:06:25] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39861.95 € duration: 1182ms
+[2021-05-15 22:06:35] [32minfo[39m: sell banker done duration: 1ms
+[2021-05-15 22:06:35] [32minfo[39m: fallend seit 1 ticks, change: -0.0001%
+[2021-05-15 22:06:35] [32minfo[39m: buy banker done duration: 1ms
+[2021-05-15 22:06:35] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39856.16 € duration: 1198ms
+[2021-05-15 22:06:45] [32minfo[39m: sell banker done duration: 1ms
+[2021-05-15 22:06:45] [32minfo[39m: buy signal: state low triggered
+[2021-05-15 22:06:45] [32minfo[39m: fallend seit 2 ticks, change: -0.0002%
+[2021-05-15 22:06:45] [32minfo[39m: buy banker done duration: 2ms
+[2021-05-15 22:06:45] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39855.56 € duration: 1189ms
+[2021-05-15 22:06:55] [32minfo[39m: sell banker done duration: 1ms
+[2021-05-15 22:06:55] [32minfo[39m: buy signal: state low triggered
+[2021-05-15 22:06:55] [32minfo[39m: fallend seit 3 ticks, change: -0.0005%
+[2021-05-15 22:06:55] [32minfo[39m: buy banker done duration: 2ms
+[2021-05-15 22:06:55] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39843.39 € duration: 1174ms
+[2021-05-15 22:07:05] [32minfo[39m: sell banker done duration: 1ms
+[2021-05-15 22:07:05] [32minfo[39m: buy signal: state low triggered
+[2021-05-15 22:07:05] [32minfo[39m: steigend seit 4 ticks, change: 0.0004%
+[2021-05-15 22:07:05] [32minfo[39m: buy banker done duration: 2ms
+[2021-05-15 22:07:05] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39859.64 € duration: 1203ms
+[2021-05-15 22:07:15] [32minfo[39m: sell banker done duration: 1ms
+[2021-05-15 22:07:15] [32minfo[39m: buy signal: state low triggered
+[2021-05-15 22:07:15] [32minfo[39m: steigend seit 5 ticks, change: 0.0016%
+[2021-05-15 22:07:15] [32minfo[39m: buy signal: signal, but last buy too recent
+[2021-05-15 22:07:15] [32minfo[39m: buy banker done duration: 2ms
+[2021-05-15 22:07:15] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39905.69 € duration: 1175ms
+[2021-05-15 22:07:25] [32minfo[39m: sell banker done duration: 1ms
+[2021-05-15 22:07:25] [32minfo[39m: buy signal: state low triggered
+[2021-05-15 22:07:25] [32minfo[39m: fallend seit 1 ticks, change: -0.0000%
+[2021-05-15 22:07:25] [32minfo[39m: buy banker done duration: 2ms
+[2021-05-15 22:07:25] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39905.45 € duration: 1180ms
+[2021-05-15 22:07:35] [32minfo[39m: sell banker done duration: 1ms
+[2021-05-15 22:07:35] [32minfo[39m: buy signal: state low triggered
+[2021-05-15 22:07:35] [32minfo[39m: fallend seit 2 ticks, change: -0.0007%
+[2021-05-15 22:07:35] [32minfo[39m: buy banker done duration: 2ms
+[2021-05-15 22:07:35] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39877.49 € duration: 1193ms
+[2021-05-15 22:07:45] [32minfo[39m: sell banker done duration: 1ms
+[2021-05-15 22:07:45] [32minfo[39m: buy signal: state low triggered
+[2021-05-15 22:07:45] [32minfo[39m: fallend seit 3 ticks, change: -0.0012%
+[2021-05-15 22:07:45] [32minfo[39m: buy banker done duration: 2ms
+[2021-05-15 22:07:45] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39858.43 € duration: 1188ms
+[2021-05-15 22:07:55] [32minfo[39m: sell banker done duration: 1ms
+[2021-05-15 22:07:55] [32minfo[39m: buy signal: state low triggered
+[2021-05-15 22:07:55] [32minfo[39m: steigend seit 4 ticks, change: 0.0006%
+[2021-05-15 22:07:55] [32minfo[39m: buy banker done duration: 2ms
+[2021-05-15 22:07:55] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39881.15 € duration: 1191ms
+[2021-05-15 22:08:05] [32minfo[39m: sell banker done duration: 1ms
+[2021-05-15 22:08:05] [32minfo[39m: buy signal: state low triggered
+[2021-05-15 22:08:05] [32minfo[39m: steigend seit 5 ticks, change: 0.0007%
+[2021-05-15 22:08:05] [32minfo[39m: buy banker done duration: 2ms
+[2021-05-15 22:08:05] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39886.14 € duration: 1195ms
+[2021-05-15 22:08:15] [32minfo[39m: sell banker done duration: 0ms
+[2021-05-15 22:08:15] [32minfo[39m: buy signal: state low triggered
+[2021-05-15 22:08:15] [32minfo[39m: fallend seit 1 ticks, change: -0.0004%
+[2021-05-15 22:08:15] [32minfo[39m: buy banker done duration: 1ms
+[2021-05-15 22:08:15] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39870.4 € duration: 1189ms
+[2021-05-15 22:08:25] [32minfo[39m: sell banker done duration: 2ms
+[2021-05-15 22:08:25] [32minfo[39m: buy signal: state low triggered
+[2021-05-15 22:08:25] [32minfo[39m: fallend seit 2 ticks, change: -0.0014%
+[2021-05-15 22:08:25] [32minfo[39m: buy banker done duration: 1ms
+[2021-05-15 22:08:25] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39829.38 € duration: 1185ms
+[2021-05-15 22:08:35] [32minfo[39m: sell banker done duration: 2ms
+[2021-05-15 22:08:35] [32minfo[39m: buy signal: state low triggered
+[2021-05-15 22:08:35] [32minfo[39m: steigend seit 3 ticks, change: 0.0009%
+[2021-05-15 22:08:35] [32minfo[39m: buy signal: signal, but last buy too recent
+[2021-05-15 22:08:35] [32minfo[39m: buy banker done duration: 2ms
+[2021-05-15 22:08:35] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39865.46 € duration: 1210ms
+[2021-05-15 22:08:45] [32minfo[39m: sell banker done duration: 1ms
+[2021-05-15 22:08:45] [32minfo[39m: buy signal: state low triggered
+[2021-05-15 22:08:45] [32minfo[39m: steigend seit 4 ticks, change: 0.0017%
+[2021-05-15 22:08:45] [32minfo[39m: buy signal: signal, but last buy too recent
+[2021-05-15 22:08:45] [32minfo[39m: buy banker done duration: 2ms
+[2021-05-15 22:08:45] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39896.13 € duration: 1188ms
+[2021-05-15 22:08:55] [32minfo[39m: sell banker done duration: 2ms
+[2021-05-15 22:08:55] [32minfo[39m: buy signal: state low triggered
+[2021-05-15 22:08:55] [32minfo[39m: fallend seit 1 ticks, change: -0.0003%
+[2021-05-15 22:08:55] [32minfo[39m: buy banker done duration: 3ms
+[2021-05-15 22:08:55] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39883.39 € duration: 1197ms
+[2021-05-15 22:09:05] [32minfo[39m: sell banker done duration: 2ms
+[2021-05-15 22:09:05] [32minfo[39m: buy signal: state low triggered
+[2021-05-15 22:09:05] [32minfo[39m: fallend seit 2 ticks, change: -0.0004%
+[2021-05-15 22:09:05] [32minfo[39m: buy banker done duration: 2ms
+[2021-05-15 22:09:05] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39880 € duration: 1206ms
+[2021-05-15 22:09:15] [32minfo[39m: sell banker done duration: 1ms
+[2021-05-15 22:09:15] [32minfo[39m: buy signal: state low triggered
+[2021-05-15 22:09:15] [32minfo[39m: steigend seit 3 ticks, change: 0.0002%
+[2021-05-15 22:09:15] [32minfo[39m: buy banker done duration: 1ms
+[2021-05-15 22:09:15] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39887.94 € duration: 1207ms
+[2021-05-15 22:09:25] [32minfo[39m: sell banker done duration: 1ms
+[2021-05-15 22:09:25] [32minfo[39m: buy signal: state low triggered
+[2021-05-15 22:09:25] [32minfo[39m: fallend seit 1 ticks, change: -0.0006%
+[2021-05-15 22:09:25] [32minfo[39m: buy banker done duration: 2ms
+[2021-05-15 22:09:25] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39862.92 € duration: 1178ms
+[2021-05-15 22:09:35] [32minfo[39m: sell banker done duration: 0ms
+[2021-05-15 22:09:35] [32minfo[39m: buy signal: state low triggered
+[2021-05-15 22:09:35] [32minfo[39m: steigend seit 2 ticks, change: 0.0000%
+[2021-05-15 22:09:35] [32minfo[39m: buy banker done duration: 2ms
+[2021-05-15 22:09:35] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39863.59 € duration: 1205ms
+[2021-05-15 22:15:54] [32minfo[39m: 
+  __  __                          ____       _       _            
+ |  \/  | ___  _ __   ___ _   _  |  _ \ _ __(_)_ __ | |_ ___ _ __ 
+ | |\/| |/ _ \| '_ \ / _ \ | | | | |_) | '__| | '_ \| __/ _ \ '__|
+ | |  | | (_) | | | |  __/ |_| | |  __/| |  | | | | | ||  __/ |   
+ |_|  |_|\___/|_| |_|\___|\__, | |_|   |_|  |_|_| |_|\__\___|_|   
+                          |___/                                   
+[2021-05-15 22:15:54] [32minfo[39m: version 1.0.0
+[2021-05-15 22:15:55] [32minfo[39m: socket for visualization connected
+[2021-05-15 22:15:56] [32minfo[39m: ✅ api online
+[2021-05-15 22:15:57] [32minfo[39m: ✅ money for trading available (100.128395096041 €)
+[2021-05-15 22:15:58] [32minfo[39m: ----- exchange data -----
+[2021-05-15 22:15:58] [32minfo[39m: 
+> money total      100.13 €
+> money available  100.13 €
+> coins total      0 BTC
+> coins available  0 BTC
+----------
+> orders           2
+> open orders      0
+> closed orders    0
+> canceled orders  0
+[2021-05-15 22:15:58] [32minfo[39m: update interval: 10000ms
+[2021-05-15 22:16:10] [32minfo[39m: sell banker done duration: 2ms
+[2021-05-15 22:16:10] [32minfo[39m: buy signal: not enough data
+[2021-05-15 22:16:10] [32minfo[39m: buy banker done duration: 2ms
+[2021-05-15 22:16:10] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39821.15 € duration: 1248ms
+[2021-05-15 22:16:20] [32minfo[39m: sell banker done duration: 1ms
+[2021-05-15 22:16:20] [32minfo[39m: buy signal: not enough data
+[2021-05-15 22:16:20] [32minfo[39m: buy banker done duration: 1ms
+[2021-05-15 22:16:20] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39787.34 € duration: 1204ms
+[2021-05-15 22:16:30] [32minfo[39m: sell banker done duration: 1ms
+[2021-05-15 22:16:30] [32minfo[39m: buy signal: not enough data
+[2021-05-15 22:16:30] [32minfo[39m: buy banker done duration: 1ms
+[2021-05-15 22:16:30] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39766.13 € duration: 1194ms
+[2021-05-15 22:16:39] [32minfo[39m: sell banker done duration: 1ms
+[2021-05-15 22:16:39] [32minfo[39m: buy signal: not enough data
+[2021-05-15 22:16:39] [32minfo[39m: buy banker done duration: 1ms
+[2021-05-15 22:16:40] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39754.27 € duration: 1186ms
+[2021-05-15 22:16:50] [32minfo[39m: sell banker done duration: 2ms
+[2021-05-15 22:16:50] [32minfo[39m: buy signal: not enough data
+[2021-05-15 22:16:50] [32minfo[39m: buy banker done duration: 1ms
+[2021-05-15 22:16:50] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39752.85 € duration: 1219ms
+[2021-05-15 22:17:00] [32minfo[39m: sell banker done duration: 1ms
+[2021-05-15 22:17:00] [32minfo[39m: buy signal: state low triggered
+[2021-05-15 22:17:00] [32minfo[39m: steigend seit 5 ticks, change: 0.0001%
+[2021-05-15 22:17:00] [32minfo[39m: buy banker done duration: 4ms
+[2021-05-15 22:17:00] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39755.78 € duration: 1282ms
+[2021-05-15 22:17:10] [32minfo[39m: sell banker done duration: 1ms
+[2021-05-15 22:17:10] [32minfo[39m: buy signal: state low triggered
+[2021-05-15 22:17:10] [32minfo[39m: steigend seit 5 ticks, change: 0.0011%
+[2021-05-15 22:17:10] [32minfo[39m: buy signal: BOOOOOOM! BUY SIGNAL!
+[2021-05-15 22:17:10] [32minfo[39m: buy-signal: I WOULD HAVE BOUGHT THAT!
+[2021-05-15 22:17:10] [32minfo[39m: buy banker done duration: 3ms
+[2021-05-15 22:17:10] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39794.72 € duration: 1199ms
+[2021-05-15 22:17:20] [32minfo[39m: sell banker done duration: 1ms
+[2021-05-15 22:17:20] [32minfo[39m: buy signal: state low triggered
+[2021-05-15 22:17:20] [32minfo[39m: steigend seit 5 ticks, change: 0.0012%
+[2021-05-15 22:17:20] [32minfo[39m: buy signal: signal, but last buy too recent
+[2021-05-15 22:17:20] [32minfo[39m: buy banker done duration: 2ms
+[2021-05-15 22:17:20] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39798.59 € duration: 1193ms
+[2021-05-15 22:17:30] [32minfo[39m: sell banker done duration: 1ms
+[2021-05-15 22:17:30] [32minfo[39m: steigend seit 5 ticks, change: 0.0012%
+[2021-05-15 22:17:30] [32minfo[39m: buy banker done duration: 2ms
+[2021-05-15 22:17:30] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39801.3 € duration: 1186ms
+[2021-05-15 22:17:40] [32minfo[39m: sell banker done duration: 2ms
+[2021-05-15 22:17:40] [32minfo[39m: fallend seit 1 ticks, change: -0.0007%
+[2021-05-15 22:17:40] [32minfo[39m: buy banker done duration: 2ms
+[2021-05-15 22:17:40] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39773.24 € duration: 1290ms
+[2021-05-15 22:17:50] [32minfo[39m: sell banker done duration: 1ms
+[2021-05-15 22:17:50] [32minfo[39m: steigend seit 2 ticks, change: 0.0000%
+[2021-05-15 22:17:50] [32minfo[39m: buy banker done duration: 2ms
+[2021-05-15 22:17:50] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39773.63 € duration: 1182ms
+[2021-05-15 22:18:00] [32minfo[39m: sell banker done duration: 1ms
+[2021-05-15 22:18:00] [32minfo[39m: fallend seit 1 ticks, change: -0.0007%
+[2021-05-15 22:18:00] [32minfo[39m: buy banker done duration: 2ms
+[2021-05-15 22:18:00] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39745.5 € duration: 1278ms
+[2021-05-15 22:18:10] [32minfo[39m: sell banker done duration: 1ms
+[2021-05-15 22:18:10] [32minfo[39m: steigend seit 2 ticks, change: 0.0005%
+[2021-05-15 22:18:10] [32minfo[39m: buy banker done duration: 1ms
+[2021-05-15 22:18:10] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39764.25 € duration: 1200ms
+[2021-05-15 22:18:20] [32minfo[39m: sell banker done duration: 1ms
+[2021-05-15 22:18:20] [32minfo[39m: fallend seit 1 ticks, change: -0.0005%
+[2021-05-15 22:18:20] [32minfo[39m: buy banker done duration: 1ms
+[2021-05-15 22:18:20] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39742.87 € duration: 1176ms
+[2021-05-15 22:18:30] [32minfo[39m: sell banker done duration: 2ms
+[2021-05-15 22:18:30] [32minfo[39m: steigend seit 2 ticks, change: 0.0001%
+[2021-05-15 22:18:30] [32minfo[39m: buy banker done duration: 1ms
+[2021-05-15 22:18:30] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39747.08 € duration: 1216ms
+[2021-05-15 22:18:40] [32minfo[39m: sell banker done duration: 2ms
+[2021-05-15 22:18:40] [32minfo[39m: fallend seit 1 ticks, change: -0.0007%
+[2021-05-15 22:18:40] [32minfo[39m: buy banker done duration: 2ms
+[2021-05-15 22:18:40] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39717.77 € duration: 1293ms
+[2021-05-15 22:18:50] [32minfo[39m: sell banker done duration: 1ms
+[2021-05-15 22:18:50] [32minfo[39m: buy signal: state low triggered
+[2021-05-15 22:18:50] [32minfo[39m: fallend seit 2 ticks, change: -0.0016%
+[2021-05-15 22:18:50] [32minfo[39m: buy banker done duration: 2ms
+[2021-05-15 22:18:50] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39682.29 € duration: 1236ms
+[2021-05-15 22:19:00] [32minfo[39m: sell banker done duration: 1ms
+[2021-05-15 22:19:00] [32minfo[39m: buy signal: state low triggered
+[2021-05-15 22:19:00] [32minfo[39m: steigend seit 3 ticks, change: 0.0004%
+[2021-05-15 22:19:00] [32minfo[39m: buy banker done duration: 2ms
+[2021-05-15 22:19:00] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39696.42 € duration: 1198ms
+[2021-05-15 22:19:10] [32minfo[39m: sell banker done duration: 1ms
+[2021-05-15 22:19:10] [32minfo[39m: buy signal: state low triggered
+[2021-05-15 22:19:10] [32minfo[39m: fallend seit 1 ticks, change: -0.0014%
+[2021-05-15 22:19:10] [32minfo[39m: buy banker done duration: 2ms
+[2021-05-15 22:19:10] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39641.1 € duration: 1185ms
+[2021-05-15 22:19:20] [32minfo[39m: sell banker done duration: 2ms
+[2021-05-15 22:19:20] [32minfo[39m: buy signal: state low triggered
+[2021-05-15 22:19:20] [32minfo[39m: steigend seit 2 ticks, change: 0.0011%
+[2021-05-15 22:19:20] [32minfo[39m: buy banker done duration: 2ms
+[2021-05-15 22:19:20] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39684.95 € duration: 1181ms
+[2021-05-15 22:19:30] [32minfo[39m: sell banker done duration: 3ms
+[2021-05-15 22:19:30] [32minfo[39m: steigend seit 3 ticks, change: 0.0021%
+[2021-05-15 22:19:30] [32minfo[39m: buy banker done duration: 1ms
+[2021-05-15 22:19:30] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39725.9 € duration: 1204ms
+[2021-05-15 22:19:40] [32minfo[39m: sell banker done duration: 1ms
+[2021-05-15 22:19:40] [32minfo[39m: steigend seit 4 ticks, change: 0.0022%
+[2021-05-15 22:19:40] [32minfo[39m: buy banker done duration: 1ms
+[2021-05-15 22:19:40] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39729.74 € duration: 1181ms
+[2021-05-15 22:19:50] [32minfo[39m: sell banker done duration: 0ms
+[2021-05-15 22:19:50] [32minfo[39m: steigend seit 5 ticks, change: 0.0022%
+[2021-05-15 22:19:50] [32minfo[39m: buy banker done duration: 0ms
+[2021-05-15 22:19:50] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39729.75 € duration: 1186ms
+[2021-05-15 22:20:00] [32minfo[39m: sell banker done duration: 1ms
+[2021-05-15 22:20:00] [32minfo[39m: fallend seit 1 ticks, change: -0.0008%
+[2021-05-15 22:20:00] [32minfo[39m: buy banker done duration: 1ms
+[2021-05-15 22:20:00] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39696.63 € duration: 1165ms
+[2021-05-15 22:20:10] [32minfo[39m: sell banker done duration: 2ms
+[2021-05-15 22:20:10] [32minfo[39m: steigend seit 2 ticks, change: 0.0008%
+[2021-05-15 22:20:10] [32minfo[39m: buy banker done duration: 2ms
+[2021-05-15 22:20:10] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39729.98 € duration: 1179ms
+[2021-05-15 22:20:20] [32minfo[39m: sell banker done duration: 1ms
+[2021-05-15 22:20:20] [32minfo[39m: fallend seit 1 ticks, change: -0.0005%
+[2021-05-15 22:20:20] [32minfo[39m: buy banker done duration: 1ms
+[2021-05-15 22:20:20] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39710.92 € duration: 1174ms
+[2021-05-15 22:20:30] [32minfo[39m: sell banker done duration: 1ms
+[2021-05-15 22:20:30] [32minfo[39m: buy signal: state low triggered
+[2021-05-15 22:20:30] [32minfo[39m: fallend seit 2 ticks, change: -0.0005%
+[2021-05-15 22:20:30] [32minfo[39m: buy banker done duration: 1ms
+[2021-05-15 22:20:30] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39710.84 € duration: 1192ms
+[2021-05-15 22:20:40] [32minfo[39m: sell banker done duration: 1ms
+[2021-05-15 22:20:40] [32minfo[39m: buy signal: state low triggered
+[2021-05-15 22:20:40] [32minfo[39m: steigend seit 3 ticks, change: 0.0000%
+[2021-05-15 22:20:40] [32minfo[39m: buy banker done duration: 2ms
+[2021-05-15 22:20:40] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39711.32 € duration: 1186ms
+[2021-05-15 22:20:50] [32minfo[39m: sell banker done duration: 4ms
+[2021-05-15 22:20:50] [32minfo[39m: buy signal: state low triggered
+[2021-05-15 22:20:50] [32minfo[39m: steigend seit 4 ticks, change: 0.0006%
+[2021-05-15 22:20:50] [32minfo[39m: buy banker done duration: 2ms
+[2021-05-15 22:20:50] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39734.77 € duration: 1197ms
+[2021-05-15 22:21:00] [32minfo[39m: sell banker done duration: 1ms
+[2021-05-15 22:21:00] [32minfo[39m: buy signal: state low triggered
+[2021-05-15 22:21:00] [32minfo[39m: fallend seit 1 ticks, change: -0.0005%
+[2021-05-15 22:21:00] [32minfo[39m: buy banker done duration: 2ms
+[2021-05-15 22:21:00] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39716.43 € duration: 1262ms
+[2021-05-15 22:21:10] [32minfo[39m: sell banker done duration: 0ms
+[2021-05-15 22:21:10] [32minfo[39m: buy signal: state low triggered
+[2021-05-15 22:21:10] [32minfo[39m: fallend seit 2 ticks, change: -0.0009%
+[2021-05-15 22:21:10] [32minfo[39m: buy banker done duration: 0ms
+[2021-05-15 22:21:10] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39698.41 € duration: 1250ms
+[2021-05-15 22:21:20] [32minfo[39m: sell banker done duration: 1ms
+[2021-05-15 22:21:20] [32minfo[39m: buy signal: state low triggered
+[2021-05-15 22:21:20] [32minfo[39m: steigend seit 3 ticks, change: 0.0000%
+[2021-05-15 22:21:20] [32minfo[39m: buy banker done duration: 1ms
+[2021-05-15 22:21:20] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39699.72 € duration: 1176ms
+[2021-05-15 22:21:30] [32minfo[39m: sell banker done duration: 2ms
+[2021-05-15 22:21:30] [32minfo[39m: buy signal: state low triggered
+[2021-05-15 22:21:30] [32minfo[39m: fallend seit 1 ticks, change: -0.0003%
+[2021-05-15 22:21:30] [32minfo[39m: buy banker done duration: 2ms
+[2021-05-15 22:21:30] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39688.47 € duration: 1191ms
+[2021-05-15 22:21:40] [32minfo[39m: sell banker done duration: 1ms
+[2021-05-15 22:21:40] [32minfo[39m: buy signal: state low triggered
+[2021-05-15 22:21:40] [32minfo[39m: steigend seit 2 ticks, change: 0.0001%
+[2021-05-15 22:21:40] [32minfo[39m: buy banker done duration: 1ms
+[2021-05-15 22:21:40] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39694.09 € duration: 1174ms
+[2021-05-15 22:21:50] [32minfo[39m: sell banker done duration: 1ms
+[2021-05-15 22:21:50] [32minfo[39m: steigend seit 3 ticks, change: 0.0002%
+[2021-05-15 22:21:50] [32minfo[39m: buy banker done duration: 2ms
+[2021-05-15 22:21:50] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39697.04 € duration: 1177ms
+[2021-05-15 22:36:06] [32minfo[39m: 
+  __  __                          ____       _       _            
+ |  \/  | ___  _ __   ___ _   _  |  _ \ _ __(_)_ __ | |_ ___ _ __ 
+ | |\/| |/ _ \| '_ \ / _ \ | | | | |_) | '__| | '_ \| __/ _ \ '__|
+ | |  | | (_) | | | |  __/ |_| | |  __/| |  | | | | | ||  __/ |   
+ |_|  |_|\___/|_| |_|\___|\__, | |_|   |_|  |_|_| |_|\__\___|_|   
+                          |___/                                   
+[2021-05-15 22:36:06] [32minfo[39m: version 1.0.0
+[2021-05-15 22:36:07] [32minfo[39m: socket for visualization connected
+[2021-05-15 22:36:08] [32minfo[39m: ✅ api online
+[2021-05-15 22:36:09] [32minfo[39m: ✅ money for trading available (100.128395096041 €)
+[2021-05-15 22:36:10] [32minfo[39m: ----- exchange data -----
+[2021-05-15 22:36:10] [32minfo[39m: 
+> money total      100.13 €
+> money available  100.13 €
+> coins total      0 BTC
+> coins available  0 BTC
+----------
+> orders           2
+> open orders      0
+> closed orders    0
+> canceled orders  0
+[2021-05-15 22:36:10] [32minfo[39m: update interval: 10000ms
+[2021-05-15 22:36:21] [32minfo[39m: sell banker done duration: 2ms
+[2021-05-15 22:36:21] [32minfo[39m: buy signal: not enough data
+[2021-05-15 22:36:21] [32minfo[39m: buy banker done duration: 1ms
+[2021-05-15 22:36:21] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39891.45 € duration: 1183ms
+[2021-05-15 22:36:22] [32minfo[39m: socket for visualization connected
+[2021-05-15 22:36:31] [32minfo[39m: sell banker done duration: 3ms
+[2021-05-15 22:36:31] [32minfo[39m: buy signal: not enough data
+[2021-05-15 22:36:31] [32minfo[39m: buy banker done duration: 1ms
+[2021-05-15 22:36:31] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39907.25 € duration: 1199ms
+[2021-05-15 22:36:41] [32minfo[39m: sell banker done duration: 2ms
+[2021-05-15 22:36:41] [32minfo[39m: buy signal: not enough data
+[2021-05-15 22:36:41] [32minfo[39m: buy banker done duration: 1ms
+[2021-05-15 22:36:41] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39901.64 € duration: 1218ms
+[2021-05-15 22:36:51] [32minfo[39m: sell banker done duration: 2ms
+[2021-05-15 22:36:51] [32minfo[39m: buy signal: not enough data
+[2021-05-15 22:36:51] [32minfo[39m: buy banker done duration: 1ms
+[2021-05-15 22:36:51] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39911.65 € duration: 1187ms
+[2021-05-15 22:37:01] [32minfo[39m: sell banker done duration: 2ms
+[2021-05-15 22:37:01] [32minfo[39m: buy signal: not enough data
+[2021-05-15 22:37:01] [32minfo[39m: buy banker done duration: 1ms
+[2021-05-15 22:37:01] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39883.29 € duration: 1198ms
+[2021-05-15 22:38:12] [32minfo[39m: 
+  __  __                          ____       _       _            
+ |  \/  | ___  _ __   ___ _   _  |  _ \ _ __(_)_ __ | |_ ___ _ __ 
+ | |\/| |/ _ \| '_ \ / _ \ | | | | |_) | '__| | '_ \| __/ _ \ '__|
+ | |  | | (_) | | | |  __/ |_| | |  __/| |  | | | | | ||  __/ |   
+ |_|  |_|\___/|_| |_|\___|\__, | |_|   |_|  |_|_| |_|\__\___|_|   
+                          |___/                                   
+[2021-05-15 22:38:12] [32minfo[39m: version 1.0.0
+[2021-05-15 22:38:12] [32minfo[39m: socket for visualization connected
+[2021-05-15 22:38:14] [32minfo[39m: socket for visualization connected
+[2021-05-15 22:38:14] [32minfo[39m: ✅ api online
+[2021-05-15 22:38:15] [32minfo[39m: ✅ money for trading available (100.128395096041 €)
+[2021-05-15 22:38:15] [32minfo[39m: socket for visualization connected
+[2021-05-15 22:38:16] [32minfo[39m: ----- exchange data -----
+[2021-05-15 22:38:16] [32minfo[39m: 
+> money total      100.13 €
+> money available  100.13 €
+> coins total      0 BTC
+> coins available  0 BTC
+----------
+> orders           2
+> open orders      0
+> closed orders    0
+> canceled orders  0
+[2021-05-15 22:38:16] [32minfo[39m: update interval: 10000ms
+[2021-05-15 22:38:27] [32minfo[39m: sell banker done duration: 5ms
+[2021-05-15 22:38:27] [32minfo[39m: buy signal: not enough data
+[2021-05-15 22:38:27] [32minfo[39m: buy banker done duration: 1ms
+[2021-05-15 22:38:27] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39856.36 € duration: 1185ms
+[2021-05-15 22:38:37] [32minfo[39m: sell banker done duration: 3ms
+[2021-05-15 22:38:37] [32minfo[39m: buy signal: not enough data
+[2021-05-15 22:38:37] [32minfo[39m: buy banker done duration: 2ms
+[2021-05-15 22:38:37] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39806.23 € duration: 1197ms
+[2021-05-15 22:38:47] [32minfo[39m: sell banker done duration: 3ms
+[2021-05-15 22:38:47] [32minfo[39m: buy signal: not enough data
+[2021-05-15 22:38:47] [32minfo[39m: buy banker done duration: 1ms
+[2021-05-15 22:38:47] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39807.78 € duration: 1195ms
+[2021-05-15 22:38:57] [32minfo[39m: socket for visualization connected
+[2021-05-15 22:38:57] [32minfo[39m: sell banker done duration: 2ms
+[2021-05-15 22:38:57] [32minfo[39m: buy signal: not enough data
+[2021-05-15 22:38:57] [32minfo[39m: buy banker done duration: 2ms
+[2021-05-15 22:38:57] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39821.88 € duration: 1204ms
+[2021-05-15 22:39:07] [32minfo[39m: socket for visualization connected
+[2021-05-15 22:39:07] [32minfo[39m: sell banker done duration: 2ms
+[2021-05-15 22:39:07] [32minfo[39m: buy signal: not enough data
+[2021-05-15 22:39:07] [32minfo[39m: buy banker done duration: 2ms
+[2021-05-15 22:39:07] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39825.89 € duration: 1188ms
+[2021-05-15 22:39:17] [32minfo[39m: sell banker done duration: 2ms
+[2021-05-15 22:39:17] [32minfo[39m: fallend seit 1 ticks, change: -0.0003%
+[2021-05-15 22:39:17] [32minfo[39m: buy banker done duration: 2ms
+[2021-05-15 22:39:17] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39815.29 € duration: 1186ms
+[2021-05-15 22:39:27] [32minfo[39m: sell banker done duration: 2ms
+[2021-05-15 22:39:27] [32minfo[39m: steigend seit 2 ticks, change: 0.0008%
+[2021-05-15 22:39:27] [32minfo[39m: buy banker done duration: 1ms
+[2021-05-15 22:39:27] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39847.06 € duration: 1192ms
+[2021-05-15 22:39:37] [32minfo[39m: sell banker done duration: 2ms
+[2021-05-15 22:39:37] [32minfo[39m: steigend seit 3 ticks, change: 0.0013%
+[2021-05-15 22:39:37] [32minfo[39m: buy banker done duration: 1ms
+[2021-05-15 22:39:37] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39866.02 € duration: 1184ms
+[2021-05-15 22:39:47] [32minfo[39m: sell banker done duration: 2ms
+[2021-05-15 22:39:47] [32minfo[39m: fallend seit 1 ticks, change: -0.0007%
+[2021-05-15 22:39:47] [32minfo[39m: buy banker done duration: 3ms
+[2021-05-15 22:39:47] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39836.72 € duration: 1199ms
+[2021-05-15 22:39:57] [32minfo[39m: sell banker done duration: 1ms
+[2021-05-15 22:39:57] [32minfo[39m: steigend seit 2 ticks, change: 0.0002%
+[2021-05-15 22:39:57] [32minfo[39m: buy banker done duration: 2ms
+[2021-05-15 22:39:57] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39846.61 € duration: 1209ms
+[2021-05-15 22:40:07] [32minfo[39m: sell banker done duration: 2ms
+[2021-05-15 22:40:07] [32minfo[39m: steigend seit 3 ticks, change: 0.0006%
+[2021-05-15 22:40:07] [32minfo[39m: buy banker done duration: 1ms
+[2021-05-15 22:40:07] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39859.14 € duration: 1176ms
+[2021-05-15 22:40:17] [32minfo[39m: sell banker done duration: 2ms
+[2021-05-15 22:40:17] [32minfo[39m: fallend seit 1 ticks, change: -0.0003%
+[2021-05-15 22:40:17] [32minfo[39m: buy banker done duration: 2ms
+[2021-05-15 22:40:17] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39845.22 € duration: 1172ms
+[2021-05-15 22:40:27] [32minfo[39m: sell banker done duration: 3ms
+[2021-05-15 22:40:27] [32minfo[39m: buy signal: state low triggered
+[2021-05-15 22:40:27] [32minfo[39m: fallend seit 2 ticks, change: -0.0004%
+[2021-05-15 22:40:27] [32minfo[39m: buy banker done duration: 2ms
+[2021-05-15 22:40:27] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39843.21 € duration: 1206ms
+[2021-05-15 22:40:37] [32minfo[39m: sell banker done duration: 2ms
+[2021-05-15 22:40:37] [32minfo[39m: buy signal: state low triggered
+[2021-05-15 22:40:37] [32minfo[39m: steigend seit 3 ticks, change: 0.0001%
+[2021-05-15 22:40:37] [32minfo[39m: buy banker done duration: 2ms
+[2021-05-15 22:40:37] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39845.91 € duration: 1187ms
+[2021-05-15 22:40:47] [32minfo[39m: sell banker done duration: 2ms
+[2021-05-15 22:40:47] [32minfo[39m: buy signal: state low triggered
+[2021-05-15 22:40:47] [32minfo[39m: fallend seit 1 ticks, change: -0.0009%
+[2021-05-15 22:40:47] [32minfo[39m: buy banker done duration: 2ms
+[2021-05-15 22:40:47] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39811.84 € duration: 1183ms
+[2021-05-15 22:40:57] [32minfo[39m: sell banker done duration: 2ms
+[2021-05-15 22:40:57] [32minfo[39m: buy signal: state low triggered
+[2021-05-15 22:40:57] [32minfo[39m: steigend seit 2 ticks, change: 0.0000%
+[2021-05-15 22:40:57] [32minfo[39m: buy banker done duration: 2ms
+[2021-05-15 22:40:57] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39813.78 € duration: 1187ms
+[2021-05-15 22:41:08] [32minfo[39m: sell banker done duration: 1ms
+[2021-05-15 22:41:08] [32minfo[39m: fallend seit 1 ticks, change: -0.0006%
+[2021-05-15 22:41:08] [32minfo[39m: buy banker done duration: 1ms
+[2021-05-15 22:41:08] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39791.18 € duration: 1510ms
+[2021-05-15 22:41:17] [32minfo[39m: sell banker done duration: 2ms
+[2021-05-15 22:41:17] [32minfo[39m: steigend seit 2 ticks, change: 0.0007%
+[2021-05-15 22:41:17] [32minfo[39m: buy banker done duration: 1ms
+[2021-05-15 22:41:17] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39820.99 € duration: 1198ms
+[2021-05-15 22:41:27] [32minfo[39m: sell banker done duration: 2ms
+[2021-05-15 22:41:27] [32minfo[39m: fallend seit 1 ticks, change: -0.0001%
+[2021-05-15 22:41:27] [32minfo[39m: buy banker done duration: 1ms
+[2021-05-15 22:41:27] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39816.85 € duration: 1193ms
+[2021-05-15 22:41:37] [32minfo[39m: sell banker done duration: 3ms
+[2021-05-15 22:41:37] [32minfo[39m: buy signal: state low triggered
+[2021-05-15 22:41:37] [32minfo[39m: fallend seit 2 ticks, change: -0.0004%
+[2021-05-15 22:41:37] [32minfo[39m: buy banker done duration: 1ms
+[2021-05-15 22:41:37] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39803.49 € duration: 1163ms
+[2021-05-15 22:41:47] [32minfo[39m: sell banker done duration: 2ms
+[2021-05-15 22:41:47] [32minfo[39m: buy signal: state low triggered
+[2021-05-15 22:41:47] [32minfo[39m: steigend seit 3 ticks, change: 0.0001%
+[2021-05-15 22:41:47] [32minfo[39m: buy banker done duration: 2ms
+[2021-05-15 22:41:47] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39809.26 € duration: 1194ms
+[2021-05-15 22:41:58] [32minfo[39m: sell banker done duration: 1ms
+[2021-05-15 22:41:58] [32minfo[39m: buy signal: state low triggered
+[2021-05-15 22:41:58] [32minfo[39m: steigend seit 4 ticks, change: 0.0007%
+[2021-05-15 22:41:58] [32minfo[39m: buy banker done duration: 0ms
+[2021-05-15 22:41:58] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39829.86 € duration: 1224ms
+[2021-05-15 22:42:07] [32minfo[39m: sell banker done duration: 2ms
+[2021-05-15 22:42:07] [32minfo[39m: buy signal: state low triggered
+[2021-05-15 22:42:07] [32minfo[39m: steigend seit 5 ticks, change: 0.0009%
+[2021-05-15 22:42:07] [32minfo[39m: buy signal: BOOOOOOM! BUY SIGNAL!
+[2021-05-15 22:42:07] [32minfo[39m: buy-signal: I WOULD HAVE BOUGHT THAT!
+[2021-05-15 22:42:07] [32minfo[39m: buy banker done duration: 3ms
+[2021-05-15 22:42:07] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39839.88 € duration: 1201ms
+[2021-05-15 22:42:17] [32minfo[39m: sell banker done duration: 3ms
+[2021-05-15 22:42:17] [32minfo[39m: fallend seit 1 ticks, change: -0.0005%
+[2021-05-15 22:42:17] [32minfo[39m: buy banker done duration: 2ms
+[2021-05-15 22:42:17] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39819.96 € duration: 1197ms
+[2021-05-15 22:42:27] [32minfo[39m: sell banker done duration: 2ms
+[2021-05-15 22:42:27] [32minfo[39m: steigend seit 2 ticks, change: 0.0001%
+[2021-05-15 22:42:27] [32minfo[39m: buy banker done duration: 1ms
+[2021-05-15 22:42:27] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39824.5 € duration: 1189ms
+[2021-05-15 22:42:38] [32minfo[39m: sell banker done duration: 1ms
+[2021-05-15 22:42:38] [32minfo[39m: fallend seit 1 ticks, change: -0.0003%
+[2021-05-15 22:42:38] [32minfo[39m: buy banker done duration: 1ms
+[2021-05-15 22:42:38] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39814.42 € duration: 1204ms
+[2021-05-15 22:42:47] [32minfo[39m: sell banker done duration: 1ms
+[2021-05-15 22:42:47] [32minfo[39m: buy signal: state low triggered
+[2021-05-15 22:42:47] [32minfo[39m: fallend seit 2 ticks, change: -0.0003%
+[2021-05-15 22:42:47] [32minfo[39m: buy banker done duration: 1ms
+[2021-05-15 22:42:47] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39811.64 € duration: 1186ms
+[2021-05-15 22:42:54] [32minfo[39m: socket for visualization connected
+[2021-05-15 22:42:57] [32minfo[39m: sell banker done duration: 2ms
+[2021-05-15 22:42:57] [32minfo[39m: buy signal: state low triggered
+[2021-05-15 22:42:57] [32minfo[39m: steigend seit 3 ticks, change: 0.0000%
+[2021-05-15 22:42:57] [32minfo[39m: buy banker done duration: 1ms
+[2021-05-15 22:42:57] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39811.79 € duration: 1176ms
+[2021-05-15 22:43:08] [32minfo[39m: sell banker done duration: 2ms
+[2021-05-15 22:43:08] [32minfo[39m: buy signal: state low triggered
+[2021-05-15 22:43:08] [32minfo[39m: steigend seit 4 ticks, change: 0.0009%
+[2021-05-15 22:43:08] [32minfo[39m: buy signal: signal, but last buy too recent
+[2021-05-15 22:43:08] [32minfo[39m: buy banker done duration: 1ms
+[2021-05-15 22:43:08] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39848.61 € duration: 1184ms
+[2021-05-15 22:43:16] [32minfo[39m: socket for visualization connected
+[2021-05-15 22:43:17] [32minfo[39m: sell banker done duration: 2ms
+[2021-05-15 22:43:17] [32minfo[39m: buy signal: state low triggered
+[2021-05-15 22:43:17] [32minfo[39m: fallend seit 1 ticks, change: -0.0007%
+[2021-05-15 22:43:17] [32minfo[39m: buy banker done duration: 2ms
+[2021-05-15 22:43:18] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39822.04 € duration: 1175ms
+[2021-05-15 22:43:28] [32minfo[39m: sell banker done duration: 1ms
+[2021-05-15 22:43:28] [32minfo[39m: steigend seit 2 ticks, change: 0.0006%
+[2021-05-15 22:43:28] [32minfo[39m: buy banker done duration: 1ms
+[2021-05-15 22:43:28] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39844.89 € duration: 1181ms
+[2021-05-15 22:43:38] [32minfo[39m: sell banker done duration: 2ms
+[2021-05-15 22:43:38] [32minfo[39m: fallend seit 1 ticks, change: -0.0002%
+[2021-05-15 22:43:38] [32minfo[39m: buy banker done duration: 1ms
+[2021-05-15 22:43:38] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39835.11 € duration: 1188ms
+[2021-05-15 22:43:48] [32minfo[39m: sell banker done duration: 2ms
+[2021-05-15 22:43:48] [32minfo[39m: steigend seit 2 ticks, change: 0.0001%
+[2021-05-15 22:43:48] [32minfo[39m: buy banker done duration: 1ms
+[2021-05-15 22:43:48] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39837.7 € duration: 1184ms
+[2021-05-15 22:43:58] [32minfo[39m: sell banker done duration: 2ms
+[2021-05-15 22:43:58] [32minfo[39m: steigend seit 3 ticks, change: 0.0006%
+[2021-05-15 22:43:58] [32minfo[39m: buy banker done duration: 2ms
+[2021-05-15 22:43:58] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39857.19 € duration: 1209ms
+[2021-05-15 22:44:08] [32minfo[39m: sell banker done duration: 2ms
+[2021-05-15 22:44:08] [32minfo[39m: fallend seit 1 ticks, change: -0.0001%
+[2021-05-15 22:44:08] [32minfo[39m: buy banker done duration: 1ms
+[2021-05-15 22:44:08] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39852.94 € duration: 1185ms
+[2021-05-15 22:44:18] [32minfo[39m: sell banker done duration: 3ms
+[2021-05-15 22:44:18] [32minfo[39m: buy signal: state low triggered
+[2021-05-15 22:44:18] [32minfo[39m: fallend seit 2 ticks, change: -0.0003%
+[2021-05-15 22:44:18] [32minfo[39m: buy banker done duration: 2ms
+[2021-05-15 22:44:18] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39846.48 € duration: 1190ms
+[2021-05-15 22:44:20] [32minfo[39m: socket for visualization connected
+[2021-05-15 22:44:28] [32minfo[39m: sell banker done duration: 3ms
+[2021-05-15 22:44:28] [32minfo[39m: buy signal: state low triggered
+[2021-05-15 22:44:28] [32minfo[39m: fallend seit 3 ticks, change: -0.0008%
+[2021-05-15 22:44:28] [32minfo[39m: buy banker done duration: 2ms
+[2021-05-15 22:44:28] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39825.33 € duration: 1200ms
+[2021-05-15 22:44:38] [32minfo[39m: sell banker done duration: 1ms
+[2021-05-15 22:44:38] [32minfo[39m: buy signal: state low triggered
+[2021-05-15 22:44:38] [32minfo[39m: steigend seit 4 ticks, change: 0.0000%
+[2021-05-15 22:44:38] [32minfo[39m: buy banker done duration: 1ms
+[2021-05-15 22:44:38] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39826.39 € duration: 1202ms
+[2021-05-15 22:44:39] [32minfo[39m: socket for visualization connected
+[2021-05-15 22:44:48] [32minfo[39m: sell banker done duration: 1ms
+[2021-05-15 22:44:48] [32minfo[39m: buy signal: state low triggered
+[2021-05-15 22:44:48] [32minfo[39m: steigend seit 5 ticks, change: 0.0003%
+[2021-05-15 22:44:48] [32minfo[39m: buy banker done duration: 1ms
+[2021-05-15 22:44:48] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39836.06 € duration: 1190ms
+[2021-05-15 22:44:54] [32minfo[39m: socket for visualization connected
+[2021-05-15 22:44:58] [32minfo[39m: sell banker done duration: 2ms
+[2021-05-15 22:44:58] [32minfo[39m: buy signal: state low triggered
+[2021-05-15 22:44:58] [32minfo[39m: fallend seit 1 ticks, change: -0.0009%
+[2021-05-15 22:44:58] [32minfo[39m: buy banker done duration: 2ms
+[2021-05-15 22:44:58] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39800 € duration: 1206ms
+[2021-05-15 22:45:08] [32minfo[39m: sell banker done duration: 2ms
+[2021-05-15 22:45:08] [32minfo[39m: steigend seit 2 ticks, change: 0.0000%
+[2021-05-15 22:45:08] [32minfo[39m: buy banker done duration: 2ms
+[2021-05-15 22:45:08] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39800.15 € duration: 1236ms
+[2021-05-15 22:45:18] [32minfo[39m: sell banker done duration: 2ms
+[2021-05-15 22:45:18] [32minfo[39m: steigend seit 3 ticks, change: 0.0002%
+[2021-05-15 22:45:18] [32minfo[39m: buy banker done duration: 2ms
+[2021-05-15 22:45:18] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39808.1 € duration: 1207ms
+[2021-05-15 22:45:28] [32minfo[39m: sell banker done duration: 2ms
+[2021-05-15 22:45:28] [32minfo[39m: steigend seit 4 ticks, change: 0.0008%
+[2021-05-15 22:45:28] [32minfo[39m: buy banker done duration: 1ms
+[2021-05-15 22:45:28] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39833.31 € duration: 1227ms
+[2021-05-15 22:45:38] [32minfo[39m: sell banker done duration: 2ms
+[2021-05-15 22:45:38] [32minfo[39m: steigend seit 5 ticks, change: 0.0014%
+[2021-05-15 22:45:38] [32minfo[39m: buy banker done duration: 1ms
+[2021-05-15 22:45:38] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39857 € duration: 1186ms
+[2021-05-15 22:45:48] [32minfo[39m: sell banker done duration: 3ms
+[2021-05-15 22:45:48] [32minfo[39m: steigend seit 5 ticks, change: 0.0015%
+[2021-05-15 22:45:48] [32minfo[39m: buy banker done duration: 2ms
+[2021-05-15 22:45:48] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39859.55 € duration: 1193ms
+[2021-05-15 22:45:58] [32minfo[39m: sell banker done duration: 3ms
+[2021-05-15 22:45:58] [32minfo[39m: steigend seit 5 ticks, change: 0.0020%
+[2021-05-15 22:45:58] [32minfo[39m: buy banker done duration: 1ms
+[2021-05-15 22:45:58] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39878.81 € duration: 1187ms
+[2021-05-15 22:46:08] [32minfo[39m: sell banker done duration: 3ms
+[2021-05-15 22:46:08] [32minfo[39m: fallend seit 1 ticks, change: -0.0003%
+[2021-05-15 22:46:08] [32minfo[39m: buy banker done duration: 2ms
+[2021-05-15 22:46:08] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39865.56 € duration: 1181ms
+[2021-05-15 22:46:18] [32minfo[39m: sell banker done duration: 2ms
+[2021-05-15 22:46:18] [32minfo[39m: buy signal: state low triggered
+[2021-05-15 22:46:18] [32minfo[39m: fallend seit 2 ticks, change: -0.0007%
+[2021-05-15 22:46:18] [32minfo[39m: buy banker done duration: 2ms
+[2021-05-15 22:46:18] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39850 € duration: 1219ms
+[2021-05-15 22:46:28] [32minfo[39m: sell banker done duration: 2ms
+[2021-05-15 22:46:28] [32minfo[39m: buy signal: state low triggered
+[2021-05-15 22:46:28] [32minfo[39m: steigend seit 3 ticks, change: 0.0000%
+[2021-05-15 22:46:28] [32minfo[39m: buy banker done duration: 2ms
+[2021-05-15 22:46:28] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39850.35 € duration: 1195ms
+[2021-05-15 22:46:38] [32minfo[39m: sell banker done duration: 2ms
+[2021-05-15 22:46:38] [32minfo[39m: buy signal: state low triggered
+[2021-05-15 22:46:38] [32minfo[39m: steigend seit 4 ticks, change: 0.0003%
+[2021-05-15 22:46:38] [32minfo[39m: buy banker done duration: 2ms
+[2021-05-15 22:46:38] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39861.2 € duration: 1198ms
+[2021-05-15 22:46:48] [32minfo[39m: sell banker done duration: 2ms
+[2021-05-15 22:46:48] [32minfo[39m: buy signal: state low triggered
+[2021-05-15 22:46:48] [32minfo[39m: fallend seit 1 ticks, change: -0.0007%
+[2021-05-15 22:46:48] [32minfo[39m: buy banker done duration: 2ms
+[2021-05-15 22:46:48] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39835.03 € duration: 1213ms
+[2021-05-15 22:46:58] [32minfo[39m: sell banker done duration: 3ms
+[2021-05-15 22:46:58] [32minfo[39m: steigend seit 2 ticks, change: 0.0001%
+[2021-05-15 22:46:58] [32minfo[39m: buy banker done duration: 2ms
+[2021-05-15 22:46:58] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39840.01 € duration: 1176ms
+[2021-05-15 22:47:08] [32minfo[39m: sell banker done duration: 2ms
+[2021-05-15 22:47:08] [32minfo[39m: fallend seit 1 ticks, change: -0.0000%
+[2021-05-15 22:47:08] [32minfo[39m: buy banker done duration: 1ms
+[2021-05-15 22:47:08] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39839.53 € duration: 1177ms
+[2021-05-15 22:47:18] [32minfo[39m: sell banker done duration: 1ms
+[2021-05-15 22:47:18] [32minfo[39m: buy signal: state low triggered
+[2021-05-15 22:47:18] [32minfo[39m: fallend seit 2 ticks, change: -0.0004%
+[2021-05-15 22:47:18] [32minfo[39m: buy banker done duration: 2ms
+[2021-05-15 22:47:18] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39822.93 € duration: 1189ms
+[2021-05-15 22:47:28] [32minfo[39m: sell banker done duration: 2ms
+[2021-05-15 22:47:28] [32minfo[39m: buy signal: state low triggered
+[2021-05-15 22:47:28] [32minfo[39m: fallend seit 3 ticks, change: -0.0008%
+[2021-05-15 22:47:28] [32minfo[39m: buy banker done duration: 2ms
+[2021-05-15 22:47:28] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39809.23 € duration: 1191ms
+[2021-05-15 22:47:38] [32minfo[39m: sell banker done duration: 2ms
+[2021-05-15 22:47:38] [32minfo[39m: buy signal: state low triggered
+[2021-05-15 22:47:38] [32minfo[39m: fallend seit 4 ticks, change: -0.0008%
+[2021-05-15 22:47:38] [32minfo[39m: buy banker done duration: 2ms
+[2021-05-15 22:47:38] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39806.55 € duration: 1185ms
+[2021-05-15 22:47:48] [32minfo[39m: sell banker done duration: 2ms
+[2021-05-15 22:47:48] [32minfo[39m: buy signal: state low triggered
+[2021-05-15 22:47:48] [32minfo[39m: fallend seit 5 ticks, change: -0.0011%
+[2021-05-15 22:47:48] [32minfo[39m: buy banker done duration: 3ms
+[2021-05-15 22:47:48] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 39797 € duration: 1183ms

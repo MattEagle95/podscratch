@@ -27,6 +27,10 @@
             box-shadow: unset;
             border-style: unset;
         }
+
+        .text-right {
+            text-align: right;
+        }
     </style>
 
     <title>MoneyPrinter 🖨🤑</title>
@@ -62,14 +66,14 @@
                     <tbody>
                         <tr>
                             <td>Current Balance</td>
-                            <td class="text-right">
-                                <span id="currentBalance"></span> €
+                            <td class="text-right d-flex justify-content-end">
+                                <div id="currentBalance"></div> €
                             </td>
                         </tr>
                         <tr>
                             <td>Current Coins</td>
-                            <td class="text-right">
-                                <span id="currentCoins"></span> BTC
+                            <td class="text-right d-flex justify-content-end">
+                                <div id="currentCoins"></div> BTC
                             </td>
                         </tr>
                     </tbody>
@@ -80,34 +84,33 @@
                 <table class="text-muted" style="width: 100%">
                     <tbody>
                         <tr>
-                            <td>ask</td>
-                            <td class="text-right">
-                                <span id="currentState_ask"></span>
+                            <td>bid</td>
+                            <td class="text-right d-flex justify-content-end">
+                                <div id="currentState_bid"></div> €
                             </td>
                         </tr>
                         <tr>
-                            <td>bid</td>
-                            <td class="text-right">
-                                <span id="currentState_bid"></span>
+                            <td>ask</td>
+                            <td class="text-right d-flex justify-content-end">
+                                <div id="currentState_ask"></div> €
                             </td>
                         </tr>
                         <tr>
                             <td>currentState</td>
-                            <td class="text-right">
-                                <span id="currentState"></span>
+                            <td class="text-right d-flex justify-content-end">
+                                <div id="currentState"></div>
                             </td>
                         </tr>
                         <tr>
                             <td>stateTicks</td>
-                            <td class="text-right">
-                                <span id="currentState_ticks"></span>
+                            <td class="text-right d-flex justify-content-end">
+                                <div id="currentState_ticks"></div>
                             </td>
                         </tr>
                         <tr>
                             <td>currentChangePercentage</td>
-                            <td class="text-right">
-                                <span id="currentState_currentChangePercentage"></span>
-                                %
+                            <td class="text-right d-flex justify-content-end">
+                                <div id="currentState_currentChangePercentage"></div> %
                             </td>
                         </tr>
                     </tbody>
@@ -120,20 +123,20 @@
                     <tbody>
                         <tr>
                             <td>stateLowTriggered</td>
-                            <td class="text-right">
-                                <span id="buySignal_stateLowTriggered"></span>
+                            <td class="text-right d-flex justify-content-end">
+                                <div id="buySignal_stateLowTriggered"></div>
                             </td>
                         </tr>
                         <tr>
                             <td>needsTicksHighTriggered</td>
-                            <td class="text-right">
-                                <span id="buySignal_needsTicksHighTriggered"></span>
+                            <td class="text-right d-flex justify-content-end">
+                                <div id="buySignal_needsTicksHighTriggered"></div>
                             </td>
                         </tr>
                         <tr>
                             <td>needsPercentageTriggered</td>
-                            <td class="text-right">
-                                <span id="buySignal_needsPercentageTriggered"></span>
+                            <td class="text-right d-flex justify-content-end">
+                                <div id="buySignal_needsPercentageTriggered"></div>
                             </td>
                         </tr>
                         <tr>
@@ -142,14 +145,14 @@
                         </tr>
                         <tr>
                             <td>ticksLowAfterStateLowTriggered</td>
-                            <td class="text-right">
-                                <span id="buySignal_ticksLowAfterStateLowTriggered"></span>
+                            <td class="text-right d-flex justify-content-end">
+                                <div id="buySignal_ticksLowAfterStateLowTriggered"></div>
                             </td>
                         </tr>
                         <tr>
                             <td>startPriceOfRising</td>
-                            <td class="text-right">
-                                <span id="buySignal_startPriceOfRising"></span>
+                            <td class="text-right d-flex justify-content-end">
+                                <div id="buySignal_startPriceOfRising"></div> €
                             </td>
                         </tr>
                     </tbody>
@@ -158,11 +161,14 @@
         </div>
 
         <h2 class="mt-4">Waiting for <span class="text-danger">Sell</span></h2>
-        <table id="lastEventsTable" class="table table-dark table-striped table-hover">
+        <table id="sellDataTabel" class="table table-dark table-striped table-hover">
             <thead>
-                <th>ACTION</th>
-                <th>DATE</th>
-                <th>PRICE</th>
+                <th>STATUS</th>
+                <th>BOUGHT DATE</th>
+                <th class="text-right">AMOUNT</th>
+                <th class="text-right">PRICE</th>
+                <th class="text-right">CHART PRICE</th>
+                <th class="text-right">NEED MIN PRICE</th>
             </thead>
             <tbody></tbody>
         </table>
@@ -170,9 +176,11 @@
         <h2 class="mt-4">Last events</h2>
         <table id="lastEventsTable" class="table table-dark table-striped table-hover">
             <thead>
-                <th>ACTION</th>
+                <th>STATUS</th>
                 <th>DATE</th>
-                <th>PRICE</th>
+                <th class="text-right">AMOUNT</th>
+                <th class="text-right">PRICE</th>
+                <th class="text-right">CHART PRICE</th>
             </thead>
             <tbody></tbody>
         </table>
@@ -194,10 +202,10 @@
             },
             grid: {
                 horzLines: {
-                    color: 'rgba(255,255,255,0.4)',
+                    color: 'rgba(255,255,255,0.2)',
                 },
                 vertLines: {
-                    color: 'rgba(255,255,255,0.4)',
+                    color: 'rgba(255,255,255,0.2)',
                 },
             },
             rightPriceScale: {
@@ -242,91 +250,157 @@
             chartData = newChartData
             lineSeries.setData(newChartData)
 
-            var tbodyRef = document
-                .getElementById('lastEventsTable')
+            // SELL DATA
+            var tbodyRefSellDataTable = document
+                .getElementById('sellDataTabel')
                 .getElementsByTagName('tbody')[0]
+            tbodyRefSellDataTable.innerHTML = ""
 
-            let newMarkers = []
-            for (
-                let index = data.orders.length - 1;
-                index >= 0;
-                index--
-            ) {
-                const element = data.orders[index]
-
-                let newDate = new Date(data.timestamp)
+            data.orders.filter(order => order.status === 'waiting').forEach(order => {
+                let newDate = new Date(order.timestamp)
                 newDate.setHours(newDate.getHours() + 2)
 
-                newMarkers.push({
-                    time: newDate.getTime() / 1000,
-                    position: 'belowBar',
-                    color: '#2196F3',
-                    shape: 'arrowUp',
-                    text: 'Buy @ ' + Math.floor(element.price - 2),
-                })
-
-                var newRow = tbodyRef.insertRow()
+                var newRow = tbodyRefSellDataTable.insertRow()
                 var newCell = newRow.insertCell()
                 var buySpan = document.createElement('span')
-                buySpan.setAttribute('class', 'text-success')
-                buySpan.textContent = 'BUY'
+                buySpan.setAttribute('class', 'text-warning')
+                buySpan.textContent = 'WAITING'
                 newCell.appendChild(buySpan)
 
                 var newCell2 = newRow.insertCell()
                 var newText2 = document.createTextNode(
-                    `${newDate.getHours()}:${newDate.getMinutes()}:${newDate.getUTCSeconds().toFixed(2)}`
+                    `${newDate.getHours()}:${newDate.getMinutes()}:${newDate.getUTCSeconds()}`
                 )
                 newCell2.appendChild(newText2)
 
                 var newCell3 = newRow.insertCell()
-                var newText3 = document.createTextNode(`${element.price} €`)
+                var newText3 = document.createTextNode(`${order.amount} BTC`)
+                newCell3.setAttribute('class', 'text-right')
                 newCell3.appendChild(newText3)
-            }
+
+                var newCell4 = newRow.insertCell()
+                var newText4 = document.createTextNode(`${order.price} €`)
+                newCell4.setAttribute('class', 'text-right')
+                newCell4.appendChild(newText4)
+
+                var newCell5 = newRow.insertCell()
+                var newText5 = document.createTextNode(`${order.chartPrice} €`)
+                newCell5.setAttribute('class', 'text-right')
+                newCell5.appendChild(newText5)
+
+                var newCell6 = newRow.insertCell()
+                var newText6 = document.createTextNode(`${(order.chartPrice + ((order.chartPrice * order.lowLimit) - order.chartPrice)).toFixed(2)} €`)
+                newCell6.setAttribute('class', 'text-right')
+                newCell6.appendChild(newText6)
+            })
+
+            // LAST EVENTS
+            var tbodyRefLastEventsTable = document
+                .getElementById('lastEventsTable')
+                .getElementsByTagName('tbody')[0]
+            tbodyRefLastEventsTable.innerHTML = ""
+            let newMarkers = []
+
+            data.orders.forEach(order => {
+                let newDate = new Date(order.timestamp)
+                newDate.setHours(newDate.getHours() + 2)
+
+                var newRow = tbodyRefLastEventsTable.insertRow()
+                var newCell = newRow.insertCell()
+                var buySpan = document.createElement('span')
+                if (order.status === 'waiting') {
+                    buySpan.setAttribute('class', 'text-success')
+                    buySpan.textContent = 'BOUGHT'
+                } else {
+                    buySpan.setAttribute('class', 'text-danger')
+                    buySpan.textContent = 'SOLD'
+                }
+                newCell.appendChild(buySpan)
+
+                var newCell2 = newRow.insertCell()
+                var newText2 = document.createTextNode(
+                    `${newDate.getHours()}:${newDate.getMinutes()}:${newDate.getUTCSeconds()}`
+                )
+                newCell2.appendChild(newText2)
+
+                var newCell3 = newRow.insertCell()
+                newCell3.setAttribute('class', 'text-right')
+                var newText3 = document.createTextNode(`${order.amount} BTC`)
+                newCell3.appendChild(newText3)
+
+                var newCell4 = newRow.insertCell()
+                newCell4.setAttribute('class', 'text-right')
+                var newText4 = document.createTextNode(`${order.price} €`)
+                newCell4.appendChild(newText4)
+
+                var newCell5 = newRow.insertCell()
+                newCell5.setAttribute('class', 'text-right')
+                var newText5 = document.createTextNode(`${order.chartPrice} €`)
+                newCell5.appendChild(newText5)
+
+                newMarkers.push({
+                    time: newDate.getTime() / 1000,
+                    position: 'belowBar',
+                    color: '#00FF00',
+                    shape: 'arrowUp',
+                    text: 'Buy @ ' + Math.floor(order.chartPrice - 2),
+                })
+            })
 
             lineSeries.setMarkers(newMarkers)
+
+            if (data.priceData.length > 0) {
+                document.getElementById(
+                    'currentState_bid'
+                ).innerText = `${data.priceData[data.priceData.length - 1].bid}`
+
+                document.getElementById(
+                    'currentState_ask'
+                ).innerText = `${data.priceData[data.priceData.length - 1].ask}`
+            }
 
             let lastUpdateDate = new Date()
             document.getElementById(
                 'lastUpdate'
-            ).innerText = `${lastUpdateDate.getHours()}:${lastUpdateDate.getMinutes()}:${lastUpdateDate.getUTCSeconds().toFixed(2)}`
+            ).innerText = `${lastUpdateDate.getHours()}:${lastUpdateDate.getMinutes()}:${lastUpdateDate.getUTCSeconds()}`
 
-            if (value.balance.totalMoney) {
+            if (data.balance.totalMoney) {
                 document.getElementById(
                     'currentBalance'
-                ).innerText = `${value.balance.totalMoney}`
+                ).innerText = `${data.balance.totalMoney}`
 
                 document.getElementById(
                     'currentCoins'
-                ).innerText = `${value.balance.totalCoins}`
+                ).innerText = `${data.balance.totalCoins}`
             }
         }
 
-        socket.on('bugSignalUpdate', function (value) {
+        socket.on('bugSignalUpdate', function (data) {
             document.getElementById(
                 'buySignal_stateLowTriggered'
-            ).innerText = `${value.stateLowTriggered ? '✅' : '⛔'}`
+            ).innerText = `${data.stateLowTriggered ? '✅' : '⛔'}`
             document.getElementById(
                 'buySignal_needsTicksHighTriggered'
-            ).innerText = `${value.needsTicksHighTriggered ? '✅' : '⛔'}`
+            ).innerText = `${data.needsTicksHighTriggered ? '✅' : '⛔'}`
             document.getElementById(
                 'buySignal_needsPercentageTriggered'
-            ).innerText = `${value.needsPercentageTriggered ? '✅' : '⛔'}`
+            ).innerText = `${data.needsPercentageTriggered ? '✅' : '⛔'}`
             document.getElementById(
                 'buySignal_ticksLowAfterStateLowTriggered'
-            ).innerText = `${value.ticksLowAfterStateLowTriggered > 0 ? '✅' : '⛔'}`
+            ).innerText = `${data.ticksLowAfterStateLowTriggered > 0 ? '✅' : '⛔'}`
             document.getElementById(
                 'buySignal_startPriceOfRising'
-            ).innerText = `${value.startPriceOfRising}`
+            ).innerText = `${data.startPriceOfRising}`
 
             document.getElementById(
                 'currentState'
-            ).innerText = `${value.currentState}`
+            ).innerText = `${data.currentState}`
             document.getElementById(
                 'currentState_ticks'
-            ).innerText = `${value.stateTicks}`
+            ).innerText = `${data.stateTicks}`
             document.getElementById(
                 'currentState_currentChangePercentage'
-            ).innerText = `${value.currentChangePercentage}`
+            ).innerText = `${data.currentChangePercentage}`
         })
     </script>
 </body>

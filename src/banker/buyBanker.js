@@ -29,17 +29,19 @@ const run = (availableMoney, priceData, lastBoughtTicks, sockets) => {
         if (checkBuySignal(priceData, lastBoughtTicks, sockets)) {
             const moneyToUse = calculateMoneyToUse(availableMoney)
             // const buyTrade = await buyOrder(moneyToUse)
-            // db.get('orders')
-            //     .push({
-            //         id: buyTrade.order,
-            //         timestamp: Date.now(),
-            //         amount: buyTrade.amount,
-            //         price: priceData[priceData.length - 1],
-            //         lowLimit: config.SIGNALIZER.SELL.LOW_LIMIT,
-            //         lowLimitHit: false,
-            //         nextLimit: parseFloat(config.SIGNALIZER.SELL.LOW_LIMIT) + parseFloat(config.SIGNALIZER.SELL.NEXT_LIMIT)
-            //     })
-            //     .write()
+            db.get('orders')
+                .push({
+                    status: 'waiting',
+                    id: Math.random(),
+                    timestamp: Date.now(),
+                    amount: Math.random(),
+                    price: Math.random(),
+                    chartPrice: priceData[priceData.length - 1],
+                    lowLimit: config.SIGNALIZER.SELL.LOW_LIMIT,
+                    lowLimitHit: false,
+                    nextLimit: parseFloat(config.SIGNALIZER.SELL.LOW_LIMIT) + parseFloat(config.SIGNALIZER.SELL.NEXT_LIMIT)
+                })
+                .write()
             lastBoughtTicks = 0
             logger.info('buy-signal: I WOULD HAVE BOUGHT THAT!')
         } else {
