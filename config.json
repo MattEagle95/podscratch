@@ -1,25 +1,33 @@
 {
     "COIN": "BTC",
-    "CURRENCY": "USD",
-    "COIN_CURRENCY": "BTC/USD",
+    "CURRENCY": "EUR",
+    "COIN_CURRENCY": "BTC/EUR",
     "CURRENCY_SYMBOL": "€",
     "UPDATE": {
-        "INTERVAL_MS": 20000
+        "INTERVAL_MS": 10000
     },
     "BANKER": {
         "BUY": {
             "BUY_MIN_MONEY_AMOUNT": 20,
-            "BUY_MAX_MONEY_PERCENTAGE": 0.20
+            "BUY_MAX_MONEY_PERCENTAGE": 0.2
         }
     },
     "SIGNALIZER": {
-        "MIN_PRICE_DATA": 10,
+        "MIN_PRICE_DATA": 6,
         "BUY": {
-            "NEEDS_TICKS_LOW": 5,
-            "NEEDS_TICKS_HIGH": 2,
-            "NEEDS_PERCENTAGE": 0.02,
-            "NEEDS_MAX_PERCENTAGE": 0.002,
-            "NEEDS_MIN_TICKS_FOR_NEXT_BUY": 10
+            "NEEDS_TICKS_LOW": 2,
+            "NEEDS_TICKS_HIGH": 1,
+            "NEEDS_PERCENTAGE": 0.0008,
+            "NEEDS_MAX_PERCENTAGE": 0.008,
+            "NEEDS_MIN_TICKS_FOR_NEXT_BUY": 60,
+            "CAN_HAVE_LOW_PERCENTAGE_BETWEEN": 0.0005
+        },
+        "SELL": {
+            "NEEDS_TICKS_LOW": 3,
+            "NEEDS_PERCENTAGE": 1.014
+        },
+        "THROWITAWAY": {
+            "MAX_LOSS_PERCENTAGE": 0.04
         }
     }
 }

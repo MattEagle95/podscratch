@@ -11,7 +11,7 @@
     "type": "git",
     "url": "git+https://github.com/MattEagle95/podscratch.git"
   },
-  "author": "",
+  "author": "Skraambl",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/MattEagle95/podscratch/issues"
@@ -21,6 +21,11 @@
     "axios": "^0.21.1",
     "ccxt": "^1.49.74",
     "env-cmd": "^10.1.0",
+    "express": "^4.17.1",
+    "figlet": "^1.5.0",
+    "lowdb": "^1.0.0",
+    "socket.io": "^4.1.1",
+    "text-table": "^0.2.0",
     "winston": "^3.3.3",
     "winston-daily-rotate-file": "^4.5.5"
   },
