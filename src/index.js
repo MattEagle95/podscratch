@@ -16,10 +16,14 @@ const figlet = require('figlet')
 app.use(express.static('public'))
 const io = require('socket.io')(httpServer)
 
+const adapter = new FileSync('./storage/db/db.json')
+const db = low(adapter)
+
 let SOCKETS = []
 let PRICE_DATA = []
 let PRICE_DATA_HISTORY = []
 let BALANCE_DATA = []
+let LAST_BOUGHT_TICKS = config.SIGNALIZER.BUY.NEEDS_MIN_TICKS_FOR_NEXT_BUY
 
 io.on('connection', (socket) => {
     logger.info('socket for visualization connected')
@@ -36,14 +40,13 @@ io.on('connection', (socket) => {
     socket.emit('setup', {
         balance: balanceData,
         priceData: PRICE_DATA_HISTORY,
+        orders: db.get('orders')
     })
 })
 
 httpServer.listen(3000)
 
     ; (async function main() {
-        let LAST_BOUGHT_TICKS = config.SIGNALIZER.BUY.NEEDS_MIN_TICKS_FOR_NEXT_BUY
-
         logger.info(`\n${figlet.textSync('Money Printer')}`)
         logger.info(`version ${packageJson.version}`)
 
@@ -138,10 +141,6 @@ httpServer.listen(3000)
                 const { lastBoughtTicks } = await buyBanker.run(BALANCE_DATA.free[config.CURRENCY].toFixed(2), PRICE_DATA, LAST_BOUGHT_TICKS, SOCKETS)
                 LAST_BOUGHT_TICKS = lastBoughtTicks
 
-                // LADE ORDERS NEU
-                BUY_SIGNAL_DATA.push(null)
-                SELL_SIGNAL_DATA.push(null)
-
                 // SEND UPDATE
                 SOCKETS.forEach((socket) => {
                     socket.emit('update', {
@@ -156,7 +155,8 @@ httpServer.listen(3000)
                         priceData: {
                             timestamp: tickerData.timestamp,
                             price: tickerData.bid,
-                        }
+                        },
+                        orders: db.get('orders')
                     })
                 })
             } catch (error) {
