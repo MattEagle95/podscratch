@@ -1,7 +1,6 @@
 const logger = require('../logger')
 const low = require('lowdb')
 const FileSync = require('lowdb/adapters/FileSync')
-const { checkSellSignalMulti } = require('../signalizer/sellSignal_Multi')
 const { checkBuySignal } = require('../signalizer/buySignal')
 const config = require('../../config.json')
 
