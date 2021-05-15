@@ -1,7 +1,7 @@
 const logger = require('../logger')
 const low = require('lowdb')
 const FileSync = require('lowdb/adapters/FileSync')
-const { checkSellSignalMulti } = require('../signalizer/sellSignal')
+const { checkSellSignal } = require('../signalizer/sellSignal')
 const config = require('../../config.json')
 
 const adapter = new FileSync('./storage/db/db.json')
@@ -31,7 +31,7 @@ const run = async (currentPrice) => {
             lowLimit,
             lowLimitHit,
             nextLimit
-        } = checkSellSignalMulti(order.amount, currentPrice, order.lowLimit, order.lowLimitHit, order.nextLimit)
+        } = checkSellSignal(order.amount, currentPrice, order.lowLimit, order.lowLimitHit, order.nextLimit)
         if (status === true) {
             logger.info(`${order.id} SELL-SIGNAL)`)
             // sellOrder(order)

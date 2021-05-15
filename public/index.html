@@ -10,10 +10,14 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous" />
 
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+
     <style>
         html,
         body {
             height: 100%;
+            font-family: 'Roboto', sans-serif;
         }
 
         .bg-black {
@@ -169,6 +173,7 @@
                 <th class="text-right">PRICE</th>
                 <th class="text-right">CHART PRICE</th>
                 <th class="text-right">NEED MIN PRICE</th>
+                <th class="text-right">DIFFERENCE</th>
             </thead>
             <tbody></tbody>
         </table>
@@ -292,6 +297,19 @@
                 var newText6 = document.createTextNode(`${(order.chartPrice + ((order.chartPrice * order.lowLimit) - order.chartPrice)).toFixed(2)} €`)
                 newCell6.setAttribute('class', 'text-right')
                 newCell6.appendChild(newText6)
+
+                const priceDifference = (parseFloat(data.priceData[data.priceData.length - 1].ask) / parseFloat((order.chartPrice + ((order.chartPrice * order.lowLimit) - order.chartPrice)))) - parseFloat(1)
+                var newCellDifference = newRow.insertCell()
+                var buySpan = document.createElement('span')
+                if (priceDifference >= 1) {
+                    buySpan.setAttribute('class', 'text-success')
+                } else {
+                    buySpan.setAttribute('class', 'text-danger')
+                }
+                buySpan.textContent = `${priceDifference.toFixed(4)} %`
+
+                newCellDifference.setAttribute('class', 'text-right')
+                newCellDifference.appendChild(buySpan)
             })
 
             // LAST EVENTS

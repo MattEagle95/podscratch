@@ -8,7 +8,7 @@ const logger = require('../logger')
 // setze UNTERSTES-LIMIT auf NÄCHSTES-SAFE-LIMIT
 // setze NÄCHSTES-SAFE-LIMIT auf NÄCHSTES-SAFE-LIMIT x 2
 
-const checkSellSignalMulti = (priceToBeat, currentPrice, lowLimit, lowLimitHit, nextLimit) => {
+const checkSellSignal = (priceToBeat, currentPrice, lowLimit, lowLimitHit, nextLimit) => {
     const prozentUnterschied =
         parseFloat(currentPrice) / parseFloat(priceToBeat)
 
@@ -78,5 +78,5 @@ const checkThrowItAwaySignal = (prozentUnterschied) => {
 }
 
 module.exports = {
-    checkSellSignalMulti,
+    checkSellSignal,
 }
