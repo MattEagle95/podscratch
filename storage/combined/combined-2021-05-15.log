@@ -174,3 +174,73 @@ Error: ENOENT: no such file or directory, open '../storage/db/db.json'
 [2021-05-15 20:43:56] [32minfo[39m: buy banker done duration: 2ms
 [2021-05-15 20:43:56] [31merror[39m: buySignal is not defined
 [2021-05-15 20:43:56] [32minfo[39m: update - av: 100.13 € t: 100.13 € - av_coin: 0 BTC t_coin: 0 BTC - BTC/EUR 39393.07 € -  duration: 2195ms
+[2021-05-15 21:19:07] [32minfo[39m: 
+  __  __                          ____       _       _            
+ |  \/  | ___  _ __   ___ _   _  |  _ \ _ __(_)_ __ | |_ ___ _ __ 
+ | |\/| |/ _ \| '_ \ / _ \ | | | | |_) | '__| | '_ \| __/ _ \ '__|
+ | |  | | (_) | | | |  __/ |_| | |  __/| |  | | | | | ||  __/ |   
+ |_|  |_|\___/|_| |_|\___|\__, | |_|   |_|  |_|_| |_|\__\___|_|   
+                          |___/                                   
+[2021-05-15 21:19:07] [32minfo[39m: version 1.0.0
+[2021-05-15 21:19:09] [32minfo[39m: ✅ api online
+[2021-05-15 21:19:09] [32minfo[39m: socket for visualization connected
+[2021-05-15 21:19:10] [32minfo[39m: ✅ money for trading available (100.128395096041 €)
+[2021-05-15 21:19:11] [32minfo[39m: ----- exchange data -----
+[2021-05-15 21:19:11] [32minfo[39m: 
+> money total      100.13 €
+> money available  100.13 €
+> coins total      0 BTC
+> coins available  0 BTC
+----------
+> orders           2
+> open orders      0
+> closed orders    0
+> canceled orders  0
+[2021-05-15 21:19:11] [32minfo[39m: update interval: 10000ms
+[2021-05-15 21:19:23] [32minfo[39m: sell banker done duration: 1ms
+[2021-05-15 21:19:23] [32minfo[39m: buy signal: not enough data
+[2021-05-15 21:19:23] [32minfo[39m: buy banker done duration: 1ms
+[2021-05-15 21:22:52] [32minfo[39m: 
+  __  __                          ____       _       _            
+ |  \/  | ___  _ __   ___ _   _  |  _ \ _ __(_)_ __ | |_ ___ _ __ 
+ | |\/| |/ _ \| '_ \ / _ \ | | | | |_) | '__| | '_ \| __/ _ \ '__|
+ | |  | | (_) | | | |  __/ |_| | |  __/| |  | | | | | ||  __/ |   
+ |_|  |_|\___/|_| |_|\___|\__, | |_|   |_|  |_|_| |_|\__\___|_|   
+                          |___/                                   
+[2021-05-15 21:22:52] [32minfo[39m: version 1.0.0
+[2021-05-15 21:22:52] [32minfo[39m: socket for visualization connected
+[2021-05-15 21:22:54] [32minfo[39m: ✅ api online
+[2021-05-15 21:22:55] [32minfo[39m: ✅ money for trading available (100.128395096041 €)
+[2021-05-15 21:22:56] [32minfo[39m: ----- exchange data -----
+[2021-05-15 21:22:56] [32minfo[39m: 
+> money total      100.13 €
+> money available  100.13 €
+> coins total      0 BTC
+> coins available  0 BTC
+----------
+> orders           2
+> open orders      0
+> closed orders    0
+> canceled orders  0
+[2021-05-15 21:22:56] [32minfo[39m: update interval: 10000ms
+[2021-05-15 21:23:07] [32minfo[39m: sell banker done duration: 2ms
+[2021-05-15 21:23:07] [32minfo[39m: buy signal: not enough data
+[2021-05-15 21:23:07] [32minfo[39m: buy banker done duration: 2ms
+[2021-05-15 21:23:07] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 38842.66 € duration: 1195ms
+[2021-05-15 21:23:18] [32minfo[39m: sell banker done duration: 1ms
+[2021-05-15 21:23:18] [32minfo[39m: buy signal: not enough data
+[2021-05-15 21:23:18] [32minfo[39m: buy banker done duration: 1ms
+[2021-05-15 21:23:18] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 38852.43 € duration: 1226ms
+[2021-05-15 21:23:27] [32minfo[39m: sell banker done duration: 1ms
+[2021-05-15 21:23:27] [32minfo[39m: buy signal: not enough data
+[2021-05-15 21:23:27] [32minfo[39m: buy banker done duration: 1ms
+[2021-05-15 21:23:27] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 38801.58 € duration: 1187ms
+[2021-05-15 21:23:38] [32minfo[39m: sell banker done duration: 1ms
+[2021-05-15 21:23:38] [32minfo[39m: buy signal: not enough data
+[2021-05-15 21:23:38] [32minfo[39m: buy banker done duration: 1ms
+[2021-05-15 21:23:38] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 38849.83 € duration: 1228ms
+[2021-05-15 21:23:40] [32minfo[39m: socket for visualization connected
+[2021-05-15 21:23:48] [32minfo[39m: sell banker done duration: 2ms
+[2021-05-15 21:23:48] [32minfo[39m: buy signal: not enough data
+[2021-05-15 21:23:48] [32minfo[39m: buy banker done duration: 1ms
+[2021-05-15 21:23:48] [32minfo[39m: update - freeMoney: 100.13 € totalMoney: 100.13 € - freeCoin: 0 BTC totalCoin: 0 BTC - BTC/EUR 38859.32 € duration: 1177ms

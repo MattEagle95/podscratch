@@ -6,7 +6,6 @@ const config = require('../config')
 const buyBanker = require('./banker/buyBanker')
 const sellBanker = require('./banker/sellBanker')
 const ccxt = require('ccxt')
-const logger = require('./logger')
 const table = require('text-table')
 const packageJson = require('../package.json')
 const low = require('lowdb')
@@ -118,10 +117,14 @@ httpServer.listen(3000)
             try {
                 // UPDATE PREIS
                 const tickerData = await exchange.fetchTicker(config.COIN_CURRENCY)
-                PRICE_DATA.push(tickerData.bid)
+                PRICE_DATA.push({
+                    bid: tickerData.bid,
+                    ask: tickerData.ask
+                })
                 PRICE_DATA_HISTORY.push({
                     timestamp: tickerData.timestamp,
-                    price: tickerData.bid,
+                    bid: tickerData.bid,
+                    ask: tickerData.ask
                 })
 
                 if (PRICE_DATA.length > config.SIGNALIZER.MIN_PRICE_DATA) {
@@ -133,7 +136,7 @@ httpServer.listen(3000)
                 BALANCE_DATA = balance
 
                 // SELLING
-                await sellBanker.run(PRICE_DATA[PRICE_DATA.length - 1])
+                await sellBanker.run(PRICE_DATA[PRICE_DATA.length - 1].ask)
 
                 // TODO: RELOAD VON BALANCE
 
@@ -154,7 +157,8 @@ httpServer.listen(3000)
                         },
                         priceData: {
                             timestamp: tickerData.timestamp,
-                            price: tickerData.bid,
+                            bid: tickerData.bid,
+                            ask: tickerData.ask
                         },
                         orders: db.get('orders')
                     })
@@ -167,10 +171,7 @@ httpServer.listen(3000)
                 message: `update - freeMoney: ${BALANCE_DATA.free[config.CURRENCY].toFixed(2)} ${config.CURRENCY_SYMBOL
                     } totalMoney: ${BALANCE_DATA.total[config.CURRENCY].toFixed(2)} ${config.CURRENCY_SYMBOL
                     } - freeCoin: ${BALANCE_DATA.free[config.COIN]} ${config.COIN} totalCoin: ${BALANCE_DATA.total[config.COIN]} ${config.COIN
-                    } - ${config.COIN_CURRENCY} ${tickerData
-                        ? `${tickerData.bid} ${config.CURRENCY_SYMBOL}`
-                        : 'undefined'
-                    } - ${addToMsg}`,
+                    } - ${config.COIN_CURRENCY} ${PRICE_DATA_HISTORY[PRICE_DATA_HISTORY.length - 1].bid} ${config.CURRENCY_SYMBOL}`
             })
         }, config.UPDATE.INTERVAL_MS)
     })()

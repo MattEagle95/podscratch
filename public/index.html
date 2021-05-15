@@ -262,7 +262,7 @@
 
             socket.on('setup', function (value) {
                 let newChartData = []
-                value.coinbase.forEach((element) => {
+                value.priceData.forEach((element) => {
                     let d = new Date(element.timestamp)
                     d.setHours(d.getHours() + 2)
 
@@ -281,7 +281,7 @@
 
                 let newMarkers = []
                 for (
-                    let index = value.buyEvents.length - 1;
+                    let index = value.orders.length - 1;
                     index >= 0;
                     index--
                 ) {

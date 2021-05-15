@@ -15,11 +15,12 @@ const buySignal = (priceData, SOCKETS) => {
     let startPriceOfRising = 0
     let lastTicksHigh = 0
 
-    priceData.forEach((price) => {
+    priceData.forEach((priceDataElement) => {
+        let price = priceDataElement.bid
         if (lastPrice !== 0) {
             const changePercentage = -parseFloat(
                 (parseFloat(lastPrice) - parseFloat(price)) /
-                    parseFloat(lastPrice)
+                parseFloat(lastPrice)
             )
 
             if (changePercentage > 0 && currentState === 'steigend') {
@@ -61,7 +62,7 @@ const buySignal = (priceData, SOCKETS) => {
                     stateLowTriggered &&
                     ticksLowAfterStateLowTriggered === 0 &&
                     currentChangePercentage >
-                        config.SIGNALIZER.BUY.CAN_HAVE_LOW_PERCENTAGE_BETWEEN
+                    config.SIGNALIZER.BUY.CAN_HAVE_LOW_PERCENTAGE_BETWEEN
                 ) {
                     ticksLowAfterStateLowTriggered++
                 } else {
@@ -93,7 +94,7 @@ const buySignal = (priceData, SOCKETS) => {
                 stateLowTriggered &&
                 currentState === 'steigend' &&
                 currentChangePercentage >
-                    config.SIGNALIZER.BUY.NEEDS_PERCENTAGE,
+                config.SIGNALIZER.BUY.NEEDS_PERCENTAGE,
             currentState: currentState,
             stateTicks: stateTicks,
             currentChangePercentage: currentChangePercentage.toFixed(4),
