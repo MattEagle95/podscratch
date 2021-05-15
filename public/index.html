@@ -173,29 +173,36 @@
         </div>
     </div>
 
-    <script>
-        (function () {
-            const str = "MoneyPrinter.print(🖨🤑)"
-            const arr = str.split('')
-            let index = 0;
-            const interval = setInterval(() => {
-                const txt = document.getElementById('logoText');
-                txt.innerText += arr[index];
-
-                index++;
-                if (index === arr.length) {
-                    clearInterval(interval);
-                }
-            }, 80);
-        })();
-    </script>
-
     <script src="https://cdn.socket.io/4.0.2/socket.io.min.js"
         integrity="sha384-Bkt72xz1toXkj/oEiOgkQwWKbvNYxTNWMqdon3ejP6gwq53zSo48nW5xACmeDV0F"
         crossorigin="anonymous"></script>
 
     <script src="https://unpkg.com/lightweight-charts/dist/lightweight-charts.standalone.production.js"></script>
     <script>
+        const typewriter = (str, elementId) => {
+            const arr = str.split('')
+            let index = 0;
+            let pre = true;
+            const interval = setInterval(() => {
+                const txt = document.getElementById(elementId);
+                if (pre) {
+                    txt.innerText += '💲';
+                } else {
+                    txt.innerText = txt.innerText.slice(0, txt.innerText.length - 2) + arr[index];
+                    index++;
+                }
+
+                pre = !pre
+                if (index === arr.length) {
+                    clearInterval(interval);
+                }
+            }, 60);
+        }
+
+        (function () {
+            typewriter('MoneyPrinter.print()', 'logoText')
+        })();
+
         const chartDiv = document.getElementById('chartDiv')
         const chart = LightweightCharts.createChart(chartDiv, {
             width: chartDiv.width,
@@ -308,15 +315,17 @@
                 const priceDifference = (parseFloat(data.priceData[data.priceData.length - 1].ask) / neededChartPrice) - parseFloat(1)
                 var newCellDifference = newRow.insertCell()
                 var buySpan = document.createElement('span')
+                buySpan.setAttribute("id", 'sellDataTable_priceDifference_' + order.id);
                 if (priceDifference >= 1) {
                     buySpan.setAttribute('class', 'text-success')
                 } else {
                     buySpan.setAttribute('class', 'text-danger')
                 }
-                buySpan.textContent = `${priceDifference.toFixed(4)} %`
-
+                buySpan.textContent = ``
                 newCellDifference.setAttribute('class', 'text-right')
                 newCellDifference.appendChild(buySpan)
+
+                typewriter(`${priceDifference.toFixed(4)} %`, 'sellDataTable_priceDifference_' + order.id)
 
                 priceLines.push(lineSeries.createPriceLine({
                     price: neededChartPrice,
