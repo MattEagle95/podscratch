@@ -1,0 +1,61 @@
+html,
+body {
+    height: 100%;
+    font-family: 'Roboto', sans-serif;
+}
+
+.bg-black {
+    background: black;
+}
+
+.table > :not(caption) > * > * {
+    padding: unset;
+    background-color: unset;
+    border-bottom-width: unset;
+    box-shadow: unset;
+    border-style: unset;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.logo {
+    opacity: 1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    animation: fadeOut 3s forwards;
+    animation-delay: 2s;
+    font-size: 24px;
+}
+
+.logo div {
+    position: relative;
+    top: -50%;
+    left: -50%;
+}
+
+.app {
+    opacity: 0;
+    animation: fadeIn 3s forwards;
+    animation-delay: 4s;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}

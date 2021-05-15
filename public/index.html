@@ -13,183 +13,182 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
 
-    <style>
-        html,
-        body {
-            height: 100%;
-            font-family: 'Roboto', sans-serif;
-        }
-
-        .bg-black {
-            background: black;
-        }
-
-        .table> :not(caption)>*>* {
-            padding: unset;
-            background-color: unset;
-            border-bottom-width: unset;
-            box-shadow: unset;
-            border-style: unset;
-        }
-
-        .text-right {
-            text-align: right;
-        }
-    </style>
-
+    <link rel="stylesheet" type="text/css" href="main.css">
     <title>MoneyPrinter 🖨🤑</title>
 </head>
 
 <body class="bg-black text-white">
-    <nav class="navbar navbar-dark bg-black mb-4">
-        <div class="
+    <div class="logo">
+        <div id="logoText"></div>
+    </div>
+    <div class="app">
+        <nav class="navbar navbar-dark bg-black mb-4">
+            <div class="
                     container
                     d-flex
                     justify-content-between
                     align-items-center
                 ">
-            <a class="navbar-brand" href="#">MoneyPrinterBOT 🖨🤑</a>
-            <div class="d-flex justify-content-end">
-                <div class="ml-2">
-                    Last update: <span id="lastUpdate"></span>
+                <a class="navbar-brand" href="#">MoneyPrinterBOT 🖨🤑</a>
+                <div class="d-flex justify-content-end">
+                    <div class="ml-2">
+                        Last update: <span id="lastUpdate"></span>
+                    </div>
                 </div>
             </div>
-        </div>
-    </nav>
+        </nav>
 
-    <div class="container">
-        <div class="row">
-            <div class="col-9">
-                <h2 class="mt-4">BTC/USD Chart</h2>
-                <div id="chartDiv" style="width: 100%; height: 100%"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-9">
+                    <h2 class="mt-4">BTC/USD Chart</h2>
+                    <div id="chartDiv" style="width: 100%; height: 100%"></div>
+                </div>
+
+                <div class="col-3">
+                    <h2 class="mt-4">Balance</h2>
+                    <table class="text-muted" style="width: 100%">
+                        <tbody>
+                            <tr>
+                                <td>Current Balance</td>
+                                <td class="text-right d-flex justify-content-end">
+                                    <div id="currentBalance"></div> €
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Current Coins</td>
+                                <td class="text-right d-flex justify-content-end">
+                                    <div id="currentCoins"></div> BTC
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+
+                    <h2 class="mt-4">Current State</h2>
+                    <table class="text-muted" style="width: 100%">
+                        <tbody>
+                            <tr>
+                                <td>bid</td>
+                                <td class="text-right d-flex justify-content-end">
+                                    <div id="currentState_bid"></div> €
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>ask</td>
+                                <td class="text-right d-flex justify-content-end">
+                                    <div id="currentState_ask"></div> €
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>currentState</td>
+                                <td class="text-right d-flex justify-content-end">
+                                    <div id="currentState"></div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>stateTicks</td>
+                                <td class="text-right d-flex justify-content-end">
+                                    <div id="currentState_ticks"></div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>currentChangePercentage</td>
+                                <td class="text-right d-flex justify-content-end">
+                                    <div id="currentState_currentChangePercentage"></div> %
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h2 class="mt-4">
+                        <span class="text-success">Buy</span> Signal State
+                    </h2>
+                    <table class="text-muted" style="width: 100%">
+                        <tbody>
+                            <tr>
+                                <td>stateLowTriggered</td>
+                                <td class="text-right d-flex justify-content-end">
+                                    <div id="buySignal_stateLowTriggered"></div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>needsTicksHighTriggered</td>
+                                <td class="text-right d-flex justify-content-end">
+                                    <div id="buySignal_needsTicksHighTriggered"></div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>needsPercentageTriggered</td>
+                                <td class="text-right d-flex justify-content-end">
+                                    <div id="buySignal_needsPercentageTriggered"></div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>-----</td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>ticksLowAfterStateLowTriggered</td>
+                                <td class="text-right d-flex justify-content-end">
+                                    <div id="buySignal_ticksLowAfterStateLowTriggered"></div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>startPriceOfRising</td>
+                                <td class="text-right d-flex justify-content-end">
+                                    <div id="buySignal_startPriceOfRising"></div> €
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
 
-            <div class="col-3">
-                <h2 class="mt-4">Balance</h2>
-                <table class="text-muted" style="width: 100%">
-                    <tbody>
-                        <tr>
-                            <td>Current Balance</td>
-                            <td class="text-right d-flex justify-content-end">
-                                <div id="currentBalance"></div> €
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>Current Coins</td>
-                            <td class="text-right d-flex justify-content-end">
-                                <div id="currentCoins"></div> BTC
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
+            <h2 class="mt-4">Waiting for <span class="text-danger">Sell</span></h2>
+            <table id="sellDataTabel" class="table table-dark table-striped table-hover">
+                <thead>
+                    <th>STATUS</th>
+                    <th>BOUGHT DATE</th>
+                    <th class="text-right">AMOUNT</th>
+                    <th class="text-right">PRICE</th>
+                    <th class="text-right">CHART PRICE</th>
+                    <th class="text-right">NEED MIN PRICE</th>
+                    <th class="text-right">DIFFERENCE</th>
+                </thead>
+                <tbody></tbody>
+            </table>
 
-
-                <h2 class="mt-4">Current State</h2>
-                <table class="text-muted" style="width: 100%">
-                    <tbody>
-                        <tr>
-                            <td>bid</td>
-                            <td class="text-right d-flex justify-content-end">
-                                <div id="currentState_bid"></div> €
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>ask</td>
-                            <td class="text-right d-flex justify-content-end">
-                                <div id="currentState_ask"></div> €
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>currentState</td>
-                            <td class="text-right d-flex justify-content-end">
-                                <div id="currentState"></div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>stateTicks</td>
-                            <td class="text-right d-flex justify-content-end">
-                                <div id="currentState_ticks"></div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>currentChangePercentage</td>
-                            <td class="text-right d-flex justify-content-end">
-                                <div id="currentState_currentChangePercentage"></div> %
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-
-                <h2 class="mt-4">
-                    <span class="text-success">Buy</span> Signal State
-                </h2>
-                <table class="text-muted" style="width: 100%">
-                    <tbody>
-                        <tr>
-                            <td>stateLowTriggered</td>
-                            <td class="text-right d-flex justify-content-end">
-                                <div id="buySignal_stateLowTriggered"></div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>needsTicksHighTriggered</td>
-                            <td class="text-right d-flex justify-content-end">
-                                <div id="buySignal_needsTicksHighTriggered"></div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>needsPercentageTriggered</td>
-                            <td class="text-right d-flex justify-content-end">
-                                <div id="buySignal_needsPercentageTriggered"></div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>-----</td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td>ticksLowAfterStateLowTriggered</td>
-                            <td class="text-right d-flex justify-content-end">
-                                <div id="buySignal_ticksLowAfterStateLowTriggered"></div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>startPriceOfRising</td>
-                            <td class="text-right d-flex justify-content-end">
-                                <div id="buySignal_startPriceOfRising"></div> €
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+            <h2 class="mt-4">Last events</h2>
+            <table id="lastEventsTable" class="table table-dark table-striped table-hover">
+                <thead>
+                    <th>STATUS</th>
+                    <th>DATE</th>
+                    <th class="text-right">AMOUNT</th>
+                    <th class="text-right">PRICE</th>
+                    <th class="text-right">CHART PRICE</th>
+                </thead>
+                <tbody></tbody>
+            </table>
         </div>
-
-        <h2 class="mt-4">Waiting for <span class="text-danger">Sell</span></h2>
-        <table id="sellDataTabel" class="table table-dark table-striped table-hover">
-            <thead>
-                <th>STATUS</th>
-                <th>BOUGHT DATE</th>
-                <th class="text-right">AMOUNT</th>
-                <th class="text-right">PRICE</th>
-                <th class="text-right">CHART PRICE</th>
-                <th class="text-right">NEED MIN PRICE</th>
-                <th class="text-right">DIFFERENCE</th>
-            </thead>
-            <tbody></tbody>
-        </table>
-
-        <h2 class="mt-4">Last events</h2>
-        <table id="lastEventsTable" class="table table-dark table-striped table-hover">
-            <thead>
-                <th>STATUS</th>
-                <th>DATE</th>
-                <th class="text-right">AMOUNT</th>
-                <th class="text-right">PRICE</th>
-                <th class="text-right">CHART PRICE</th>
-            </thead>
-            <tbody></tbody>
-        </table>
     </div>
+
+    <script>
+        (function () {
+            const str = "MoneyPrinter.print(🖨🤑)"
+            const arr = str.split('')
+            let index = 0;
+            const interval = setInterval(() => {
+                const txt = document.getElementById('logoText');
+                txt.innerText += arr[index];
+
+                index++;
+                if (index === arr.length) {
+                    clearInterval(interval);
+                }
+            }, 80);
+        })();
+    </script>
 
     <script src="https://cdn.socket.io/4.0.2/socket.io.min.js"
         integrity="sha384-Bkt72xz1toXkj/oEiOgkQwWKbvNYxTNWMqdon3ejP6gwq53zSo48nW5xACmeDV0F"
