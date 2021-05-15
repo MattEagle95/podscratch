@@ -51,10 +51,10 @@ const run = (currentPrice) => {
 
 const sellOrder = (order) => {
     try {
-        await exchange.createMarketSellOrder(config.COIN_CURRENCY, order.amount)
+        const sellOrderData = await exchange.createMarketSellOrder(config.COIN_CURRENCY, order.amount)
 
         const trades = await exchange.fetchMyTrades(config.COIN_CURRENCY)
-        const sellTrade = trades.find((trade) => trade.order === order.id)
+        const sellTrade = trades.find((trade) => trade.order === sellOrderData.id)
 
         logger.info(
             `${sellTrade.order} - ${sellTrade.cost} ${config.COIN} SOLD FOR ${sellTrade.amount} ${config.CURRENCY} AT PRICE ${sellTrade.price} ${config.CURRENCY}`
