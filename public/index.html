@@ -31,7 +31,10 @@
                 ">
                 <a class="navbar-brand" href="#">MoneyPrinterBOT 🖨🤑</a>
                 <div class="d-flex justify-content-end">
-                    <div class="ml-2">
+                    <div class="mx-2">
+                        Gewinn: <span id="totalBalance"></span>
+                    </div>
+                    <div class="mx-2">
                         Last update: <span id="lastUpdate"></span>
                     </div>
                 </div>
@@ -53,6 +56,12 @@
                                 <td>Current Balance</td>
                                 <td class="text-right d-flex justify-content-end">
                                     <div id="currentBalance"></div> €
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Free Balance</td>
+                                <td class="text-right d-flex justify-content-end">
+                                    <div id="freeBalance"></div> €
                                 </td>
                             </tr>
                             <tr>
@@ -196,7 +205,7 @@
                 if (index === arr.length) {
                     clearInterval(interval);
                 }
-            }, 60);
+            }, 65);
         }
 
         (function () {
@@ -405,12 +414,36 @@
             let lastUpdateDate = new Date()
             document.getElementById(
                 'lastUpdate'
-            ).innerText = `${lastUpdateDate.getHours()}:${lastUpdateDate.getMinutes()}:${lastUpdateDate.getUTCSeconds()}`
+            ).innerText = ``
+
+            typewriter(`${lastUpdateDate.getHours()}:${lastUpdateDate.getMinutes()}:${lastUpdateDate.getUTCSeconds()}`, 'lastUpdate')
+
+            document.getElementById(
+                'totalBalance'
+            ).innerText = ``
+
+            const balanceDifference = (parseFloat(data.balance.totalMoney) / 100).toFixed(2)
+            let prefix = '+'
+            if (balanceDifference >= 1) {
+                document.getElementById(
+                    'totalBalance'
+                ).className = 'text-success'
+            } else {
+                prefix = '-'
+                document.getElementById(
+                    'totalBalance'
+                ).className = 'text-danger'
+            }
+            typewriter(`${prefix}${((parseFloat(data.balance.totalMoney) / 100) - parseFloat(1)).toFixed(2)} %`, 'totalBalance')
 
             if (data.balance.totalMoney) {
                 document.getElementById(
                     'currentBalance'
                 ).innerText = `${parseFloat(data.balance.totalMoney).toFixed(2)}`
+
+                document.getElementById(
+                    'freeBalance'
+                ).innerText = `${parseFloat(data.balance.freeMoney).toFixed(2)}`
 
                 document.getElementById(
                     'currentCoins'
