@@ -1,14 +1,29 @@
 {
   "orders": [
     {
-      "id": 0.35607764682061593,
+      "id": 0.35010893733048,
       "status": "buy",
       "buyInfo": {
-        "id": 0.03605705965338357,
-        "timestamp": 1621184172931,
+        "id": 0.4903725822332565,
+        "timestamp": 1621189463647,
         "amount": 0.00125,
         "price": 5,
-        "chartPrice": 38995.92
+        "chartPrice": 38378.44
+      },
+      "sellInfo": null,
+      "lowLimit": 1.014,
+      "lowLimitHit": false,
+      "nextLimit": 1.018
+    },
+    {
+      "id": 0.9245776791954172,
+      "status": "buy",
+      "buyInfo": {
+        "id": 0.6881697994525227,
+        "timestamp": 1621191139381,
+        "amount": 0.00125,
+        "price": 5,
+        "chartPrice": 38099.67
       },
       "sellInfo": null,
       "lowLimit": 1.014,

@@ -4,21 +4,7 @@ const FileSync = require('lowdb/adapters/FileSync')
 const { checkBuySignal } = require('../signalizer/buySignal')
 const config = require('../../config.json')
 
-const adapter = new FileSync('./storage/db/db.json')
-const db = low(adapter)
-
-/*
-{
-    id,
-    timestamp,
-    amount,
-    lowLimit,
-    nextLimit
-}
-*/
-db.defaults({ orders: [] }).write()
-
-const run = async (availableMoney, priceData, lastBoughtTicks, sockets) => {
+const run = async (availableMoney, priceData, lastBoughtTicks, sockets, db) => {
     const profiler = logger.startTimer()
     logger.debug('running buy banker')
 
@@ -62,6 +48,7 @@ const run = async (availableMoney, priceData, lastBoughtTicks, sockets) => {
                     nextLimit: parseFloat(config.SIGNALIZER.SELL.LOW_LIMIT) + parseFloat(config.SIGNALIZER.SELL.NEXT_LIMIT)
                 })
                 .write()
+
             lastBoughtTicks = 0
             logger.info('buy-signal: I WOULD HAVE BOUGHT THAT!')
         } else {

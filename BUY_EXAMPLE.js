@@ -20,13 +20,13 @@
     console.log('exchangeRate: ' + exchangeRate + ' €')
     console.log('amountToBuy: ' + amountToBuy + ' BTC')
 
-    // try {
-    //     console.log(await exchange.createMarketBuyOrder('BTC/EUR', amountToBuy))
+    try {
+        console.log(await exchange.createMarketBuyOrder('BTC/EUR', amountToBuy))
 
-    //     console.log(await exchange.fetchMyTrades('BTC/EUR'))
-    // } catch (err) {
-    //     console.error(err)
-    // }
+        console.log(await exchange.fetchMyTrades('BTC/EUR'))
+    } catch (err) {
+        console.error(err)
+    }
 })()
 
 

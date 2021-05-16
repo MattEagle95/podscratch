@@ -4,12 +4,7 @@ const FileSync = require('lowdb/adapters/FileSync')
 const { checkSellSignal } = require('../signalizer/sellSignal')
 const config = require('../../config.json')
 
-const adapter = new FileSync('./storage/db/db.json')
-const db = low(adapter)
-
-db.defaults({ orders: [] }).write()
-
-const run = async (currentPrice) => {
+const run = async (currentPrice, db) => {
     const profiler = logger.startTimer()
     logger.debug('running sell banker')
 

@@ -70,7 +70,7 @@ const buySignal = (priceData, SOCKETS) => {
 
             needsHighPercentageMin = changePercentageLastLowestPrice > config.SIGNALIZER.BUY.NEEDS_PERCENTAGE_HIGH_MIN
             needsHighPercentageMax = changePercentageLastLowestPrice > config.SIGNALIZER.BUY.NEEDS_PERCENTAGE_HIGH_MAX
-            if (needsHighPercentageMax) {
+            if (needsHighPercentageMax && (currentState === 'fallend' || stateTicks > 1) ) {
                 lastHighestPrice = price
                 lastLowestPrice = price
             }

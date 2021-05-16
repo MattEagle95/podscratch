@@ -21,7 +21,7 @@ const io = require('socket.io')(httpServer, {
     }
 })
 
-const adapter = new FileSync('./storage/db/db.json')
+const adapter = new FileSync('storage/db/db.json')
 const db = low(adapter)
 
 let SOCKETS = []
@@ -45,7 +45,9 @@ io.on('connection', (socket) => {
     socket.emit('setup', {
         balance: balanceData,
         priceData: PRICE_DATA_HISTORY,
-        orders: db.get('orders').value()
+        orders: db.get('orders').value(),
+        lastBoughtTicks: LAST_BOUGHT_TICKS,
+        lastBoughtTicksNeeded: config.SIGNALIZER.BUY.NEEDS_MIN_TICKS_FOR_NEXT_BUY
     })
 })
 
@@ -142,16 +144,17 @@ httpServer.listen(3000)
                 BALANCE_DATA = balance
 
                 // SELLING
-                await sellBanker.run(PRICE_DATA[PRICE_DATA.length - 1].ask)
+                await sellBanker.run(PRICE_DATA[PRICE_DATA.length - 1].ask, db)
 
                 // TODO: RELOAD VON BALANCE
 
                 // BUYING
-                const { lastBoughtTicks } = await buyBanker.run(BALANCE_DATA.free[config.CURRENCY].toFixed(2), PRICE_DATA, LAST_BOUGHT_TICKS, SOCKETS)
+                const { lastBoughtTicks } = await buyBanker.run(BALANCE_DATA.free[config.CURRENCY].toFixed(2), PRICE_DATA, LAST_BOUGHT_TICKS, SOCKETS, db)
                 LAST_BOUGHT_TICKS = lastBoughtTicks
 
                 // SEND UPDATE
                 SOCKETS.forEach((socket) => {
+                    const orders = db.get('orders').value()
                     socket.emit('update', {
                         balance: {
                             totalMoney:
@@ -162,7 +165,9 @@ httpServer.listen(3000)
                             freeCoins: BALANCE_DATA.free[config.COIN],
                         },
                         priceData: PRICE_DATA_HISTORY,
-                        orders: db.get('orders').value()
+                        orders: orders,
+                        lastBoughtTicks: LAST_BOUGHT_TICKS,
+                        lastBoughtTicksNeeded: config.SIGNALIZER.BUY.NEEDS_MIN_TICKS_FOR_NEXT_BUY
                     })
                 })
             } catch (error) {
