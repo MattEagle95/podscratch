@@ -32,11 +32,11 @@ const buySignal = (priceData, SOCKETS) => {
         )
         const changePercentageLastHighestPrice = -parseFloat(
             (parseFloat(lastHighestPrice) - parseFloat(price)) /
-            parseFloat(lastPrice)
+            parseFloat(lastHighestPrice)
         )
         const changePercentageLastLowestPrice = -parseFloat(
             (parseFloat(lastLowestPrice) - parseFloat(price)) /
-            parseFloat(lastPrice)
+            parseFloat(lastLowestPrice)
         )
 
         if (lastPrice !== 0) {
@@ -51,8 +51,6 @@ const buySignal = (priceData, SOCKETS) => {
                 }
 
                 // BUY BEDINGUNG
-                needsHighPercentageMin = changePercentageLastLowestPrice > config.SIGNALIZER.BUY.NEEDS_PERCENTAGE_HIGH_MIN
-                needsHighPercentageMax = changePercentageLastLowestPrice > config.SIGNALIZER.BUY.NEEDS_PERCENTAGE_HIGH_MAX
                 currentState = 'steigend'
             }
 
@@ -68,6 +66,13 @@ const buySignal = (priceData, SOCKETS) => {
 
                 needsLowPercentageTriggered = changePercentageLastHighestPrice < config.SIGNALIZER.BUY.NEEDS_PERCENTAGE_LOW
                 currentState = 'fallend'
+            }
+
+            needsHighPercentageMin = changePercentageLastLowestPrice > config.SIGNALIZER.BUY.NEEDS_PERCENTAGE_HIGH_MIN
+            needsHighPercentageMax = changePercentageLastLowestPrice > config.SIGNALIZER.BUY.NEEDS_PERCENTAGE_HIGH_MAX
+            if (needsHighPercentageMax) {
+                lastHighestPrice = price
+                lastLowestPrice = price
             }
 
             stateTicks++;

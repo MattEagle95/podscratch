@@ -22,20 +22,33 @@ const run = async (currentPrice) => {
             lowLimit,
             lowLimitHit,
             nextLimit
-        } = checkSellSignal(order.amount, currentPrice, order.lowLimit, order.lowLimitHit, order.nextLimit)
+        } = checkSellSignal(order.buyInfo.amount, currentPrice, order.lowLimit, order.lowLimitHit, order.nextLimit)
         if (status === true) {
             logger.info(`${order.id} SELL-SIGNAL)`)
-            const sellTrade = await sellOrder(order)
-            db.get('orders')
+            // const sellTrade = await sellOrder(order)
+            // db.get('orders')
+            //     .find({ id: order.id })
+            //     .assign({
+            //         status: 'sell',
+            //         sellInfo: {
+            //             id: sellTrade.id,
+            //             timestamp: sellTrade.timestamp,
+            //             amount: sellTrade.amount,
+            //             price: sellTrade.cost,
+            //             chartPrice: sellTrade.price,
+            //         },
+            //     })
+            //     .write()
+                db.get('orders')
                 .find({ id: order.id })
                 .assign({
                     status: 'sell',
                     sellInfo: {
-                        id: sellTrade.id,
-                        timestamp: sellTrade.timestamp,
-                        amount: sellTrade.amount,
-                        price: sellTrade.cost,
-                        chartPrice: sellTrade.price,
+                        id: Math.random(),
+                        timestamp: Date.now(),
+                        amount: 0.00125,
+                        price: 5,
+                        chartPrice: 12345,
                     },
                 })
                 .write()

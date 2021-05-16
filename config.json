@@ -12,8 +12,8 @@
     "SIGNALIZER": {
         "MIN_PRICE_DATA": 10,
         "BUY": {
-            "NEEDS_PERCENTAGE_LOW": -0.0015,
-            "NEEDS_PERCENTAGE_HIGH_MIN": 0.0018,
+            "NEEDS_PERCENTAGE_LOW": -0.0010,
+            "NEEDS_PERCENTAGE_HIGH_MIN": 0.0010,
             "NEEDS_PERCENTAGE_HIGH_MAX": 0.0030,
             "NEEDS_MIN_TICKS_FOR_NEXT_BUY": 50
         },

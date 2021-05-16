@@ -45,6 +45,23 @@ const run = async (availableMoney, priceData, lastBoughtTicks, sockets) => {
             //         nextLimit: parseFloat(config.SIGNALIZER.SELL.LOW_LIMIT) + parseFloat(config.SIGNALIZER.SELL.NEXT_LIMIT)
             //     })
             //     .write()
+            db.get('orders')
+                .push({
+                    id: Math.random(),
+                    status: 'buy',
+                    buyInfo: {
+                        id: Math.random(),
+                        timestamp: Date.now(),
+                        amount: 0.00125,
+                        price: 5,
+                        chartPrice: priceData[priceData.length - 1].bid,
+                    },
+                    sellInfo: null,
+                    lowLimit: config.SIGNALIZER.SELL.LOW_LIMIT,
+                    lowLimitHit: false,
+                    nextLimit: parseFloat(config.SIGNALIZER.SELL.LOW_LIMIT) + parseFloat(config.SIGNALIZER.SELL.NEXT_LIMIT)
+                })
+                .write()
             lastBoughtTicks = 0
             logger.info('buy-signal: I WOULD HAVE BOUGHT THAT!')
         } else {
