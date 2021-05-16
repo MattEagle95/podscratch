@@ -45,7 +45,7 @@ io.on('connection', (socket) => {
     socket.emit('setup', {
         balance: balanceData,
         priceData: PRICE_DATA_HISTORY,
-        orders: db.get('orders')
+        orders: db.get('orders').value()
     })
 })
 
@@ -162,7 +162,7 @@ httpServer.listen(3000)
                             freeCoins: BALANCE_DATA.free[config.COIN],
                         },
                         priceData: PRICE_DATA_HISTORY,
-                        orders: db.get('orders')
+                        orders: db.get('orders').value()
                     })
                 })
             } catch (error) {
