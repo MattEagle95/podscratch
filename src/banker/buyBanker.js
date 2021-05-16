@@ -27,24 +27,24 @@ const run = async (availableMoney, priceData, lastBoughtTicks, sockets) => {
         lastBoughtTicks++
     } else {
         if (checkBuySignal(priceData, lastBoughtTicks, sockets)) {
-            const buyTrade = await buyOrder(config.BANKER.BUY.BUY_MONEY_AMOUNT)
-            db.get('orders')
-                .push({
-                    id: buyTrade.id,
-                    status: 'buy',
-                    buyInfo: {
-                        id: buyTrade.id,
-                        timestamp: buyTrade.timestamp,
-                        amount: buyTrade.amount,
-                        price: buyTrade.cost,
-                        chartPrice: buyTrade.price,
-                    },
-                    sellInfo: null,
-                    lowLimit: config.SIGNALIZER.SELL.LOW_LIMIT,
-                    lowLimitHit: false,
-                    nextLimit: parseFloat(config.SIGNALIZER.SELL.LOW_LIMIT) + parseFloat(config.SIGNALIZER.SELL.NEXT_LIMIT)
-                })
-                .write()
+            // const buyTrade = await buyOrder(config.BANKER.BUY.BUY_MONEY_AMOUNT)
+            // db.get('orders')
+            //     .push({
+            //         id: buyTrade.id,
+            //         status: 'buy',
+            //         buyInfo: {
+            //             id: buyTrade.id,
+            //             timestamp: buyTrade.timestamp,
+            //             amount: buyTrade.amount,
+            //             price: buyTrade.cost,
+            //             chartPrice: buyTrade.price,
+            //         },
+            //         sellInfo: null,
+            //         lowLimit: config.SIGNALIZER.SELL.LOW_LIMIT,
+            //         lowLimitHit: false,
+            //         nextLimit: parseFloat(config.SIGNALIZER.SELL.LOW_LIMIT) + parseFloat(config.SIGNALIZER.SELL.NEXT_LIMIT)
+            //     })
+            //     .write()
             lastBoughtTicks = 0
             logger.info('buy-signal: I WOULD HAVE BOUGHT THAT!')
         } else {

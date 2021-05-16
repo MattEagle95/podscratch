@@ -18,6 +18,8 @@ const buySignal = (priceData, SOCKETS) => {
 
         if (price > lastHighestPrice) {
             lastHighestPrice = price
+            needsLowPercentageTriggered = false;
+            lastLowestPrice = price
         }
 
         if (price < lastLowestPrice) {
@@ -45,13 +47,13 @@ const buySignal = (priceData, SOCKETS) => {
 
                 } else {
                     // WAR VORHER FALLEND, JETZT STEIGEND
-                    currentState = 'steigend'
                     stateTicks = 0
                 }
 
                 // BUY BEDINGUNG
                 needsHighPercentageMin = changePercentageLastLowestPrice > config.SIGNALIZER.BUY.NEEDS_PERCENTAGE_HIGH_MIN
                 needsHighPercentageMax = changePercentageLastLowestPrice > config.SIGNALIZER.BUY.NEEDS_PERCENTAGE_HIGH_MAX
+                currentState = 'steigend'
             }
 
             // FALLEND
@@ -61,14 +63,17 @@ const buySignal = (priceData, SOCKETS) => {
 
                 } else {
                     // WAR VORHER STEIGEND, JETZT FALLEND
-                    currenState = 'fallend'
                     stateTicks = 0
                 }
 
                 needsLowPercentageTriggered = changePercentageLastHighestPrice < config.SIGNALIZER.BUY.NEEDS_PERCENTAGE_LOW
+                currentState = 'fallend'
             }
 
             stateTicks++;
+        } else {
+            lastHighestPrice = price
+            lastLowestPrice = price
         }
 
         lastPrice = price
@@ -90,7 +95,7 @@ const buySignal = (priceData, SOCKETS) => {
     return (
         needsLowPercentageTriggered &&
         needsHighPercentageMin &&
-        needsHighPercentageMax
+        !needsHighPercentageMax
     )
 }
 
