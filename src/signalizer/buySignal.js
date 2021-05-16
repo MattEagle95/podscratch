@@ -1,83 +1,74 @@
 const logger = require('../logger')
 const config = require('../../config.json')
 
-// wenn es um "GEBÜHR" fällt => kauf aufjedenfall beim nächsten hoch
-
 const buySignal = (priceData, SOCKETS) => {
     let lastPrice = 0
-    let currentChangePercentage = 0
-    let currentState = 'steigend'
-    let stateLowTriggered = false
-    let stateTicks = 0
+    let lastHighestPrice = 0
+    let lastLowestPrice = 0
 
-    // um kleine schwankungen in einem anstieg zu kompensieren
-    let ticksLowAfterStateLowTriggered = 0
-    let startPriceOfRising = 0
-    let lastTicksHigh = 0
+    let needsLowPercentageTriggered = false;
+    let needsHighPercentageMin = false;
+    let needsHighPercentageMax = false;
+
+    let stateTicks = 0
+    let currentState = 'steigend'
 
     priceData.forEach((priceDataElement) => {
         let price = priceDataElement.bid
+
+        if (price > lastHighestPrice) {
+            lastHighestPrice = price
+        }
+
+        if (price < lastLowestPrice) {
+            lastLowestPrice = price
+        }
+
+        const changePercentageLastPrice = -parseFloat(
+            (parseFloat(lastPrice) - parseFloat(price)) /
+            parseFloat(lastPrice)
+        )
+        const changePercentageLastHighestPrice = -parseFloat(
+            (parseFloat(lastHighestPrice) - parseFloat(price)) /
+            parseFloat(lastPrice)
+        )
+        const changePercentageLastLowestPrice = -parseFloat(
+            (parseFloat(lastLowestPrice) - parseFloat(price)) /
+            parseFloat(lastPrice)
+        )
+
         if (lastPrice !== 0) {
-            const changePercentage = -parseFloat(
-                (parseFloat(lastPrice) - parseFloat(price)) /
-                parseFloat(lastPrice)
-            )
+            // STEIGEND
+            if (changePercentageLastPrice >= 0) {
+                if (currentState === 'steigend') {
+                    // WAR VORHER SCHON STEIGEND
 
-            if (changePercentage > 0 && currentState === 'steigend') {
-                currentChangePercentage =
-                    parseFloat(currentChangePercentage) +
-                    parseFloat(changePercentage)
-                stateTicks++
-                lastTicksHigh = stateTicks
-                ticksLowAfterStateLowTriggered = 0
-            } else if (changePercentage > 0) {
-                currentState = 'steigend'
-                currentChangePercentage = changePercentage
-                startPriceOfRising = lastPrice
-
-                if (ticksLowAfterStateLowTriggered === 1) {
-                    stateTicks = lastTicksHigh + 1
-                    ticksLowAfterStateLowTriggered = 0
                 } else {
-                    stateTicks++
+                    // WAR VORHER FALLEND, JETZT STEIGEND
+                    currentState = 'steigend'
+                    stateTicks = 0
                 }
 
-                lastTicksHigh = stateTicks
-            } else if (changePercentage < 0 && currentState === 'fallend') {
-                currentChangePercentage =
-                    parseFloat(currentChangePercentage) +
-                    parseFloat(changePercentage)
-                stateTicks++
-
-                if (ticksLowAfterStateLowTriggered === 1) {
-                    ticksLowAfterStateLowTriggered = 0
-                    stateLowTriggered = false
-                }
-            } else if (changePercentage < 0) {
-                currentState = 'fallend'
-                currentChangePercentage = changePercentage
-                stateTicks = 1
-
-                if (
-                    stateLowTriggered &&
-                    ticksLowAfterStateLowTriggered === 0 &&
-                    currentChangePercentage >
-                    config.SIGNALIZER.BUY.CAN_HAVE_LOW_PERCENTAGE_BETWEEN
-                ) {
-                    ticksLowAfterStateLowTriggered++
-                } else {
-                    ticksLowAfterStateLowTriggered = 0
-                    stateLowTriggered = false
-                }
+                // BUY BEDINGUNG
+                needsHighPercentageMin = changePercentageLastLowestPrice > config.SIGNALIZER.BUY.NEEDS_PERCENTAGE_HIGH_MIN
+                needsHighPercentageMax = changePercentageLastLowestPrice > config.SIGNALIZER.BUY.NEEDS_PERCENTAGE_HIGH_MAX
             }
 
-            if (
-                currentState === 'fallend' &&
-                stateTicks === config.SIGNALIZER.BUY.NEEDS_TICKS_LOW
-            ) {
-                stateLowTriggered = true
-                logger.info('buy signal: state low triggered')
+            // FALLEND
+            if (changePercentageLastPrice < 0) {
+                if (currentState === 'fallend') {
+                    // WAR VORHER SCHON FALLEND
+
+                } else {
+                    // WAR VORHER STEIGEND, JETZT FALLEND
+                    currenState = 'fallend'
+                    stateTicks = 0
+                }
+
+                needsLowPercentageTriggered = changePercentageLastHighestPrice < config.SIGNALIZER.BUY.NEEDS_PERCENTAGE_LOW
             }
+
+            stateTicks++;
         }
 
         lastPrice = price
@@ -85,35 +76,21 @@ const buySignal = (priceData, SOCKETS) => {
 
     SOCKETS.forEach((socket) => {
         socket.emit('bugSignalUpdate', {
-            stateLowTriggered: stateLowTriggered,
-            needsTicksHighTriggered:
-                stateLowTriggered &&
-                currentState === 'steigend' &&
-                stateTicks >= config.SIGNALIZER.BUY.NEEDS_TICKS_HIGH,
-            needsPercentageTriggered:
-                stateLowTriggered &&
-                currentState === 'steigend' &&
-                currentChangePercentage >
-                config.SIGNALIZER.BUY.NEEDS_PERCENTAGE,
-            currentState: currentState,
-            stateTicks: stateTicks,
-            currentChangePercentage: currentChangePercentage.toFixed(4),
-            startPriceOfRising: startPriceOfRising,
-            ticksLowAfterStateLowTriggered: ticksLowAfterStateLowTriggered,
+            lastPrice,
+            lastHighestPrice,
+            lastLowestPrice,
+            needsLowPercentageTriggered,
+            needsHighPercentageMin,
+            needsHighPercentageMax,
+            stateTicks,
+            currentState
         })
     })
 
-    logger.info(
-        `${currentState} seit ${stateTicks} ticks, change: ${currentChangePercentage.toFixed(
-            4
-        )}%`
-    )
-
     return (
-        stateLowTriggered &&
-        stateTicks >= config.SIGNALIZER.BUY.NEEDS_TICKS_HIGH &&
-        currentChangePercentage > config.SIGNALIZER.BUY.NEEDS_PERCENTAGE &&
-        currentChangePercentage < config.SIGNALIZER.BUY.NEEDS_MAX_PERCENTAGE
+        needsLowPercentageTriggered &&
+        needsHighPercentageMin &&
+        needsHighPercentageMax
     )
 }
 

@@ -18,7 +18,7 @@ const db = low(adapter)
 */
 db.defaults({ orders: [] }).write()
 
-const run = (availableMoney, priceData, lastBoughtTicks, sockets) => {
+const run = async (availableMoney, priceData, lastBoughtTicks, sockets) => {
     const profiler = logger.startTimer()
     logger.debug('running buy banker')
 
@@ -27,16 +27,19 @@ const run = (availableMoney, priceData, lastBoughtTicks, sockets) => {
         lastBoughtTicks++
     } else {
         if (checkBuySignal(priceData, lastBoughtTicks, sockets)) {
-            const moneyToUse = calculateMoneyToUse(availableMoney)
-            // const buyTrade = await buyOrder(moneyToUse)
+            const buyTrade = await buyOrder(config.BANKER.BUY.BUY_MONEY_AMOUNT)
             db.get('orders')
                 .push({
-                    status: 'waiting',
-                    id: Math.random(),
-                    timestamp: Date.now(),
-                    amount: Math.random(),
-                    price: Math.random(),
-                    chartPrice: priceData[priceData.length - 1],
+                    id: buyTrade.id,
+                    status: 'buy',
+                    buyInfo: {
+                        id: buyTrade.id,
+                        timestamp: buyTrade.timestamp,
+                        amount: buyTrade.amount,
+                        price: buyTrade.cost,
+                        chartPrice: buyTrade.price,
+                    },
+                    sellInfo: null,
                     lowLimit: config.SIGNALIZER.SELL.LOW_LIMIT,
                     lowLimitHit: false,
                     nextLimit: parseFloat(config.SIGNALIZER.SELL.LOW_LIMIT) + parseFloat(config.SIGNALIZER.SELL.NEXT_LIMIT)
@@ -75,19 +78,8 @@ const buyOrder = async (amount) => {
     return null
 }
 
-const calculateMoneyToUse = (moneyAvailable) => {
-    const moneyByPercentage = moneyAvailable * config.BANKER.BUY.BUY_MAX_MONEY_PERCENTAGE;
-
-    if (moneyByPercentage < config.BANKER.BUY.BUY_MIN_MONEY_AMOUNT) {
-        logger.info(`moneyByPercentage ${moneyByPercentage} ${config.CURRENCY_SYMBOL} (${config.BANKER.BUY.BUY_MAX_MONEY_PERCENTAGE}%) is lower than minMoneyAmount, using minMoneyAmount: ${config.BANKER.BUY.BUY_MIN_MONEY_AMOUNT}${config.CURRENCY_SYMBOL}`)
-        return config.BANKER.BUY.BUY_MIN_MONEY_AMOUNT;
-    }
-
-    return moneyByPercentage;
-}
-
 const checkEnoughMoney = (moneyAvailable) => {
-    return moneyAvailable >= config.BANKER.BUY.BUY_MIN_MONEY_AMOUNT
+    return moneyAvailable >= config.BANKER.BUY.BUY_MONEY_AMOUNT
 }
 
 module.exports = {

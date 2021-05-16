@@ -7,15 +7,6 @@ const config = require('../../config.json')
 const adapter = new FileSync('./storage/db/db.json')
 const db = low(adapter)
 
-/*
-{
-    id,
-    timestamp,
-    amount,
-    lowLimit,
-    nextLimit
-}
-*/
 db.defaults({ orders: [] }).write()
 
 const run = async (currentPrice) => {
@@ -25,7 +16,7 @@ const run = async (currentPrice) => {
     const orders = db.get('orders').value()
     logger.debug(`found ${orders.length} orders`)
 
-    orders.forEach((order) => {
+    orders.forEach(async (order) => {
         const {
             status,
             lowLimit,
@@ -34,7 +25,20 @@ const run = async (currentPrice) => {
         } = checkSellSignal(order.amount, currentPrice, order.lowLimit, order.lowLimitHit, order.nextLimit)
         if (status === true) {
             logger.info(`${order.id} SELL-SIGNAL)`)
-            // sellOrder(order)
+            const sellTrade = await sellOrder(order)
+            db.get('orders')
+                .find({ id: order.id })
+                .assign({
+                    status: 'sell',
+                    sellInfo: {
+                        id: sellTrade.id,
+                        timestamp: sellTrade.timestamp,
+                        amount: sellTrade.amount,
+                        price: sellTrade.cost,
+                        chartPrice: sellTrade.price,
+                    },
+                })
+                .write()
         } else {
             db.get('orders')
                 .find({ id: order.id })
@@ -62,6 +66,8 @@ const sellOrder = async (order) => {
         logger.info(
             `${sellTrade.order} - ${sellTrade.cost} ${config.COIN} SOLD FOR ${sellTrade.amount} ${config.CURRENCY} AT PRICE ${sellTrade.price} ${config.CURRENCY}`
         )
+
+        return sellTrade
     } catch (err) {
         console.error(err)
     }

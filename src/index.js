@@ -11,9 +11,15 @@ const packageJson = require('../package.json')
 const low = require('lowdb')
 const FileSync = require('lowdb/adapters/FileSync')
 const figlet = require('figlet')
+const cors = require('cors')
 
 app.use(express.static('public'))
-const io = require('socket.io')(httpServer)
+app.use(cors())
+const io = require('socket.io')(httpServer, {
+    cors: {
+        methods: ["GET", "POST"],
+    }
+})
 
 const adapter = new FileSync('./storage/db/db.json')
 const db = low(adapter)
@@ -105,7 +111,7 @@ httpServer.listen(3000)
 
             logger.info(`\n${t}`)
 
-            logger.info(`update interval: ${config.UPDATE.INTERVAL_MS}ms`)
+            logger.info(`update interval: ${config.UPDATE_INTERVAL_MS}ms`)
         } catch (error) {
             logger.error(error)
             process.exit(1)
@@ -169,5 +175,5 @@ httpServer.listen(3000)
                     } - freeCoin: ${BALANCE_DATA.free[config.COIN]} ${config.COIN} totalCoin: ${BALANCE_DATA.total[config.COIN]} ${config.COIN
                     } - ${config.COIN_CURRENCY} ${PRICE_DATA_HISTORY[PRICE_DATA_HISTORY.length - 1].bid} ${config.CURRENCY_SYMBOL}`
             })
-        }, config.UPDATE.INTERVAL_MS)
+        }, config.UPDATE_INTERVAL_MS)
     })()
