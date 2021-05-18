@@ -135,7 +135,7 @@ httpServer.listen(3000)
                     ask: tickerData.ask
                 })
 
-                if (PRICE_DATA.length > 100) {
+                if (PRICE_DATA.length > config.SIGNALIZER.MAX_PRICE_DATA) {
                     PRICE_DATA = PRICE_DATA.slice(1, PRICE_DATA.length)
                 }
 

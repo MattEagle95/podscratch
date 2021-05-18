@@ -11,15 +11,15 @@ const run = async (currentPrice, db) => {
     const orders = db.get('orders').value()
     logger.debug(`found ${orders.length} orders`)
 
-    orders.forEach(async (order) => {
+    orders.filter(order => order.status === 'buy').forEach(async (order) => {
         const {
             status,
             lowLimit,
             lowLimitHit,
             nextLimit
-        } = checkSellSignal(order.buyInfo.amount, currentPrice, order.lowLimit, order.lowLimitHit, order.nextLimit)
+        } = checkSellSignal(order.buyInfo.chartPrice, currentPrice, order.lowLimit, order.lowLimitHit, order.nextLimit)
         if (status === true) {
-            logger.info(`${order.id} SELL-SIGNAL)`)
+            logger.info(`${order.id} SELL-SIGNAL`)
             // const sellTrade = await sellOrder(order)
             // db.get('orders')
             //     .find({ id: order.id })

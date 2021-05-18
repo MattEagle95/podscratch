@@ -29,6 +29,16 @@
             "date": 1621116263501,
             "name": "storage\\combined\\combined-2021-05-16.log",
             "hash": "9fb4b1eab3b803cbe8820f56c6248b26"
+        },
+        {
+            "date": 1621208912062,
+            "name": "storage\\combined\\combined-2021-05-17.log",
+            "hash": "7878e0131a83911a7c5c2a09d6f69a9c"
+        },
+        {
+            "date": 1621351431874,
+            "name": "storage\\combined\\combined-2021-05-18.log",
+            "hash": "fe45b579343e41982975d39db25b88cc"
         }
     ]
 }

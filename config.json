@@ -1,7 +1,7 @@
 {
-    "COIN": "BTC",
+    "COIN": "LTC",
     "CURRENCY": "EUR",
-    "COIN_CURRENCY": "BTC/EUR",
+    "COIN_CURRENCY": "LTC/EUR",
     "CURRENCY_SYMBOL": "€",
     "UPDATE_INTERVAL_MS": 10000,
     "BANKER": {
@@ -11,18 +11,19 @@
     },
     "SIGNALIZER": {
         "MIN_PRICE_DATA": 10,
+        "MAX_PRICE_DATA": 360,
         "BUY": {
-            "NEEDS_PERCENTAGE_LOW": -0.0010,
+            "NEEDS_PERCENTAGE_LOW": -0.0015,
             "NEEDS_PERCENTAGE_HIGH_MIN": 0.0010,
-            "NEEDS_PERCENTAGE_HIGH_MAX": 0.0030,
-            "NEEDS_MIN_TICKS_FOR_NEXT_BUY": 50
+            "NEEDS_PERCENTAGE_HIGH_MAX": 0.0025,
+            "NEEDS_MIN_TICKS_FOR_NEXT_BUY": 180
         },
         "SELL": {
             "LOW_LIMIT": 1.014,
-            "NEXT_LIMIT": 0.004
+            "NEXT_LIMIT": 0.002
         },
         "THROWITAWAY": {
-            "MAX_LOSS_PERCENTAGE": 0.04
+            "MAX_LOSS_PERCENTAGE": 0.025
         }
     }
 }

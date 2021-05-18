@@ -43,10 +43,10 @@ const checkSellSignal = (priceToBeat, currentPrice, lowLimit, lowLimitHit, nextL
             }
         }
     }
-
+    
     if (lowLimitHit) {
         if (prozentUnterschied > nextLimit) {
-            lowLimitHit = nextLimit
+            lowLimit = nextLimit
             nexLimit = parseFloat(nextLimit) + parseFloat(config.SIGNALIZER.SELL.NEXT_LIMIT)
             return {
                 status: false,
@@ -60,7 +60,7 @@ const checkSellSignal = (priceToBeat, currentPrice, lowLimit, lowLimitHit, nextL
     return {
         status: false,
         lowLimit: lowLimit,
-        lowLimitHit: lowLimitHit,
+        lowLimitHit: true,
         nextLimit: nextLimit
     }
 }
