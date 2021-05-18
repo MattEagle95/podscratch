@@ -47,7 +47,9 @@ io.on('connection', (socket) => {
         priceData: PRICE_DATA_HISTORY,
         orders: db.get('orders').value(),
         lastBoughtTicks: LAST_BOUGHT_TICKS,
-        lastBoughtTicksNeeded: config.SIGNALIZER.BUY.NEEDS_MIN_TICKS_FOR_NEXT_BUY
+        lastBoughtTicksNeeded: config.SIGNALIZER.BUY.NEEDS_MIN_TICKS_FOR_NEXT_BUY,
+        coin: config.COIN,
+        coinCurrency: config.COIN_CURRENCY
     })
 })
 
@@ -167,7 +169,9 @@ httpServer.listen(3000)
                         priceData: PRICE_DATA_HISTORY,
                         orders: orders,
                         lastBoughtTicks: LAST_BOUGHT_TICKS,
-                        lastBoughtTicksNeeded: config.SIGNALIZER.BUY.NEEDS_MIN_TICKS_FOR_NEXT_BUY
+                        lastBoughtTicksNeeded: config.SIGNALIZER.BUY.NEEDS_MIN_TICKS_FOR_NEXT_BUY,
+                        coin: config.COIN,
+                        coinCurrency: config.COIN_CURRENCY
                     })
                 })
             } catch (error) {

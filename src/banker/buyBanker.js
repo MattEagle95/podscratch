@@ -20,7 +20,8 @@ const run = async (availableMoney, priceData, lastBoughtTicks, sockets, db) => {
             //         status: 'buy',
             //         buyInfo: {
             //             id: buyTrade.id,
-            //             timestamp: buyTrade.timestamp,
+            //             timestamp: Date.now(),
+            //             exchangeTimestamp: buyTrade.timestamp,
             //             amount: buyTrade.amount,
             //             price: buyTrade.cost,
             //             chartPrice: buyTrade.price,

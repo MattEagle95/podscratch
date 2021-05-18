@@ -20,6 +20,21 @@
       "lowLimit": 1.012,
       "lowLimitHit": true,
       "nextLimit": 1.014
+    },
+    {
+      "id": 0.15418615117993562,
+      "status": "buy",
+      "buyInfo": {
+        "id": 0.05116297210025755,
+        "timestamp": 1621355427240,
+        "amount": 0.00125,
+        "price": 5,
+        "chartPrice": 248.3
+      },
+      "sellInfo": null,
+      "lowLimit": 1.016,
+      "lowLimitHit": true,
+      "nextLimit": 1.016
     }
   ]
 }

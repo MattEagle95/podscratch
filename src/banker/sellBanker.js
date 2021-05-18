@@ -27,7 +27,8 @@ const run = async (currentPrice, db) => {
             //         status: 'sell',
             //         sellInfo: {
             //             id: sellTrade.id,
-            //             timestamp: sellTrade.timestamp,
+            //             timestamp: Date.now(),
+            //             exchangeTimestamp: sellTrade.timestamp,
             //             amount: sellTrade.amount,
             //             price: sellTrade.cost,
             //             chartPrice: sellTrade.price,
