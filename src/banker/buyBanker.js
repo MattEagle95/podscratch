@@ -3,8 +3,9 @@ const low = require('lowdb')
 const FileSync = require('lowdb/adapters/FileSync')
 const { checkBuySignal } = require('../signalizer/buySignal')
 const config = require('../../config.json')
+const crypto = require("crypto")
 
-const run = async (availableMoney, priceData, lastBoughtTicks, sockets, db) => {
+const run = async (availableMoney, priceData, lastBoughtTicks, sockets, db, exchange) => {
     const profiler = logger.startTimer()
     logger.debug('running buy banker')
 
@@ -13,45 +14,56 @@ const run = async (availableMoney, priceData, lastBoughtTicks, sockets, db) => {
         lastBoughtTicks++
     } else {
         if (checkBuySignal(priceData, lastBoughtTicks, sockets)) {
-            // const buyTrade = await buyOrder(config.BANKER.BUY.BUY_MONEY_AMOUNT)
-            // db.get('orders')
-            //     .push({
-            //         id: buyTrade.id,
-            //         status: 'buy',
-            //         buyInfo: {
-            //             id: buyTrade.id,
-            //             timestamp: Date.now(),
-            //             exchangeTimestamp: buyTrade.timestamp,
-            //             amount: buyTrade.amount,
-            //             price: buyTrade.cost,
-            //             chartPrice: buyTrade.price,
-            //         },
-            //         sellInfo: null,
-            //         lowLimit: config.SIGNALIZER.SELL.LOW_LIMIT,
-            //         lowLimitHit: false,
-            //         nextLimit: parseFloat(config.SIGNALIZER.SELL.LOW_LIMIT) + parseFloat(config.SIGNALIZER.SELL.NEXT_LIMIT)
-            //     })
-            //     .write()
-            db.get('orders')
-                .push({
-                    id: Math.random(),
-                    status: 'buy',
-                    buyInfo: {
-                        id: Math.random(),
-                        timestamp: Date.now(),
-                        amount: 0.00125,
-                        price: 5,
-                        chartPrice: priceData[priceData.length - 1].bid,
-                    },
-                    sellInfo: null,
-                    lowLimit: config.SIGNALIZER.SELL.LOW_LIMIT,
-                    lowLimitHit: false,
-                    nextLimit: parseFloat(config.SIGNALIZER.SELL.LOW_LIMIT) + parseFloat(config.SIGNALIZER.SELL.NEXT_LIMIT)
-                })
-                .write()
+            // const { buyTrade, buyOrderDataId } = await buyOrder(priceData, exchange)
+
+            // if (buyOrderDataId !== undefined) {
+
+            //     if (buyTrade === undefined) {
+            //         logger.warn(`buy trade for buy order [${buyOrderDataId}] not ready`)
+            //         db.get('orders')
+            //             .push({
+            //                 id: generateId(db),
+            //                 status: 'buy-pending',
+            //                 buyInfo: {
+            //                     id: buyOrderDataId,
+            //                     tradeId: null,
+            //                 },
+            //                 sellInfo: null,
+            //                 lowLimit: config.SIGNALIZER.SELL.LOW_LIMIT,
+            //                 lowLimitHit: false,
+            //                 nextLimit: parseFloat(config.SIGNALIZER.SELL.LOW_LIMIT) + parseFloat(config.SIGNALIZER.SELL.NEXT_LIMIT)
+            //             })
+            //             .write()
+            //     } else {
+            //         logger.info('buyTrade')
+            //         logger.info(JSON.stringify(buyTrade))
+            //         db.get('orders')
+            //             .push({
+            //                 id: generateId(db),
+            //                 status: 'buy',
+            //                 buyInfo: {
+            //                     id: buyOrderDataId,
+            //                     tradeId: buyTrade.id,
+            //                     timestamp: Date.now(),
+            //                     exchangeTimestamp: buyTrade.timestamp,
+            //                     amount: buyTrade.amount,
+            //                     price: buyTrade.cost,
+            //                     chartPrice: buyTrade.price,
+            //                     fee: buyTrade.fee,
+            //                 },
+            //                 sellInfo: null,
+            //                 lowLimit: config.SIGNALIZER.SELL.LOW_LIMIT,
+            //                 lowLimitHit: false,
+            //                 nextLimit: parseFloat(config.SIGNALIZER.SELL.LOW_LIMIT) + parseFloat(config.SIGNALIZER.SELL.NEXT_LIMIT)
+            //             })
+            //             .write()
+            //     }
+
+            // } else {
+            //     logger.warn(`buyOrderDataId is undefined`)
+            // }
 
             lastBoughtTicks = 0
-            logger.info('buy-signal: I WOULD HAVE BOUGHT THAT!')
         } else {
             lastBoughtTicks++
         }
@@ -64,27 +76,47 @@ const run = async (availableMoney, priceData, lastBoughtTicks, sockets, db) => {
     }
 }
 
-const buyOrder = async (amount) => {
+const buyOrder = async (priceData, exchange) => {
     try {
-        const buyOrderData = await exchange.createMarketBuyOrder(config.COIN_CURRENCY, amount)
+        const euroToUse = config.BANKER.BUY.BUY_MONEY_AMOUNT
+        const exchangeRate = priceData[priceData.length - 1].bid
+
+        const amountToBuy = (euroToUse / exchangeRate)
+        logger.info('buy-signal: buying euro: ' + euroToUse + ` ${config.CURRENCY}`)
+        logger.info('buy-signal: buying exchangeRate: ' + exchangeRate + ` ${config.CURRENCY}`)
+        logger.info('buy-signal: buying amountToBuy: ' + amountToBuy + ` ${config.COIN}`)
+
+        const buyOrderData = await exchange.createMarketBuyOrder(config.COIN_CURRENCY, amountToBuy)
 
         const trades = await exchange.fetchMyTrades(config.COIN_CURRENCY)
         const buyTrade = trades.find((trade) => trade.order === buyOrderData.id)
 
-        logger.info(
-            `${buyTrade.order} - ${buyTrade.amount} ${buyTrade.COIN} BOUGHT FOR ${buyTrade.cost} ${config.CURRENCY} AT PRICE ${buyTrade.price} ${config.CURRENCY}`
-        )
-
-        return buyTrade
+        return {
+            buyTrade,
+            buyOrderDataId: buyOrderData.id
+        }
     } catch (err) {
+        logger.error(err)
         console.error(err)
     }
 
-    return null
+    return {
+        undefined,
+        undefined
+    }
 }
 
 const checkEnoughMoney = (moneyAvailable) => {
     return moneyAvailable >= config.BANKER.BUY.BUY_MONEY_AMOUNT
+}
+
+const generateId = (db) => {
+    let id = crypto.randomBytes(5).toString('hex')
+    while (db.get('orders').value().filter(order => order.id === id).length > 0) {
+        id = crypto.randomBytes(5).toString('hex')
+    }
+
+    return id
 }
 
 module.exports = {

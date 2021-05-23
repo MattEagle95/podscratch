@@ -39,6 +39,21 @@
             "date": 1621351431874,
             "name": "storage\\combined\\combined-2021-05-18.log",
             "hash": "fe45b579343e41982975d39db25b88cc"
+        },
+        {
+            "date": 1621422221210,
+            "name": "storage\\combined\\combined-2021-05-19.log",
+            "hash": "c5852be003744150442d83a3062f0e5a"
+        },
+        {
+            "date": 1621675502690,
+            "name": "storage\\combined\\combined-2021-05-22.log",
+            "hash": "f916a90fe816439ceb7cd89a31f69281"
+        },
+        {
+            "date": 1621772742770,
+            "name": "storage\\combined\\combined-2021-05-23.log",
+            "hash": "23f19f36a0389aa978609dea53454e06"
         }
     ]
 }

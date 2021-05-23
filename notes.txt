@@ -1,0 +1,5 @@
+status von orders:
+- buy (gekauft, bereit zum verkauf)
+- buy-pending (gekauft, aber trade muss nochmal aktualisiert werden)
+- sell (verkauft)
+- sell-pending (verkauft, aber trade muss nochmla aktualisiert werden)

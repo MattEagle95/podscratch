@@ -16,28 +16,19 @@ const buySignal = (priceData, SOCKETS) => {
     priceData.forEach((priceDataElement) => {
         let price = priceDataElement.bid
 
-        if (price > lastHighestPrice) {
+        if (parseFloat(price) > parseFloat(lastHighestPrice)) {
             lastHighestPrice = price
             needsLowPercentageTriggered = false;
             lastLowestPrice = price
         }
 
-        if (price < lastLowestPrice) {
+        if (parseFloat(price) < parseFloat(lastLowestPrice)) {
             lastLowestPrice = price
         }
 
-        const changePercentageLastPrice = -parseFloat(
-            (parseFloat(lastPrice) - parseFloat(price)) /
-            parseFloat(lastPrice)
-        )
-        const changePercentageLastHighestPrice = -parseFloat(
-            (parseFloat(lastHighestPrice) - parseFloat(price)) /
-            parseFloat(lastHighestPrice)
-        )
-        const changePercentageLastLowestPrice = -parseFloat(
-            (parseFloat(lastLowestPrice) - parseFloat(price)) /
-            parseFloat(lastLowestPrice)
-        )
+        const changePercentageLastPrice = percentageDifference(lastPrice, price)
+        const changePercentageLastHighestPrice = percentageDifference(lastHighestPrice, price)
+        const changePercentageLastLowestPrice = percentageDifference(lastLowestPrice, price)
 
         if (lastPrice !== 0) {
             // STEIGEND
@@ -70,7 +61,7 @@ const buySignal = (priceData, SOCKETS) => {
 
             needsHighPercentageMin = changePercentageLastLowestPrice > config.SIGNALIZER.BUY.NEEDS_PERCENTAGE_HIGH_MIN
             needsHighPercentageMax = changePercentageLastLowestPrice > config.SIGNALIZER.BUY.NEEDS_PERCENTAGE_HIGH_MAX
-            if (needsHighPercentageMax && (currentState === 'fallend' || stateTicks > 1) ) {
+            if (needsHighPercentageMax && (currentState === 'fallend' || stateTicks > 1)) {
                 lastHighestPrice = price
                 lastLowestPrice = price
             }
@@ -124,6 +115,10 @@ const checkBuySignal = (priceData, lastBoughtTicks, SOCKETS) => {
     }
 
     return false
+}
+
+const percentageDifference = (gekauft, verkauft) => {
+    return ((parseFloat(verkauft) / parseFloat(gekauft)) * 100) - 100
 }
 
 module.exports = {

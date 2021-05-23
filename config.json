@@ -1,29 +1,51 @@
 {
+    "TICKER": [
+        {
+            "coin": "BTC",
+            "currency": "EUR",
+            "symbol": "BTC/EUR",
+            "color": "#ffbd2d"
+        },
+        {
+            "coin": "ETH",
+            "currency": "EUR",
+            "symbol": "ETH/EUR",
+            "color": "#2da0ff"
+        },
+        {
+            "coin": "LTC",
+            "currency": "EUR",
+            "symbol": "LTC/EUR",
+            "color": "#3b536e"
+        }
+    ],
     "COIN": "LTC",
     "CURRENCY": "EUR",
     "COIN_CURRENCY": "LTC/EUR",
     "CURRENCY_SYMBOL": "€",
+    "TICKER_UPDATE_INTERVAL_MS": 1000,
+    "TICKER_SAVE_INTERRVAL_MINUTES": 1,
     "UPDATE_INTERVAL_MS": 10000,
     "BANKER": {
         "BUY": {
-            "BUY_MONEY_AMOUNT": 10
+            "BUY_MONEY_AMOUNT": 8
         }
     },
     "SIGNALIZER": {
         "MIN_PRICE_DATA": 10,
-        "MAX_PRICE_DATA": 360,
+        "MAX_PRICE_DATA": 1000,
         "BUY": {
-            "NEEDS_PERCENTAGE_LOW": -0.0015,
-            "NEEDS_PERCENTAGE_HIGH_MIN": 0.0010,
-            "NEEDS_PERCENTAGE_HIGH_MAX": 0.0025,
-            "NEEDS_MIN_TICKS_FOR_NEXT_BUY": 180
+            "NEEDS_PERCENTAGE_LOW": -0.50,
+            "NEEDS_PERCENTAGE_HIGH_MIN": 0.14,
+            "NEEDS_PERCENTAGE_HIGH_MAX": 0.28,
+            "NEEDS_MIN_TICKS_FOR_NEXT_BUY": 5
         },
         "SELL": {
-            "LOW_LIMIT": 1.014,
-            "NEXT_LIMIT": 0.002
+            "LOW_LIMIT": 1.4,
+            "NEXT_LIMIT": 0.3
         },
         "THROWITAWAY": {
-            "MAX_LOSS_PERCENTAGE": 0.025
+            "MAX_LOSS_PERCENTAGE": -8
         }
     }
 }

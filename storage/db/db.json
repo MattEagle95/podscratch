@@ -1,40 +1,37 @@
 {
   "orders": [
     {
-      "id": 0.047838268784892835,
+      "id": "56bef278-fafb-45d4-9043-f17aa4d9aada",
       "status": "sell",
       "buyInfo": {
-        "id": 0.5068345412665525,
-        "timestamp": 1621353639806,
-        "amount": 0.00125,
-        "price": 5,
-        "chartPrice": 245.3
+        "id": "9627482",
+        "timestamp": 1621440961776,
+        "exchangeTimestamp": 1621439429725,
+        "amount": 0.04618138,
+        "price": 8.040178258,
+        "chartPrice": 174.1,
+        "fee": {
+          "cost": 0.04020089129,
+          "currency": "EUR",
+          "rate": 0.005
+        }
       },
       "sellInfo": {
-        "id": 0.08878786639664105,
-        "timestamp": 1621353789971,
-        "amount": 0.00125,
-        "price": 5,
-        "chartPrice": 12345
+        "id": "9630020",
+        "timestamp": 1621440964121,
+        "exchangeTimestamp": 1621440962436,
+        "amount": 0.04618138,
+        "price": 7.6808871216,
+        "chartPrice": 166.32,
+        "fee": {
+          "cost": 0.038404435608,
+          "currency": "EUR",
+          "rate": 0.005
+        }
       },
-      "lowLimit": 1.012,
-      "lowLimitHit": true,
-      "nextLimit": 1.014
-    },
-    {
-      "id": 0.15418615117993562,
-      "status": "buy",
-      "buyInfo": {
-        "id": 0.05116297210025755,
-        "timestamp": 1621355427240,
-        "amount": 0.00125,
-        "price": 5,
-        "chartPrice": 248.3
-      },
-      "sellInfo": null,
-      "lowLimit": 1.016,
-      "lowLimitHit": true,
-      "nextLimit": 1.016
+      "lowLimit": 1.2,
+      "lowLimitHit": false,
+      "nextLimit": 1.4
     }
   ]
 }

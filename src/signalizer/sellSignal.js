@@ -8,13 +8,13 @@ const logger = require('../logger')
 // setze UNTERSTES-LIMIT auf NÄCHSTES-SAFE-LIMIT
 // setze NÄCHSTES-SAFE-LIMIT auf NÄCHSTES-SAFE-LIMIT x 2
 
-const checkSellSignal = (priceToBeat, currentPrice, lowLimit, lowLimitHit, nextLimit) => {
-    const prozentUnterschied =
-        parseFloat(currentPrice) / parseFloat(priceToBeat)
+const checkSellSignal = (buyPrice, currentPrice, lowLimit, lowLimitHit, nextLimit) => {
+    const prozentUnterschied = percentageDifference(buyPrice, currentPrice)
+    console.log(prozentUnterschied)
 
     if (checkThrowItAwaySignal(prozentUnterschied)) {
         // SELL -> DONT LOSE MORE
-        logger.info(`sell-signal: TROW AWAY! ${prozentUnterschied} %`)
+        logger.info(`sell-signal: TROW AWAY! ${prozentUnterschied} % / ${config.SIGNALIZER.THROWITAWAY.MAX_LOSS_PERCENTAGE} %`)
         return {
             status: true,
             lowLimit: lowLimit,
@@ -43,16 +43,16 @@ const checkSellSignal = (priceToBeat, currentPrice, lowLimit, lowLimitHit, nextL
             }
         }
     }
-    
+
     if (lowLimitHit) {
         if (prozentUnterschied > nextLimit) {
-            lowLimit = nextLimit
-            nexLimit = parseFloat(nextLimit) + parseFloat(config.SIGNALIZER.SELL.NEXT_LIMIT)
+            const newLowLimit = parseFloat(prozentUnterschied) - parseFloat(config.SIGNALIZER.SELL.NEXT_LIMIT)
+            const newNextLimit = parseFloat(prozentUnterschied) + parseFloat(config.SIGNALIZER.SELL.NEXT_LIMIT)
             return {
                 status: false,
-                lowLimit: lowLimit,
+                lowLimit: newLowLimit,
                 lowLimitHit: lowLimitHit,
-                nextLimit: nextLimit
+                nextLimit: newNextLimit
             }
         }
     }
@@ -65,8 +65,6 @@ const checkSellSignal = (priceToBeat, currentPrice, lowLimit, lowLimitHit, nextL
     }
 }
 
-
-
 const checkThrowItAwaySignal = (prozentUnterschied) => {
     if (
         prozentUnterschied < config.SIGNALIZER.THROWITAWAY.MAX_LOSS_PERCENTAGE
@@ -75,6 +73,10 @@ const checkThrowItAwaySignal = (prozentUnterschied) => {
     }
 
     return false
+}
+
+const percentageDifference = (gekauft, verkauft) => {
+    return ((parseFloat(verkauft) / parseFloat(gekauft)) * 100) - 100
 }
 
 module.exports = {
